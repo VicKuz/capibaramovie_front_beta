@@ -253,7 +253,7 @@ footer {
     /*scroll-behavior: smooth;
     scroll-snap-type: x mandatory;*/
     gap: calc(1vw + 1rem);
-    overflow-x: hidden;
+    overflow-y: auto;
     overscroll-behavior-x: contain;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
