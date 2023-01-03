@@ -20,6 +20,7 @@
 /*------------------------*/
 
 :root {
+    --header-background: rgba(0, 0, 0, 0);
     --font-size-sm: clamp(0.8rem, -0.09vw + 0.82rem, 0.75rem);
     --font-size-base: clamp(1rem, 0vw + 1rem, 1rem);
     --font-size-md: clamp(1.25rem, 0.15vw + 1.21rem, 1.33rem);
@@ -120,6 +121,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
+    overflow-x: hidden;
 }
 
 header.sticky {
