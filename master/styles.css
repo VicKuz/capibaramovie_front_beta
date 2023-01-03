@@ -1,0 +1,331 @@
+/* Font faces */
+
+@font-face {
+    font-family: Mariupol Regular;
+    src: url(resources/fonts/Mariupol/Mariupol_Regular/Mariupol-Regular.otf);
+}
+
+@font-face {
+    font-family: Mariupol Medium;
+    src: url(resources/fonts/Mariupol/Mariupol_Medium/Mariupol-Medium.otf);
+}
+
+@font-face {
+    font-family: Mariupol Bold;
+    src: url(resources/fonts/Mariupol/Mariupol_Bold/Mariupol-Bold.otf);
+}
+
+/* End of font faces */
+
+/*------------------------*/
+
+:root {
+    --font-size-sm: clamp(0.8rem, -0.09vw + 0.82rem, 0.75rem);
+    --font-size-base: clamp(1rem, 0vw + 1rem, 1rem);
+    --font-size-md: clamp(1.25rem, 0.15vw + 1.21rem, 1.33rem);
+    --font-size-l: clamp(1.56rem, 0.39vw + 1.47rem, 1.78rem);
+    --font-size-lg: clamp(1.95rem, 0.76vw + 1.76rem, 2.37rem);
+    --font-size-xl: clamp(2.44rem, 1.3vw + 2.12rem, 3.16rem);
+    --font-size-xxl: clamp(3.05rem, 2.1vw + 2.53rem, 4.21rem);
+    --font-size-xxxl: clamp(3.81rem, 3.26vw + 3rem, 5.61rem);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: var(--font-size-base);
+    box-sizing: border-box;
+    font-family: Mariupol Regular, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+img {height: 100%}
+
+
+/* Font styles */
+
+p, b, i {font-size: var(--font-size-md); padding: 0.5em 0}
+
+
+h1 {
+    font-family: Mariupol Medium, sans-serif;
+    font-size: var(--font-size-xxl);
+    padding-bottom: 1rem;
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+    padding-bottom: 1rem;
+}
+
+h3 {
+    font-size: var(--font-size-lg);
+    padding-bottom: 1rem;
+}
+
+h4 {
+    font-size: var(--font-size-l);
+    padding-bottom: 1rem;
+}
+
+h5 {
+    font-size: var(--font-size-md);
+    padding-bottom: 1rem;
+}
+
+p,
+b,
+i,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+overflow-wrap: break-word;
+hyphens: auto;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+a:hover {
+    color: yellow;
+}
+
+/* End of font styles */
+
+/*------------------------*/
+
+/* Header styles */
+header {
+    z-index: 100;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding: 3vw;
+    color: white;
+    text-transform: uppercase;
+    background: var(--header-background);
+    opacity: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+header.sticky {
+    position: fixed;
+    padding: 0.5vw 3vw;
+}
+
+.menu-top-strip ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4vw;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem 0;
+}
+
+.logo-container {display: flex; flex-direction: row; justify-content: flex-start; align-items: center}
+.logo {height: 100%; width: 5rem; background: yellow}
+
+.top-icons-container {display: flex; flex-direction: row; justify-content: flex-end; gap: 1vw}
+.top-icon {height: 100%; width: 2rem; background: yellowgreen}
+
+.logo-container, .top-icons-container {flex: 1}
+
+/* End of Header styles */
+
+/*------------------------*/
+
+/* Hero styles */
+.Hero {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+/* End of Hero styles */
+
+/*------------------------*/
+
+/* Sections styles */
+.Section {
+    padding: max(2rem, 8vh) max(2rem, 12vw);
+    overflow-x: hidden;
+}
+
+.Section.coral {background: coral;}
+
+.Section.white {background: white;}
+
+.Section.grey  {background: #E5E5E5;}
+
+.section-tittle {}
+
+/* End of Section styles */
+
+/*------------------------*/
+
+/* Footer styles */
+footer {
+    background: rebeccapurple;
+    width: 100%;
+    min-height: 30vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* End of Footer styles */
+
+/*------------------------*/
+
+/* Movie Card styles */
+.movie-card {
+    width: 12rem;
+    /* scroll-snap-align: start; */
+    line-height: 1.3;
+    user-select: none;
+}
+
+.movie-card-poster {
+    background-image: url("materials/posters/poster.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 27 / 40;
+    transition: 0.2s;
+}
+
+.movie-card-poster:hover {
+    -o-transform: perspective(300px) rotateY(5deg);
+    -ms-transform: perspective(300px) rotateY(5deg);
+    -moz-transform: perspective(300px) rotateY(5deg);
+    -webkit-transform: perspective(300px) rotateY(5deg);
+    transform: perspective(300px) rotateY(5deg);
+}
+
+.movie-card-title {padding-bottom: 0}
+
+.movie-card-desc {
+    font-size: 0.9rem;
+    color: rgba(119, 119, 119, 1);
+}
+
+.movie-card a {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.movie-cards-row {
+    position: relative;
+    padding-top: 1rem;
+    top: -1rem;
+    display: grid;
+    grid-auto-flow: column;
+    /*scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;*/
+    gap: calc(1vw + 1rem);
+    overflow-x: hidden;
+    overscroll-behavior-x: contain;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.movie-cards-row-wrapper {
+    position: relative;
+}
+
+.movie-cards-row::-webkit-scrollbar{
+    display: none;
+}
+
+.movie-cards-row.active, .movie-cards-row.active .movie-card a {
+    cursor: grab;
+}
+
+.vignette {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 5vw;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: visibility 0.2s linear,
+    opacity 0.1s linear;
+    -moz-transition: visibility 0.2s linear,
+    opacity 0.1s linear;
+    -o-transition: visibility 0.2s linear,
+    opacity 0.1s linear;
+}
+
+.vignette.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+#vignette-left {
+    background: linear-gradient(to right, #ffffff, transparent);
+    left: 0;
+}
+
+#vignette-right {
+    background: linear-gradient(to left, #ffffff, transparent);
+    right: 0;
+}
+
+/* End of Movie Card styles */
+
+/*------------------------*/
+
+
+/*
+mobile:
+.movie-cards-row {
+    padding: 0 max(2rem, 15vw);
+    margin: 0 min(-2rem, -15vw);
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+  .element::before {
+    float: left;
+    padding-top: 100%;
+    content: "";
+  }
+
+  .element::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+*/
