@@ -121,7 +121,6 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    overflow-x: hidden;
 }
 
 header.sticky {
@@ -184,7 +183,7 @@ header.sticky {
 
 .Section.grey  {background: #E5E5E5;}
 
-.section-tittle {}
+.section-tittle {margin-bottom: 2rem}
 
 /* End of Section styles */
 
@@ -219,15 +218,6 @@ footer {
     background-size: cover;
     width: 100%;
     aspect-ratio: 27 / 40;
-    transition: 0.2s;
-}
-
-.movie-card-poster:hover {
-    -o-transform: perspective(300px) rotateY(5deg);
-    -ms-transform: perspective(300px) rotateY(5deg);
-    -moz-transform: perspective(300px) rotateY(5deg);
-    -webkit-transform: perspective(300px) rotateY(5deg);
-    transform: perspective(300px) rotateY(5deg);
 }
 
 .movie-card-title {padding-bottom: 0}
@@ -245,9 +235,6 @@ footer {
 }
 
 .movie-cards-row {
-    position: relative;
-    padding-top: 1rem;
-    top: -1rem;
     display: grid;
     grid-auto-flow: column;
     /*scroll-behavior: smooth;
