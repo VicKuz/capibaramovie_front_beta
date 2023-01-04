@@ -68,8 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
             var rowViewportLeft = slider.scrollLeft;
             var rowViewportRight = slider.scrollLeft + slider.clientWidth;
             var rowWidth = slider.scrollWidth;
+
+            /*
             console.log(rowViewportRight);
             console.log(rowWidth);
+             */
 
             if (rowViewportRight < rowWidth) {
                 document.getElementById("vignette-right").classList.add("visible");

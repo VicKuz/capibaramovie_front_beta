@@ -99,7 +99,7 @@ a {
 }
 
 a:hover {
-    color: yellow;
+    color: #ffb200;
 }
 
 /* End of font styles */
@@ -139,11 +139,13 @@ header.sticky {
     padding: 0.5rem 0;
 }
 
-.logo-container {display: flex; flex-direction: row; justify-content: flex-start; align-items: center}
-.logo {height: 100%; width: 5rem; background: yellow}
+.logo-container {max-height: 2rem; display: flex; flex-direction: row; justify-content: flex-start; align-items: center}
+.logo {height: 100%; width: 5rem; }
 
-.top-icons-container {display: flex; flex-direction: row; justify-content: flex-end; gap: 1vw}
-.top-icon {height: 100%; width: 2rem; background: yellowgreen}
+.top-icons-container {display: flex; flex-direction: row; justify-content: flex-end; gap: 1.5rem; height: 100%}
+.top-icon-container {width: 2rem; height: 2rem; display: inline-flex; justify-content: center;}
+.top-icon {width: 100%; height: 100%; fill: white}
+.top-icon:hover {fill: #ffb200}
 
 .logo-container, .top-icons-container {flex: 1}
 
@@ -183,6 +185,15 @@ header.sticky {
 
 .Section.grey  {background: #E5E5E5;}
 
+.Section.camel {background: #D0A071}
+
+.Section.olive {background: #373127; color: white}
+
+.Section.rebeccapurple {background: rebeccapurple; color: white}
+
+.Section.honeyyellow {background: #FFB200}
+
+
 .section-tittle {margin-bottom: 2rem}
 
 /* End of Section styles */
@@ -205,7 +216,7 @@ footer {
 
 /* Movie Card styles */
 .movie-card {
-    width: 12rem;
+    width: min(12rem, 14vw);
     /* scroll-snap-align: start; */
     line-height: 1.3;
     user-select: none;
