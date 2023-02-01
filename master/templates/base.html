@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Опис сторінки">
+    <meta name="author" content="Автор">
+
+    <meta property="og:title" content="Назва сторінки OG">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.movietheatree.com">
+    <meta property="og:description" content="Опис сторінки OG">
+    <meta property="og:image" content="image.png">
+
+    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css?v=1.0')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+
+    {% block head %} {% endblock %}
+</head>
+<body>
+    <header id="header">
+
+        <div class="logo-container">
+        <div class="logo"></div>
+        </div>
+
+        <nav class="menu-top-strip">
+            <ul>
+                <li><a href="/">Фільми</a></li>
+                <li><a href="/">Прем'єри</a></li>
+                <li><a href="/">Новини</a></li>
+                <li><a href="/">Люди</a></li>
+                <li><a href="/">Рейтинг</a></li>
+            </ul>
+        </nav>
+
+        <div class="top-icons-container">
+            <img class="top-icon" src="../resources/identity/logo.webp">
+            <img class="top-icon" src="../resources/identity/logo.webp">
+            <img class="top-icon" src="../resources/identity/logo.webp">
+        </div>
+
+    </header>
+
+
+    {% block body %}
+
+    {% endblock %}
+
+<footer class="Section">
+    <b>Сторінка закінчилась, а історія лише починається</b>
+</footer>
+<script src="../resources/js/sticky-header.js"></script>
+<script src="../resources/js/movie-row-scroll.js"></script>
+</body>
+</html>
