@@ -1,5 +1,11 @@
 let root = document.documentElement;
 
+function changeValue(id, value) {
+    const suffix = (id != 'color' ? '%' : '');
+    root.style.setProperty(`--${id}`, value + suffix);
+}
+
+
 function vh(percent) {
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     return (percent * h) / 100;
@@ -43,11 +49,11 @@ function headerScroll() {
 
     /* Переробити vw(4) в івент sticked і записування значення скролу для розрахунку) */
     var bg_opacity = ((1 - (vh(100) - (window.pageYOffset - vw(4))) / vh(100)));
-    root.style.setProperty('--header-background', 'rgba(0, 0, 0, ' + bg_opacity + ')');
+        changeValue('header-background', 'rgba(0, 0, 0, ' + bg_opacity + ')');
     if (bg_opacity > '1') {
-        root.style.setProperty('--header-background', 'rgba(0, 0, 0, 1)');
+        changeValue('header-background', 'rgba(0, 0, 0, 1)');
     } else if (bg_opacity < '0') {
-        root.style.setProperty('--header-background', 'rgba(0, 0, 0, 0)');
+        changeValue('header-background', 'rgba(0, 0, 0, 0)');
     }
 
 }

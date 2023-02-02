@@ -1,48 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const carousels = document.getElementsByClassName('carousel');
 
-    if (document.querySelector('.movie-cards-row')) {
+    /*!!!!!!!!!!!!!!відібрати в масив тільки ті що шириною більше вюпорта!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
-        // Slider dragging
-        const slider = document.querySelector('.movie-cards-row');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+    if (carousels) {
+    var arr = Array.from(carousels);
+    arr.forEach(CarouselFunction);
+    }
 
-        slider.addEventListener('mousedown', (e) => {
+    function CarouselFunction(item) {
+
+        // carousel dragging
+        const carousel = item;
+        var isDown = false;
+        var startX;
+        var scrollLeft;
+
+        rowVignette(carousel);
+
+        carousel.addEventListener('mousedown', (e) => {
             isDown = true;
-            slider.classList.add('active');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
+            carousel.classList.add('active');
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
             cancelMomentumTracking();
         });
 
-        slider.addEventListener('mouseleave', () => {
+        carousel.addEventListener('mouseleave', () => {
             isDown = false;
-            slider.classList.remove('active');
+            carousel.classList.remove('active');
         });
 
-        slider.addEventListener('mouseup', () => {
+        carousel.addEventListener('mouseup', () => {
             isDown = false;
-            slider.classList.remove('active');
+            carousel.classList.remove('active');
             beginMomentumTracking();
         });
 
-        slider.addEventListener('mousemove', (e) => {
+        carousel.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
+            const x = e.pageX - carousel.offsetLeft;
             const walk = (x - startX); //scroll-fast
-            var prevScrollLeft = slider.scrollLeft;
-            slider.scrollLeft = scrollLeft - walk;
-            velX = slider.scrollLeft - prevScrollLeft;
+            var prevScrollLeft = carousel.scrollLeft;
+            carousel.scrollLeft = scrollLeft - walk;
+            velX = carousel.scrollLeft - prevScrollLeft;
         });
 
         // Momentum
         var velX = 0;
         var momentumID;
-
-
         function beginMomentumTracking() {
             cancelMomentumTracking();
             momentumID = requestAnimationFrame(momentumLoop);
@@ -53,46 +61,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function momentumLoop() {
-            slider.scrollLeft += velX * 2;
+            carousel.scrollLeft += velX * 2;
             velX *= 0.85;
             if (Math.abs(velX) > 0.5) {
                 momentumID = requestAnimationFrame(momentumLoop);
             }
         }
 
-
         /*Scrollable left and right detection for server + vignette */
-        slider.onscroll = function () {rowVignette()};
 
-        function rowVignette() {
-            var rowViewportLeft = slider.scrollLeft;
-            var rowViewportRight = slider.scrollLeft + slider.clientWidth;
-            var rowWidth = slider.scrollWidth;
+        carousel.onscroll = function(e) {
+            rowVignette(carousel);
+        };
+
+        function rowVignette(row) {
+            var rowViewportLeft = Math.round(row.scrollLeft);
+            var rowViewportRight = Math.round(row.scrollLeft + row.clientWidth);
+            var rowWidth = Math.round(row.scrollWidth);
+
+            if (rowViewportRight < rowWidth && rowViewportLeft <= vw(5)) {
+                row.classList.remove("vignette-left");
+                row.classList.remove("vignette-right-left");
+                row.classList.add("vignette-right");
+            } else if (rowViewportRight+vw(5) >= rowWidth && rowViewportLeft > 0) {
+                row.classList.remove("vignette-right");
+                row.classList.remove("vignette-right-left");
+                row.classList.add("vignette-left");
+            } else if (rowViewportLeft > 0 && rowViewportRight < rowWidth) {
+                row.classList.remove("vignette-left");
+                row.classList.remove("vignette-right");
+                row.classList.add("vignette-right-left");
+            }
 
             /*
-            console.log(rowViewportRight);
-            console.log(rowWidth);
-             */
-
             if (rowViewportRight < rowWidth) {
-                document.getElementById("vignette-right").classList.add("visible");
+                row.classList.add("vignette-right");
             } else if (rowViewportRight >= rowWidth) {
-                document.getElementById("vignette-right").classList.remove("visible");
+                row.classList.remove("vignette-right");
             }
 
             if (rowViewportLeft > 0) {
-                document.getElementById("vignette-left").classList.add("visible");
+                row.classList.add("vignette-left");
             } else if (rowViewportLeft === 0) {
-                document.getElementById("vignette-left").classList.remove("visible");
+                row.classList.remove("vignette-left");
             }
+            */
 
 
         }
 
-        rowVignette();
-
     }
-
 
 });
 

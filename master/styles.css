@@ -45,12 +45,12 @@ body {
     min-height: 100vh;
 }
 
-img {height: 100%}
-
+img {max-width: 100%}
+figcaption {color: rgba(119, 119, 119, 1); font-size: 0.8em; text-align: center}
 
 /* Font styles */
 
-p, b, i {font-size: var(--font-size-md); padding: 0.5em 0}
+p, b, i {font-size: var(--font-size-md); padding: 0.5em 0; line-height: 1.8}
 
 
 h1 {
@@ -100,6 +100,11 @@ a {
 
 a:hover {
     color: #ffb200;
+}
+
+p a {
+    text-decoration: underline 2px;
+    text-underline-position: under;
 }
 
 /* End of font styles */
@@ -246,6 +251,11 @@ footer {
 }
 
 .movie-cards-row {
+    grid-auto-columns: min-content;
+}
+
+.carousel {
+    margin: calc(1vw + 1rem) 0;
     display: grid;
     grid-auto-flow: column;
     /*scroll-behavior: smooth;
@@ -256,60 +266,75 @@ footer {
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
     scrollbar-width: none;
-}
-
-.movie-cards-row-wrapper {
-    position: relative;
-}
-
-.movie-cards-row::-webkit-scrollbar{
-    display: none;
-}
-
-.movie-cards-row.active, .movie-cards-row.active .movie-card a {
-    cursor: grab;
-}
-
-.vignette {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 5vw;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: visibility 0.2s linear,
+    -webkit-mask-composite: source-in; /* For Chrome */
+    mask-composite: intersect; /* For Firefox *
+    /*
+        -webkit-transition: visibility 0.2s linear,
     opacity 0.1s linear;
     -moz-transition: visibility 0.2s linear,
     opacity 0.1s linear;
     -o-transition: visibility 0.2s linear,
     opacity 0.1s linear;
+     */
+}
+.carousel.vignette-left {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 5vw);
+    mask-image: linear-gradient(to right, transparent 0, black 5vw);
 }
 
-.vignette.visible {
-    visibility: visible;
-    opacity: 1;
+.carousel.vignette-right {
+    -webkit-mask-image: linear-gradient(to left, transparent 0, black 5vw);
+    mask-image: linear-gradient(to left, transparent 0, black 5vw);
 }
 
-
-#vignette-left {
-    background: linear-gradient(to right, #ffffff, transparent);
-    left: 0;
+.carousel.vignette-right-left {
+    -webkit-mask-image:
+            linear-gradient(to left, transparent 0, black 5vw),
+            linear-gradient(to right, transparent 0, black 5vw);
+    mask-image:
+            linear-gradient(to left, transparent 0, black 5vw),
+            linear-gradient(to right, transparent 0, black 5vw);
 }
 
-#vignette-right {
-    background: linear-gradient(to left, #ffffff, transparent);
-    right: 0;
+.carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.carousel.active, .carousel.active .movie-card a {
+    cursor: grab;
 }
 
 /* End of Movie Card styles */
 
 /*------------------------*/
 
+/* Start of Picture Card styles */
+
+.picture-cards-row {
+    grid-auto-columns: max-content;
+}
+
+.picture-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.picture-card img {
+    height: 60vh
+}
+
+.picture-card figcaption {width: min-content; min-width: 80%}
+
+/* End of Picture Card styles */
+
+/*------------------------*/
+
 
 /*
 mobile:
-.movie-cards-row {
+.carousel {
     padding: 0 max(2rem, 15vw);
     margin: 0 min(-2rem, -15vw);
 }
