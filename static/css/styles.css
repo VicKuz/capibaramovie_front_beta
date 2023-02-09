@@ -2,17 +2,17 @@
 
 @font-face {
     font-family: Mariupol Regular;
-    src: url(resources/fonts/Mariupol/Mariupol_Regular/Mariupol-Regular.otf);
+    src: url('static/resources/fonts/Mariupol/Mariupol_Regular/Mariupol-Regular.otf');
 }
 
 @font-face {
     font-family: Mariupol Medium;
-    src: url(resources/fonts/Mariupol/Mariupol_Medium/Mariupol-Medium.otf);
+    src: url('static/resources/fonts/Mariupol/Mariupol_Medium/Mariupol-Medium.otf');
 }
 
 @font-face {
     font-family: Mariupol Bold;
-    src: url(resources/fonts/Mariupol/Mariupol_Bold/Mariupol-Bold.otf);
+    src: url('static/resources/fonts/Mariupol/Mariupol_Bold/Mariupol-Bold.otf');
 }
 
 /* End of font faces */

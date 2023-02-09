@@ -13,11 +13,14 @@
     <meta property="og:description" content="Опис сторінки OG">
     <meta property="og:image" content="image.png">
 
+
+
+    <!-- TODO: fix icons? -->
     <link rel="icon" href="../favicon.ico">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css?v=1.0')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
 
     {% block head %} {% endblock %}
@@ -40,9 +43,9 @@
         </nav>
 
         <div class="top-icons-container">
-            <img class="top-icon" src="../resources/identity/logo.webp">
-            <img class="top-icon" src="../resources/identity/logo.webp">
-            <img class="top-icon" src="../resources/identity/logo.webp">
+            <img class="top-icon" src="/static/resources/identity/logo.webp" alt="">
+            <img class="top-icon" src="/static/resources/identity/logo.webp" alt="">
+            <img class="top-icon" src="/static/resources/identity/logo.webp" alt="">
         </div>
 
     </header>
@@ -55,7 +58,7 @@
 <footer class="Section">
     <b>Сторінка закінчилась, а історія лише починається</b>
 </footer>
-<script src="../resources/js/sticky-header.js"></script>
-<script src="../resources/js/movie-row-scroll.js"></script>
+<script src="/static/resources/js/movie-row-scroll.js"></script>
+<script src="/static/resources/js/sticky-header.js"></script>
 </body>
 </html>
