@@ -195,7 +195,8 @@ header.sticky {
 
 /* Sections styles */
 .Section {
-    padding: max(2rem, 8vh) max(2rem, 12vw);
+    padding: 8vh 11vw;
+    /* padding: max(2rem, 8vh) max(2rem, 12vw); */
     overflow-x: hidden;
 }
 
@@ -237,7 +238,8 @@ footer {
 /* Carousel styles */
 
 .carousel {
-    margin: calc(1vw + 1rem) 0;
+    padding: 0 12vw;
+    margin: calc(1vw + 1rem) -12vw;
     display: grid;
     grid-auto-flow: column;
     /*scroll-behavior: smooth;
@@ -261,22 +263,22 @@ footer {
 
 }
 .carousel.vignette-left {
-    -webkit-mask-image: linear-gradient(to right, transparent 0, black 5vw);
-    mask-image: linear-gradient(to right, transparent 0, black 5vw);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 10vw);
+    mask-image: linear-gradient(to right, transparent 0, black 10vw);
 }
 
 .carousel.vignette-right {
-    -webkit-mask-image: linear-gradient(to left, transparent 0, black 5vw);
-    mask-image: linear-gradient(to left, transparent 0, black 5vw);
+    -webkit-mask-image: linear-gradient(to left, transparent 0, black 10vw);
+    mask-image: linear-gradient(to left, transparent 0, black 10vw);
 }
 
 .carousel.vignette-right-left {
     -webkit-mask-image:
-            linear-gradient(to left, transparent 0, black 5vw),
-            linear-gradient(to right, transparent 0, black 5vw);
+            linear-gradient(to left, transparent 0, black 10vw),
+            linear-gradient(to right, transparent 0, black 10vw);
     mask-image:
-            linear-gradient(to left, transparent 0, black 5vw),
-            linear-gradient(to right, transparent 0, black 5vw);
+            linear-gradient(to left, transparent 0, black 10vw),
+            linear-gradient(to right, transparent 0, black 10vw);
 }
 
 .carousel::-webkit-scrollbar{
@@ -356,7 +358,6 @@ footer {
 /* Start of Article Card styles */
 
 .article-card {
-    width: min(28rem, 25vw);
     /* scroll-snap-align: start; */
     line-height: 1.3;
     user-select: none;
@@ -391,17 +392,25 @@ footer {
 }
 
 .article-card-link:hover {
-    filter: drop-shadow(10px 10px 3rem rgba(119, 119, 119, 1));
+    filter: brightness(110%) contrast(85%);
     transition: 0.1s;
 }
 
 .article-cards-row {
     grid-auto-columns: min-content;
+    grid-template-columns: repeat(4, calc(33.333% - calc( 2/3 * calc(1vw + 1rem))));
+
 }
 
 .article-tag {
     font-weight: bold;
-    text-decoration: none;
+}
+
+
+.article-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(1vw + 1rem);
 }
 
 
