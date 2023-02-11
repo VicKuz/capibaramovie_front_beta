@@ -1,8 +1,7 @@
 let root = document.documentElement;
 
 function changeValue(id, value) {
-    const suffix = (id != 'color' ? '%' : '');
-    root.style.setProperty(`--${id}`, value + suffix);
+    root.style.setProperty(`--${id}`, value);
 }
 
 
@@ -39,6 +38,7 @@ function headerScroll() {
         header.classList.remove("sticky");
     }
 
+    /*!!!!!!!!!!!!!!!!!Зробити ініціалізацію тільки на інтервалі прокрутки коли треба!!!!!!!!!!!!*/
     var header_opacity = (1 - window.pageYOffset/vw(1.5)) * 0.3 + 0.7;
 
     if (header_opacity < '0.7') {
