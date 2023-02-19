@@ -232,7 +232,8 @@ header.sticky {
     height: 60vh;
 }
 .Hero.movie {
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     z-index: -1;
     position: fixed;
     top: 0;
@@ -282,10 +283,11 @@ header.sticky {
 
 .Section.airborne {
     --section-airborne-width: 85vw;
+    --section-airborne-padding: 4vw;
 
     width: var(--section-airborne-width);
     margin: 4vw auto;
-    padding: 4vw;
+    padding: var(--section-airborne-padding);
     z-index: 1;
     border-radius: 10px;
 }
@@ -701,6 +703,14 @@ footer {
                          "pics"
                          "people";
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .Section.airborne {
+        --section-airborne-padding: 10vw;
+    }
+
+    .Section.semitransparent {
+        background: none;
     }
 }
 
