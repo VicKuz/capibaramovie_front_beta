@@ -1,3 +1,6 @@
+/* !!!!!!!!!!!!!!!!!!!!! ПЕРЕВІРЯТИ ЧИ Є HERO, якщо ні - то одразу sticky !!!!!!!!!!!!!!!!! */
+
+
 let root = document.documentElement;
 
 function changeValue(id, value) {

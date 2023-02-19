@@ -29,6 +29,32 @@
     --font-size-xl: clamp(2.44rem, 1.3vw + 2.12rem, 3.16rem);
     --font-size-xxl: clamp(3.05rem, 2.1vw + 2.53rem, 4.21rem);
     --font-size-xxxl: clamp(3.81rem, 3.26vw + 3rem, 5.61rem);
+
+    /* Gap between columns. */
+    --col-gap: calc(1vw + 1rem);
+
+    --comfy-text-width: 58vw;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(119, 119, 119, 0.6);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+    mix-blend-mode: difference;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(119, 119, 119, 1);
 }
 
 * {
@@ -42,7 +68,7 @@
 }
 
 body {
-    min-height: 100vh;
+    overflow: overlay;
 }
 
 img {max-width: 100%}
@@ -50,9 +76,9 @@ figcaption {color: rgba(119, 119, 119, 1); font-size: 0.8em; text-align: center}
 
 /* Font styles */
 
-p, b, i, li {font-size: var(--font-size-md); padding: 1rem 0; line-height: 1.8}
+p, b, i, li {font-size: var(--font-size-md); padding: 1em 0; line-height: 1.8}
 
-.orange-list {padding-left: 4rem}
+.orange-list {padding-left: 4vw}
 .orange-list li {padding-left: 2rem}
 .orange-list li::marker {
     content: "🍊";
@@ -61,27 +87,32 @@ p, b, i, li {font-size: var(--font-size-md); padding: 1rem 0; line-height: 1.8}
 h1 {
     font-family: Mariupol Medium, sans-serif;
     font-size: var(--font-size-xxl);
-    padding-bottom: 2rem;
+    padding: 3vmin 0;
 }
 
 h2 {
     font-size: var(--font-size-xl);
-    padding-bottom: 1rem;
+    padding: 1.6vmin 0;
 }
 
 h3 {
     font-size: var(--font-size-lg);
-    padding-bottom: 1rem;
+    padding: 1.3vmin 0;
 }
 
 h4 {
     font-size: var(--font-size-l);
-    padding-bottom: 1rem;
+    padding: 1vmin 0;
 }
 
 h5 {
     font-size: var(--font-size-md);
-    padding-bottom: 1rem;
+    padding: 0.8vmin 0;
+}
+
+h6 {
+    font-size: var(--font-size-base);
+    padding: 0.5vmin 0;
 }
 
 p,
@@ -110,6 +141,9 @@ a:hover {
 a {
     text-decoration: underline 2px;
     text-underline-position: under;
+    -webkit-text-decoration-line: underline;
+    text-decoration-color: #ffb200;
+    -webkit-text-decoration-color: #ffb200;
 }
 
 /* End of font styles */
@@ -131,6 +165,9 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
+
+    /* ПРИБРАТИ */
+    overflow: hidden;
 }
 
 header.sticky {
@@ -176,19 +213,62 @@ header.sticky {
 /* Hero styles */
 .Hero {
     width: 100%;
-    height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     background-attachment: fixed;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+    position: relative;
 }
+
+.Hero.main {height: 100vh;}
+.Hero.article {
+    height: 60vh;
+}
+.Hero.movie {
+    height: 100vh;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    background-image: url("materials/posters/poster.jpg");
+}
+.Hero.movie .blur {backdrop-filter: blur(49px); height: 100vh; width: 100vw; position: absolute; top: 0; z-index: 0}
+.movie-page-name-plate {text-align: center; color: white; margin-top: 15vh}
+.movie-page {
+    display: grid;
+    grid-template-areas: "poster trailer"
+                         "details desc"
+                         "collection collection"
+                         "pics pics"
+                         "people people";
+    grid-template-columns: 1fr 3fr;
+    gap: 2vw;
+}
+.movie-page-poster {grid-area: poster}
+.movie-page-details {grid-area: details}
+.movie-page-trailer {grid-area: trailer}
+.movie-page-description {grid-area: desc}
+.movie-page-pictures {grid-area: pics}
+.movie-page-collection {
+    grid-area: collection;
+    background-image: linear-gradient(rgba(153,205,107,0.6), rgba(153,205,107,0.8)), url("materials/images/image-3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 35vh;
+    border-radius: 10px;
+    padding: calc(1vw + 1rem)
+}
+.movie-page-people {grid-area: people}
+
+.movie-rating {padding: 0.3rem; border: 1px solid white; border-radius: 2px}
+
 /* End of Hero styles */
 
 /*------------------------*/
@@ -198,6 +278,16 @@ header.sticky {
     padding: 8vh 11vw;
     /* padding: max(2rem, 8vh) max(2rem, 12vw); */
     overflow-x: hidden;
+}
+
+.Section.airborne {
+    --section-airborne-width: 85vw;
+
+    width: var(--section-airborne-width);
+    margin: 4vw auto;
+    padding: 4vw;
+    z-index: 1;
+    border-radius: 10px;
 }
 
 .Section.coral {background: coral;}
@@ -214,8 +304,18 @@ header.sticky {
 
 .Section.honeyyellow {background: #FFB200}
 
+.Section.transparent {background: none}
 
-.section-tittle {margin-bottom: 2rem; text-align: center}
+.Section.semitransparent {background: /*rgba(169, 157, 206, 0.4)*/rgba(255, 255, 255, 0.4)}
+
+.section-tittle {text-align: center}
+
+.comfy-text p, .comfy-text li, .comfy-text i, .comfy-text b, .comfy-text ul {
+    width: var(--comfy-text-width);
+    margin: auto;
+}
+
+:is(.comfy-text) :is(h1, h2, h3, h4, h5, h6) {text-align: center}
 
 /* End of Section styles */
 
@@ -238,13 +338,15 @@ footer {
 /* Carousel styles */
 
 .carousel {
+    /* Gap between columns. */
+    grid-gap: var(--col-gap);
+
     padding: 0 12vw;
     margin: calc(1vw + 1rem) -12vw;
     display: grid;
     grid-auto-flow: column;
     /*scroll-behavior: smooth;
     scroll-snap-type: x mandatory;*/
-    gap: calc(1vw + 1rem);
     overflow-y: auto;
     overscroll-behavior-x: contain;
     -ms-overflow-style: none;
@@ -260,8 +362,13 @@ footer {
     -o-transition: visibility 0.2s linear,
     opacity 0.1s linear;
      */
-
 }
+
+.airborne .carousel {
+    padding: 0 4vw;
+    margin: calc(1vw + 1rem) -4vw;
+}
+
 .carousel.vignette-left {
     -webkit-mask-image: linear-gradient(to right, transparent 0, black 10vw);
     mask-image: linear-gradient(to right, transparent 0, black 10vw);
@@ -294,14 +401,19 @@ footer {
 /*------------------------*/
 
 /* Movie Card styles */
-.movie-card {
-    width: min(12rem, 14vw);
+.movie-card, .picture-card, .person-card, .article-card {
     /* scroll-snap-align: start; */
     line-height: 1.3;
     user-select: none;
+/*
+    box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+    padding: 0.5rem;
+    margin: calc(1vw + 1rem) 0;
+    border-radius: 10px;
+*/
 }
 
-.movie-card-poster {
+.movie-card-poster, .movie-page-poster {
     background-image: url("materials/posters/poster.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -310,14 +422,14 @@ footer {
     aspect-ratio: 27 / 40;
 }
 
-.movie-card-title {padding-bottom: 0}
+.movie-card .movie-card-title, .person-card .person-card-title {padding: 0; text-align: start}
 
-.movie-card-desc {
+.movie-card-desc, .person-card-desc {
     font-size: 0.9rem;
     color: rgba(119, 119, 119, 1);
 }
 
-.movie-card a {
+.movie-card a, .person-card a {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -325,8 +437,28 @@ footer {
     text-decoration: none;
 }
 
-.movie-cards-row {
-    grid-auto-columns: min-content;
+.movie-cards-row, .movie-cards-grid {
+    /* How many columns to show. */
+    --visible-cols: 6;
+
+    /* How much to show of the next hidden column. You can use this as a hint to show the user there are more scrollable items. Particularly helpful for mobile devices where the scrollbar gets hidden by default.*/
+    --col-hint: 0px;
+
+    /*  Calculated column size. */
+    --col-size: calc((100% / var(--visible-cols)) - var(--col-gap) * ((var(--visible-cols) - 1) / var(--visible-cols)) - var(--col-hint));
+
+    display: grid;
+    grid-template-columns: var(--col-size);
+    grid-auto-columns: var(--col-size);
+}
+
+.movie-cards-grid {
+    grid-template-columns: repeat(var(--visible-cols), var(--col-size));
+    grid-gap: var(--col-gap);
+}
+
+.movie-cards-row.few {
+    justify-content: center;
 }
 
 /* End of Movie Card styles */
@@ -339,7 +471,7 @@ footer {
     grid-auto-columns: max-content;
 }
 
-.picture-card, .article-picture {
+.picture-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -347,12 +479,53 @@ footer {
 }
 
 .picture-card img {
-    height: 60vmin
+    height: 60vmin;
+    border-radius: 10px;
 }
 
 .picture-card figcaption {width: min-content; min-width: 80%}
 
 /* End of Picture Card styles */
+
+/*------------------------*/
+
+/* Start of Person Card styles */
+
+.people-cards-row, .people-cards-grid {
+    /* How many columns to show. */
+    --visible-cols: 6;
+
+    /* How much to show of the next hidden column. You can use this as a hint to show the user there are more scrollable items. Particularly helpful for mobile devices where the scrollbar gets hidden by default.*/
+    --col-hint: 0px;
+
+    /*  Calculated column size. */
+    --col-size: calc((100% / var(--visible-cols)) - var(--col-gap) * ((var(--visible-cols) - 1) / var(--visible-cols)) - var(--col-hint));
+
+    display: grid;
+    grid-template-columns: var(--col-size);
+    grid-auto-columns: var(--col-size);
+}
+
+.people-cards-grid {
+    grid-template-columns: repeat(var(--visible-cols), var(--col-size));
+    grid-gap: var(--col-gap);
+}
+
+.person-card-picture {
+    background-image: url("materials/images/portrait-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+}
+
+
+
+/* End of Person Card styles */
+
+/*------------------------*/
 
 
 /* Start of Article Card styles */
@@ -370,9 +543,10 @@ footer {
     background-size: cover;
     width: 100%;
     aspect-ratio: 40 / 27;
+    border-radius: 10px
 }
 
-.article-card-title {padding: 0.8rem 0 0.5rem 0}
+.article-card-title {padding: 0.8rem 0 0.5rem 0; text-align: left}
 
 .article-card-desc {
     font-size: 0.9rem;
@@ -396,21 +570,30 @@ footer {
     transition: 0.1s;
 }
 
-.article-cards-row {
-    grid-auto-columns: min-content;
-    grid-template-columns: repeat(4, calc(33.333% - calc( 2/3 * calc(1vw + 1rem))));
-
-}
-
 .article-tag {
     font-weight: bold;
 }
 
 
-.article-cards-grid {
+.article-cards-row, .article-cards-grid {
+    /* How many columns to show. */
+    --visible-cols: 3;
+
+    /* How much to show of the next hidden column. You can use this as a hint to show the user there are more scrollable items. Particularly helpful for mobile devices where the scrollbar gets hidden by default.*/
+    --col-hint: 0px;
+
+    /*  Calculated column size. */
+    --col-size: calc((100% / var(--visible-cols)) - var(--col-gap) * ((var(--visible-cols) - 1) / var(--visible-cols)) - var(--col-hint));
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: calc(1vw + 1rem);
+    grid-template-columns: var(--col-size);
+    grid-auto-columns: var(--col-size);
+}
+
+
+.article-cards-grid {
+    grid-gap: var(--col-gap);
+    grid-template-columns: repeat(var(--visible-cols), var(--col-size));
 }
 
 
@@ -426,19 +609,110 @@ footer {
 
 /*------------------------*/
 
-.comfy-text p, .comfy-text li, .comfy-text i, .comfy-text b, .comfy-text ul {width: 58vw; margin: auto;}
-
-:is(.comfy-text) :is(h1, h2, h3, h4, h5, h6) {text-align: center}
-
 /* Start of Article Picture styles */
-
-.article-picture.standard {margin: 1rem 0}
-.article-picture.standard img {max-height: 60vh}
 
 
 /* End of Article Picture styles */
 
 /*------------------------*/
+
+
+
+@media (min-width: 1440px) {
+    .movie-cards-row, .movie-cards-grid {
+        --visible-cols: 6;
+    }
+
+    .article-cards-row, .article-cards-grid {
+        --visible-cols: 3;
+    }
+
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 6;
+    }
+}
+
+@media (max-width: 1440px) {
+    .movie-cards-row, .movie-cards-grid {
+        --visible-cols: 5;
+    }
+
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 5;
+    }
+
+    :root {
+        --comfy-text-width: 100%;
+    }
+}
+
+@media (max-width: 1240px) {
+    .movie-cards-row, .movie-cards-grid {
+        --visible-cols: 4;
+    }
+
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 4;
+    }
+
+    .Section.airborne {
+        --section-airborne-width: 100vw;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 1140px) {
+    .article-cards-row, .article-cards-grid {
+        --visible-cols: 2;
+    }
+}
+
+@media (max-width: 940px) {
+    .movie-cards-row, .movie-cards-grid {
+        --visible-cols: 3;
+    }
+}
+
+@media (max-width: 840px) {
+.people-cards-row, .people-cards-grid {
+    --visible-cols: 3;
+}
+}
+
+@media (max-width: 640px) {
+    .movie-cards-row, .movie-cards-grid {
+        --visible-cols: 2;
+    }
+
+    .article-cards-row, .article-cards-grid {
+        --visible-cols: 1;
+    }
+
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 2;
+    }
+
+    .movie-page {
+        grid-template-areas: "poster"
+                         "desc"
+                         "trailer"
+                         "details"
+                         "collection"
+                         "pics"
+                         "people";
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 340px) {
+    .movie-cards-row, .movie-cards-grid {
+        --visible-cols: 1;
+    }
+
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 1;
+    }
+}
 
 
 /*

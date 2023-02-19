@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const carousels = document.getElementsByClassName('carousel');
 
-    /*!!!!!!!!!!!!!!відібрати в масив тільки ті що шириною більше вюпорта!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    /*!!!!!!!!!!!!!!відібрати в масив тільки ті що шириною більше вюпорта, якщо менше - додаєм клас few (або стиль по центру)!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
     if (carousels) {
     var arr = Array.from(carousels);
@@ -73,6 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
         carousel.onscroll = function(e) {
             rowVignette(carousel);
         };
+
+
+        /*зробити ширину димки-градієнту залежно від того скільки лишилось скролити */
 
         function rowVignette(row) {
             var rowViewportLeft = Math.round(row.scrollLeft);
