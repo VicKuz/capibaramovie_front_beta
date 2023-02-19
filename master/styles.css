@@ -238,7 +238,7 @@ header.sticky {
     top: 0;
     background-image: url("materials/posters/poster.jpg");
 }
-.Hero.movie .blur {backdrop-filter: blur(49px); height: 100vh; width: 100vw; position: absolute; top: 0; z-index: 0}
+.Hero.movie .blur {-webkit-backdrop-filter: blur(49px); backdrop-filter: blur(49px); height: 100vh; width: 100vw; position: absolute; top: 0; z-index: 0}
 .movie-page-name-plate {text-align: center; color: white; margin-top: 15vh}
 .movie-page {
     display: grid;
