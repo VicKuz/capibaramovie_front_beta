@@ -232,11 +232,14 @@ header.sticky {
     height: 60vh;
 }
 .Hero.movie {
+    transform: scale(1.0);
+
     height: 100%;
     width: 100%;
     z-index: -1;
     position: fixed;
     top: 0;
+    left: 0;
     background-image: url("materials/posters/poster.jpg");
 }
 .Hero.movie .blur {-webkit-backdrop-filter: blur(49px); backdrop-filter: blur(49px); height: 100%; width: 100%; position: fixed; top: 0; z-index: 0}
