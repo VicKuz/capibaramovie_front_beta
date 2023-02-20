@@ -65,6 +65,7 @@
     font-size: var(--font-size-base);
     box-sizing: border-box;
     font-family: Mariupol Regular, sans-serif;
+    font-weight: normal;
 }
 
 body {
@@ -574,7 +575,7 @@ footer {
 }
 
 .article-tag {
-    font-weight: bold;
+    font-family: Mariupol Medium, sans-serif;
 }
 
 
