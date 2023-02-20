@@ -217,7 +217,7 @@ header.sticky {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -232,8 +232,6 @@ header.sticky {
     height: 60vh;
 }
 .Hero.movie {
-    transform: scale(1.0);
-
     height: 100%;
     width: 100%;
     z-index: -1;
