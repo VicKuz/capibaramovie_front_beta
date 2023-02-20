@@ -65,7 +65,7 @@
     font-size: var(--font-size-base);
     box-sizing: border-box;
     font-family: Mariupol Regular, sans-serif;
-    font-weight: normal;
+    font-weight: normal !important;
 }
 
 body {
