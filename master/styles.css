@@ -225,7 +225,9 @@ header.sticky {
     align-items: center;
     color: white;
     text-align: center;
-    position: relative;
+    position: sticky;
+    top:0;
+    z-index: -2;
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
     background-position: center;
@@ -234,8 +236,6 @@ header.sticky {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-
-    background-attachment: fixed;
 }
 
 .Hero.main {min-height: 100vh}
@@ -245,7 +245,7 @@ header.sticky {
 .Hero.movie {
     height: 100vh;
     z-index: -1;
-    position: sticky;
+    position: absolute;
     top: 0;
     background-image: url("materials/posters/poster.jpg");
 }
@@ -696,9 +696,6 @@ footer {
 }
 
 @media (max-width: 640px) {
-    .Hero {
-        background-attachment: scroll;
-    }
 
     .movie-cards-row, .movie-cards-grid {
         --visible-cols: 2;
