@@ -226,15 +226,6 @@ header.sticky {
     color: white;
     text-align: center;
     position: relative;
-}
-
-.hero-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
     background-position: center;
@@ -243,6 +234,8 @@ header.sticky {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+
+    background-attachment: fixed;
 }
 
 .Hero.main {min-height: 100vh}
@@ -695,6 +688,11 @@ footer {
 }
 
 @media (max-width: 640px) {
+
+    .Hero {
+        background-attachment: scroll;
+    }
+
     .movie-cards-row, .movie-cards-grid {
         --visible-cols: 2;
     }
