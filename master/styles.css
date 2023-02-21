@@ -84,7 +84,7 @@ figcaption {color: rgba(119, 119, 119, 1); font-size: 0.8em; text-align: center}
 
 p, b, strong, i, em, li {font-size: var(--font-size-md); line-height: 1.8}
 
-p {padding: 1em 0;}
+p {padding: calc(var(--col-gap) / 2) 0;}
 
 .orange-list {padding-left: 4vw}
 .orange-list li {padding-left: 2rem}
@@ -145,6 +145,7 @@ h6 {
 a {
     all: unset;
     cursor: pointer;
+    transition: 0.15s;
 }
 
 a:hover {
@@ -373,12 +374,12 @@ footer {
     grid-gap: var(--col-gap);
 
     padding: 0 12vw;
-    margin: calc(1vw + 1rem) -12vw;
+    margin: 0 -12vw;
     display: grid;
     grid-auto-flow: column;
     /*scroll-behavior: smooth;
     scroll-snap-type: x mandatory;*/
-    overflow-y: auto;
+    overflow-y: hidden;
     overscroll-behavior-x: contain;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
@@ -397,7 +398,7 @@ footer {
 
 .airborne .carousel {
     padding: 0 4vw;
-    margin: calc(1vw + 1rem) -4vw;
+    margin: 0 -4vw;
 }
 
 .carousel.vignette-left {
@@ -436,6 +437,10 @@ footer {
     /* scroll-snap-align: start; */
     line-height: 1.3;
     user-select: none;
+    filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0));
+    transition: filter 0.15s;
+    padding: calc(var(--col-gap) / 2) 0;
+
 /*
     box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
     padding: 0.5rem;
@@ -443,6 +448,11 @@ footer {
     border-radius: 10px;
 */
 }
+
+.movie-card:hover, .picture-card:hover, .person-card:hover, .article-card:hover {
+    filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.3));
+}
+
 
 .movie-card-poster, .movie-page-poster {
     background-image: url("materials/posters/poster.jpg");
@@ -500,6 +510,13 @@ footer {
 
 .picture-cards-row {
     grid-auto-columns: max-content;
+}
+
+.picture-cards-grid {
+    display: grid;
+    grid-gap: var(--col-gap);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-flow: row dense;
 }
 
 .picture-card {
@@ -588,6 +605,7 @@ footer {
 
 .article-card-link {
     text-decoration: none;
+    transition: filter 0.15s;
 }
 
 .article-card-link:hover {
