@@ -225,8 +225,7 @@ header.sticky {
     align-items: center;
     color: white;
     text-align: center;
-    position: fixed;
-    transform: translate3d(0,0,0);
+    position: relative;
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
     background-position: center;
