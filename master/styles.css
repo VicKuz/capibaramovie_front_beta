@@ -226,7 +226,17 @@ header.sticky {
     color: white;
     text-align: center;
     position: relative;
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    min-height: fill-available;
+    z-index: -2;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 .hero-image {
     position: fixed;
