@@ -3,19 +3,16 @@
 @font-face {
     font-family: Mariupol Regular;
     src: url(resources/fonts/Mariupol/Mariupol_Regular/Mariupol-Regular.otf);
-    font-weight: normal;
 }
 
 @font-face {
     font-family: Mariupol Medium;
     src: url(resources/fonts/Mariupol/Mariupol_Medium/Mariupol-Medium.otf);
-    font-weight: normal;
 }
 
 @font-face {
     font-family: Mariupol Bold;
     src: url(resources/fonts/Mariupol/Mariupol_Bold/Mariupol-Bold.otf);
-    font-weight: normal;
 }
 
 /* End of font faces */
@@ -26,7 +23,7 @@
     --header-background: rgba(0, 0, 0, 0);
     --font-size-sm: clamp(0.8rem, -0.09vw + 0.82rem, 0.75rem);
     --font-size-base: clamp(1rem, 0vw + 1rem, 1rem);
-    --font-size-md: clamp(1.25rem, 0.15vw + 1.21rem, 1.33rem);
+    --font-size-md: clamp(1.25rem, 0.17vw + 1.21rem, 1.35rem);
     --font-size-l: clamp(1.56rem, 0.39vw + 1.47rem, 1.78rem);
     --font-size-lg: clamp(1.95rem, 0.76vw + 1.76rem, 2.37rem);
     --font-size-xl: clamp(2.44rem, 1.3vw + 2.12rem, 3.16rem);
@@ -68,6 +65,7 @@
     font-size: var(--font-size-base);
     box-sizing: border-box;
     font-family: Mariupol Regular, sans-serif;
+    font-weight: normal;
 }
 
 body {
@@ -94,26 +92,31 @@ h1 {
 }
 
 h2 {
+    font-family: Mariupol Medium, sans-serif;
     font-size: var(--font-size-xl);
     padding: 1.6vmin 0;
 }
 
 h3 {
+    font-family: Mariupol Medium, sans-serif;
     font-size: var(--font-size-lg);
     padding: 1.3vmin 0;
 }
 
 h4 {
+    font-family: Mariupol Medium, sans-serif;
     font-size: var(--font-size-l);
     padding: 1vmin 0;
 }
 
 h5 {
+    font-family: Mariupol Medium, sans-serif;
     font-size: var(--font-size-md);
     padding: 0.8vmin 0;
 }
 
 h6 {
+    font-family: Mariupol Medium, sans-serif;
     font-size: var(--font-size-base);
     padding: 0.5vmin 0;
 }
@@ -130,7 +133,6 @@ h5,
 h6 {
     overflow-wrap: break-word;
     hyphens: auto;
-    font-weight: normal !important;
 }
 
 a {
@@ -217,11 +219,6 @@ header.sticky {
 /* Hero styles */
 .Hero {
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* background-attachment: fixed; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -231,10 +228,22 @@ header.sticky {
     position: relative;
 }
 
-.Hero.main {height: 100vh;}
-.Hero.article {
-    height: 60vh;
+.hero-image {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.Hero.main {height: 100vh;}
+
+.Hero.article {height: 60vh;}
+
 .Hero.movie {
     height: 100%;
     width: 100%;
@@ -536,12 +545,6 @@ footer {
 
 
 /* Start of Article Card styles */
-
-.article-card {
-    /* scroll-snap-align: start; */
-    line-height: 1.3;
-    user-select: none;
-}
 
 .article-card-picture {
     background-image: url("materials/images/news-1.png");
