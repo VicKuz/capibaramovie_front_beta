@@ -246,7 +246,7 @@ header.sticky {
     height: 100vh;
     z-index: -1;
     position: sticky;
-    top: -100vh;
+    top: 0;
     background-image: url("materials/posters/poster.jpg");
 }
 
