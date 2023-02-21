@@ -62,7 +62,7 @@
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-base);
     box-sizing: border-box;
     font-family: Mariupol Regular, sans-serif;
     font-weight: normal;
