@@ -242,9 +242,9 @@ header.sticky {
     background-size: cover;
 }
 
-.Hero.main {min-height: 100lvh}
+.Hero.main {min-height: 100vh}
 
-.Hero.article {min-height: 60lvh;}
+.Hero.article {min-height: 60vh;}
 
 .Hero.movie {
     height: 100%;
