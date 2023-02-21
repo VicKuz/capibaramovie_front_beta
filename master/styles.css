@@ -239,7 +239,7 @@ header.sticky {
     background-attachment: fixed;
 }
 
-.Hero.main {min-height: 100svh}
+.Hero.main {height: 100%}
 
 .Hero.article {min-height: 60vh;}
 
