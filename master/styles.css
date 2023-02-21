@@ -233,7 +233,7 @@ header.sticky {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100lvh;
     min-height: -webkit-fill-available;
     z-index: -2;
 
@@ -243,9 +243,9 @@ header.sticky {
     background-size: cover;
 }
 
-.Hero.main {height: 100vh; min-height: -webkit-fill-available;}
+.Hero.main {height: 100lvh; min-height: -webkit-fill-available;}
 
-.Hero.article {height: 60vh;}
+.Hero.article {height: 60lvh;}
 
 .Hero.movie {
     height: 100%;
