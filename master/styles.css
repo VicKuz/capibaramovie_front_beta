@@ -226,10 +226,6 @@ header.sticky {
     color: white;
     text-align: center;
     position: relative;
-
-    min-height: -webkit-fill-available;
-    min-height: -moz-available;          /* WebKit-based browsers will ignore this. */
-    min-height: fill-available;
 }
 
 .hero-image {
