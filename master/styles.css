@@ -153,8 +153,8 @@ a:hover {
 
 a {
     text-decoration: underline 0.2rem;
+    -webkit-text-decoration-line: underline 0.2rem;
     text-underline-position: under;
-    -webkit-text-decoration-line: underline;
     text-decoration-color: #ffb200;
     -webkit-text-decoration-color: #ffb200;
 }
@@ -400,8 +400,24 @@ footer {
     margin: calc(1vw + 1rem) -4vw;
 }
 
+.carousel.vignette-left {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 10vw);
+    mask-image: linear-gradient(to right, transparent 0, black 10vw);
+}
 
+.carousel.vignette-right {
+    -webkit-mask-image: linear-gradient(to left, transparent 0, black 10vw);
+    mask-image: linear-gradient(to left, transparent 0, black 10vw);
+}
 
+.carousel.vignette-right-left {
+    -webkit-mask-image:
+            linear-gradient(to left, transparent 0, black 10vw),
+            linear-gradient(to right, transparent 0, black 10vw);
+    mask-image:
+            linear-gradient(to left, transparent 0, black 10vw),
+            linear-gradient(to right, transparent 0, black 10vw);
+}
 
 .carousel::-webkit-scrollbar{
     display: none;
