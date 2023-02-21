@@ -254,7 +254,7 @@ header.sticky {
     width: 100%;
     z-index: -1;
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     background-image: url("materials/posters/poster.jpg");
 }
