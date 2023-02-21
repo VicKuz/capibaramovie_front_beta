@@ -235,6 +235,8 @@ header.sticky {
     width: 100%;
     height: 100lvh;
     min-height: -webkit-fill-available;
+    min-height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    min-height: fill-available;
     z-index: -2;
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
@@ -243,7 +245,7 @@ header.sticky {
     background-size: cover;
 }
 
-.Hero.main {height: 100lvh; min-height: -webkit-fill-available;}
+.Hero.main {height: 100lvh}
 
 .Hero.article {height: 60lvh;}
 
