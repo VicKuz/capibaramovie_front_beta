@@ -228,18 +228,12 @@ header.sticky {
     top:0;
     position: fixed;
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background: black;
 
     background-attachment: fixed;
 }
 
-.Hero.main {height: 100dvh}
+.Hero.main {height: 100vh}
 
 .Hero.article {min-height: 60vh;}
 
