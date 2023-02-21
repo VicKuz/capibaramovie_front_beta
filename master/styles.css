@@ -66,6 +66,11 @@
     box-sizing: border-box;
     font-family: Mariupol Regular, sans-serif;
     font-weight: normal;
+    /*outline: 3px solid green;*/
+}
+
+html {
+    /*overflow-x: hidden; Увімкнути на проді!!!*/
 }
 
 body {
@@ -77,7 +82,9 @@ figcaption {color: rgba(119, 119, 119, 1); font-size: 0.8em; text-align: center}
 
 /* Font styles */
 
-p, b, i, li {font-size: var(--font-size-md); padding: 1em 0; line-height: 1.8}
+p, b, strong, i, em, li {font-size: var(--font-size-md); line-height: 1.8}
+
+p {padding: 1em 0;}
 
 .orange-list {padding-left: 4vw}
 .orange-list li {padding-left: 2rem}
@@ -145,7 +152,7 @@ a:hover {
 }
 
 a {
-    text-decoration: underline 2px;
+    text-decoration: underline 0.2rem;
     text-underline-position: under;
     -webkit-text-decoration-line: underline;
     text-decoration-color: #ffb200;
@@ -330,7 +337,7 @@ header.sticky {
 
 .Section.semitransparent {background: /*rgba(169, 157, 206, 0.4)*/rgba(255, 255, 255, 0.4)}
 
-.section-tittle {text-align: center}
+.section-tittle {text-align: center; margin-bottom: var(--col-gap)}
 
 .comfy-text p, .comfy-text li, .comfy-text i, .comfy-text b, .comfy-text ul {
     width: var(--comfy-text-width);
@@ -360,6 +367,8 @@ footer {
 /* Carousel styles */
 
 .carousel {
+    transform: translate3d(0,0,0); /* Подумати чи лишати тут і чи треба */
+
     /* Gap between columns. */
     grid-gap: var(--col-gap);
 
@@ -501,7 +510,7 @@ footer {
 }
 
 .picture-card img {
-    height: 60vmin;
+    max-height: 60vmin;
     border-radius: 10px;
 }
 
