@@ -237,10 +237,9 @@ header.sticky {
     -o-background-size: cover;
 
     background-attachment: fixed;
-    min-height: -webkit-fill-available;
 }
 
-.Hero.main {min-height: 100lvh}
+.Hero.main {min-height: 100svh}
 
 .Hero.article {min-height: 60vh;}
 
