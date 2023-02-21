@@ -227,9 +227,7 @@ header.sticky {
     text-align: center;
     top:0;
     position: fixed;
-
     background: black;
-
     background-attachment: fixed;
 }
 
