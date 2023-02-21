@@ -242,7 +242,7 @@ header.sticky {
     background-size: cover;
 }
 
-.Hero.main {height: 1000px;}
+.Hero.main {height: 100lvh;}
 
 .Hero.article {height: 60vh;}
 
