@@ -237,6 +237,7 @@ header.sticky {
     -o-background-size: cover;
 
     background-attachment: fixed;
+    transform: translate3d(0,0,0);
 }
 
 .Hero.main {min-height: 100lvh}
