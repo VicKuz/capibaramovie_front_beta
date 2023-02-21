@@ -673,10 +673,6 @@ footer {
     .article-cards-row, .article-cards-grid {
         --visible-cols: 2;
     }
-
-    .Hero {
-        background-attachment: scroll;
-    }
 }
 
 @media (max-width: 940px) {
@@ -692,7 +688,9 @@ footer {
 }
 
 @media (max-width: 640px) {
-
+    .Hero {
+        background-attachment: scroll;
+    }
 
     .movie-cards-row, .movie-cards-grid {
         --visible-cols: 2;
