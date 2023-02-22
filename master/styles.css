@@ -244,7 +244,7 @@ header.sticky {
     -o-background-size: cover;
 }
 
-.Hero.main {min-height: 100vh}
+.Hero.main {min-height: 80vh; position: fixed; top: 0;}
 
 .Hero.article {min-height: 60vh;}
 
