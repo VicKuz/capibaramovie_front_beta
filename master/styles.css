@@ -376,7 +376,20 @@ footer {
      */
 }
 
+.carousel.vignette-left {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 10vw);
+    mask-image: linear-gradient(to right, transparent 0, black 1vw);
+}
 
+.carousel.vignette-right {
+    -webkit-mask-image: linear-gradient(to left, transparent 0, black 10vw);
+    mask-image: linear-gradient(to left, transparent 0, black 1vw);
+}
+
+.carousel.vignette-right-left {
+    -webkit-mask-image: linear-gradient(to left, transparent 0, black 10vw), linear-gradient(to right, transparent 0, black 10vw);
+    mask-image: linear-gradient(to left, transparent 0, black 1vw), linear-gradient(to right, transparent 0, black 1vw);
+}
 
 .carousel::-webkit-scrollbar{
     display: none;
