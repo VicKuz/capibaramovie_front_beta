@@ -377,18 +377,18 @@ footer {
 }
 
 .carousel.vignette-left {
-    -webkit-mask: linear-gradient(to right, transparent 0, black 10vw);
-    mask: linear-gradient(to right, transparent 0, black 10vw);
+    -webkit-mask: linear-gradient(to right, transparent 2vw, black 10vw);
+    mask: linear-gradient(to right, transparent 2vw, black 10vw);
 }
 
 .carousel.vignette-right {
-    -webkit-mask: linear-gradient(to left, transparent 0, black 10vw);
-    mask: linear-gradient(to left, transparent 0, black 10vw);
+    -webkit-mask: linear-gradient(to left, transparent 2vw, black 10vw);
+    mask: linear-gradient(to left, transparent 2vw, black 10vw);
 }
 
 .carousel.vignette-right-left {
-    -webkit-mask: linear-gradient(to left, transparent 0, black 10px), linear-gradient(to right, transparent 0, black 10px);
-    mask: linear-gradient(to left, transparent 0, black 10vw), linear-gradient(to right, transparent 0, black 10vw);
+    -webkit-mask: linear-gradient(to left, transparent 0px, black 10vw), linear-gradient(to right, transparent 0px, black 10vw);
+    mask: linear-gradient(to left, transparent 0px, black 10vw), linear-gradient(to right, transparent 0px, black 10vw);
 }
 
 .carousel::-webkit-scrollbar{
