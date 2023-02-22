@@ -27,9 +27,11 @@ function vmax(percent) {
 }
 
 
-
-
-window.onscroll = function() {headerScroll()};
+window.addEventListener('resize', function(){
+    if(window.innerWidth > 640){
+        window.onscroll = function() {headerScroll()};
+    }
+});
 
 function headerScroll() {
 

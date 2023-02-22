@@ -36,6 +36,12 @@
     --col-gap: calc(1vw + 1rem);
 
     --comfy-text-width: 58vw;
+
+    --section-padding: 8vh 11vw;
+    --section-airborne-width: 85vw;
+    --section-airborne-padding: 4vw;
+
+    --header-height: calc(6vw + 2rem);
 }
 
 /* custom scrollbar */
@@ -227,97 +233,16 @@ header.sticky {
 
 /*------------------------*/
 
-/* Hero styles */
-.Hero {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    position: relative;
-
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
-
-.Hero.main {min-height: 80vh}
-
-.Hero.article {min-height: 60vh;}
-
-.Hero.movie {
-    height:100vh;
-    z-index: -1;
-    position: fixed;
-    top: 0;
-    background-image: url("materials/posters/poster.jpg");
-    transform: translate3d(0,0,0);
-}
-
-.Hero.movie::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(49px); /* apply the blur */
-    -webkit-backdrop-filter: blur(49px);
-    pointer-events: none; /* make the overlay click-through */
-}
-
-/* .Hero.movie .blur {-webkit-backdrop-filter: blur(49px); backdrop-filter: blur(49px); height: 100vh; width: 100vw; position: fixed; top: 0; z-index: 0} */
-.movie-page-name-plate {text-align: center; color: white; margin-top: 15vh}
-.movie-page {
-    display: grid;
-    grid-template-areas: "poster trailer"
-                         "details desc"
-                         "collection collection"
-                         "pics pics"
-                         "people people";
-    grid-template-columns: 1fr 3fr;
-    gap: 2vw;
-}
-.movie-page-poster {grid-area: poster}
-.movie-page-details {grid-area: details}
-.movie-page-trailer {grid-area: trailer}
-.movie-page-description {grid-area: desc}
-.movie-page-pictures {grid-area: pics}
-.movie-page-collection {
-    grid-area: collection;
-    background-image: linear-gradient(rgba(153,205,107,0.6), rgba(153,205,107,0.8)), url("materials/images/image-3.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 35vh;
-    border-radius: 10px;
-    padding: calc(1vw + 1rem)
-}
-.movie-page-people {grid-area: people}
-
-.movie-rating {padding: 0.3rem; border: 1px solid white; border-radius: 2px}
-
-/* End of Hero styles */
-
-/*------------------------*/
-
 /* Sections styles */
 .Section {
-    padding: 8vh 11vw;
+    padding: var(--section-padding);
     /* padding: max(2rem, 8vh) max(2rem, 12vw); */
     overflow-x: hidden;
 }
 
 .Section.airborne {
-    --section-airborne-width: 85vw;
-    --section-airborne-padding: 4vw;
-
     width: var(--section-airborne-width);
-    margin: 4vw auto;
+    margin: 0 auto var(--col-gap);
     padding: var(--section-airborne-padding);
     z-index: 1;
     border-radius: 10px;
@@ -354,7 +279,56 @@ header.sticky {
 
 /*------------------------*/
 
+/* Hero styles */
+.Hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: calc(var(--header-height) + var(--col-gap));
+}
+
+.Hero.main {min-height: 80vh}
+
+.Hero.article {min-height: 60vh;}
+
+.Hero.movie {
+    height:100vh;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    background-image: url("materials/posters/poster.jpg");
+    transform: translate3d(0,0,0);
+}
+
+.Hero.movie::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(49px); /* apply the blur */
+    -webkit-backdrop-filter: blur(49px);
+    pointer-events: none; /* make the overlay click-through */
+}
+
+/* End of Hero styles */
+
+/*-----------------------*/
+
 /* Footer styles */
+
 footer {
     background: rebeccapurple;
     width: 100%;
@@ -364,6 +338,7 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
 /* End of Footer styles */
 
 /*------------------------*/
@@ -413,9 +388,7 @@ footer {
 }
 
 .carousel.vignette-right-left {
-    -webkit-mask-image:
-            linear-gradient(to left, transparent 0, black 10vw),
-            linear-gradient(to right, transparent 0, black 10vw);
+    -webkit-mask-image: linear-gradient(to left, transparent 0, black 10vw), linear-gradient(to right, transparent 0, black 10vw);
     mask-image:
             linear-gradient(to left, transparent 0, black 10vw),
             linear-gradient(to right, transparent 0, black 10vw);
@@ -569,12 +542,9 @@ footer {
     border-radius: 10px;
 }
 
-
-
 /* End of Person Card styles */
 
 /*------------------------*/
-
 
 /* Start of Article Card styles */
 
@@ -639,14 +609,56 @@ footer {
     grid-template-columns: repeat(var(--visible-cols), var(--col-size));
 }
 
-
 /* End of Article Card styles */
 
 /*------------------------*/
 
+/*MOVIE PAGE*/
 
+/*------------------------*/
 
+.movie-page-name-plate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
+    padding: calc(var(--header-height) + var(--col-gap)) var(--col-gap) var(--col-gap);
+    color: white;
+}
+.movie-page {
+    display: grid;
+    grid-template-areas: "poster trailer"
+                         "details desc"
+                         "collection collection"
+                         "pics pics"
+                         "people people";
+    grid-template-columns: 1fr 3fr;
+    gap: 2vw;
+}
+.movie-page-poster {grid-area: poster}
+.movie-page-details {grid-area: details}
+.movie-page-trailer {grid-area: trailer}
+.movie-page-description {grid-area: desc}
+.movie-page-pictures {grid-area: pics}
+.movie-page-collection {
+    grid-area: collection;
+    background-image: linear-gradient(rgba(153,205,107,0.6), rgba(153,205,107,0.8)), url("materials/images/image-3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 35vh;
+    border-radius: 10px;
+    padding: calc(1vw + 1rem)
+}
+.movie-page-people {grid-area: people}
+
+.movie-rating {padding: 0.3rem; border: 1px solid white; border-radius: 2px}
+
+/* End of MOVIE PAGE styles */
+
+/*------------------------*/
 
 /*ARTICLE PAGE*/
 
@@ -724,6 +736,15 @@ footer {
 
 @media (max-width: 640px) {
 
+    .Hero {
+        padding: 0; /* Підібрати залежно від ширини мобільного Header */
+    }
+
+    header {
+        position: fixed;
+        opacity: 0.7;
+    }
+
     .movie-cards-row, .movie-cards-grid {
         --visible-cols: 2;
     }
@@ -738,22 +759,22 @@ footer {
 
     .movie-page {
         grid-template-areas: "poster"
-                         "desc"
-                         "trailer"
-                         "details"
-                         "collection"
-                         "pics"
-                         "people";
+                             "desc"
+                             "trailer"
+                             "details"
+                             "collection"
+                             "pics"
+                             "people";
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .Section.airborne {
+    .movie-page-name-plate {background: rgba(255, 255, 255, 0.4); padding-bottom: 0}
+
+    :root {
+        --header-background: rgba(0, 0, 0, 1);
         --section-airborne-padding: 10vw;
     }
 
-    .Section.semitransparent {
-        background: none;
-    }
 }
 
 @media (max-width: 340px) {
