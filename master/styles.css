@@ -377,17 +377,17 @@ footer {
 }
 
 .carousel.vignette-left {
-    mask-image: linear-gradient(to right, transparent 0, black 10vw);
+
     -webkit-mask-image: linear-gradient(to right, transparent 0, black 10vw);
 }
 
 .carousel.vignette-right {
-    mask-image: linear-gradient(to left, transparent 0, black 10vw);
+
     -webkit-mask-image: linear-gradient(to left, transparent 0, black 10vw);
 }
 
 .carousel.vignette-right-left {
-    mask-image: linear-gradient(to left, transparent 0, black 10vw), linear-gradient(to right, transparent 0, black 10vw);
+
     -webkit-mask-image: linear-gradient(to left, transparent 0, black 10vw), linear-gradient(to right, transparent 0, black 10vw);
 }
 
