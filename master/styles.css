@@ -742,7 +742,7 @@ footer {
 
     header {
         position: sticky;
-        opacity: 0.7;
+        opacity: 1;
     }
 
     .movie-cards-row, .movie-cards-grid {
