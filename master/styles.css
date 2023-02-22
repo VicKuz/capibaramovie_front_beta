@@ -20,7 +20,10 @@
 /*------------------------*/
 
 :root {
+    --header-height: calc(6vw + 2rem);
     --header-background: rgba(0, 0, 0, 0);
+
+
     --font-size-sm: clamp(0.8403rem, -0.1062vw + 0.8682rem, 0.7407rem);
     --font-size-base: clamp(1rem, 0vw + 1rem, 1rem);
     --font-size-md: clamp(1.19rem, 0.1707vw + 1.1452rem, 1.35rem);
@@ -37,11 +40,10 @@
 
     --comfy-text-width: 58vw;
 
-    --section-padding: 8vh 11vw;
     --section-airborne-width: 85vw;
-    --section-airborne-padding: 4vw;
+    --section-vertical-padding: clamp(var(--col-gap), calc(8vh - 1rem), 8vh);
+    --section-horizontal-padding: clamp(var(--col-gap), calc(11vw - 1rem), 11vw);
 
-    --header-height: calc(6vw + 2rem);
 }
 
 /* custom scrollbar */
@@ -235,15 +237,17 @@ header.sticky {
 
 /* Sections styles */
 .Section {
-    padding: var(--section-padding);
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
     /* padding: max(2rem, 8vh) max(2rem, 12vw); */
     overflow-x: hidden;
 }
 
 .Section.airborne {
+    --section-horizontal-padding: 4vw;
+
     width: var(--section-airborne-width);
     margin: 0 auto var(--col-gap);
-    padding: var(--section-airborne-padding);
+    padding: var(--section-horizontal-padding);
     z-index: 1;
     border-radius: 10px;
 }
@@ -297,7 +301,7 @@ header.sticky {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    padding: calc(var(--header-height) + var(--col-gap));
+    padding: calc(var(--header-height) + var(--col-gap)) var(--section-horizontal-padding);
 }
 
 .Hero.main {min-height: 80vh}
@@ -349,8 +353,8 @@ footer {
     /* Gap between columns. */
     grid-gap: var(--col-gap);
 
-    padding: var(--col-gap) 12vw;
-    margin: 0 -12vw;
+    padding: var(--col-gap) var(--section-horizontal-padding);
+    margin: 0 calc(var(--section-horizontal-padding) * -1);
     display: grid;
     grid-auto-flow: column;
     /*scroll-behavior: smooth;
@@ -370,11 +374,6 @@ footer {
     -o-transition: visibility 0.2s linear,
     opacity 0.1s linear;
      */
-}
-
-.airborne .carousel {
-    padding: 0 4vw;
-    margin: 0 -4vw;
 }
 
 .carousel.vignette-left {
@@ -736,13 +735,9 @@ footer {
 
 @media (max-width: 640px) {
 
-    .Hero {
-        padding: 0; /* Підібрати залежно від ширини мобільного Header */
-    }
-
     header {
-        position: sticky;
-        opacity: 1;
+        position: fixed;
+        opacity: 0.7;
     }
 
     .movie-cards-row, .movie-cards-grid {

@@ -27,6 +27,12 @@ function vmax(percent) {
 }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    if(window.innerWidth > 640){
+        window.onscroll = function() {headerScroll()};
+    }
+})
+
 window.addEventListener('resize', function(){
     if(window.innerWidth > 640){
         window.onscroll = function() {headerScroll()};
