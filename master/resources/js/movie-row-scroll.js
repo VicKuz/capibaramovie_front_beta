@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var startX;
         var scrollLeft;
 
-        rowVignette(carousel);
+        /* rowVignette(carousel); */
 
         carousel.addEventListener('mousedown', (e) => {
             isDown = true;
