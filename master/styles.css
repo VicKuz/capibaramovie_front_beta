@@ -376,6 +376,7 @@ footer {
      */
 }
 
+
 .carousel.vignette-left {
     -webkit-mask-image: linear-gradient(to right, transparent 0, black 10vw);
     mask-image: linear-gradient(to right, transparent 0, black 10vw);
