@@ -240,10 +240,6 @@ header.sticky {
     padding: var(--section-vertical-padding) var(--section-horizontal-padding);
     /* padding: max(2rem, 8vh) max(2rem, 12vw); */
     overflow-x: hidden;
-
-    -webkit-mask-image: linear-gradient(to left, transparent 0%, black var(--section-horizontal-padding)), linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
-    mask-image: linear-gradient(to left, transparent 0%, black var(--section-horizontal-padding)), linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
-
 }
 
 .Section.airborne {
@@ -318,7 +314,8 @@ header.sticky {
     position: fixed;
     top: 0;
     background-image: url("materials/posters/poster.jpg");
-    transform: translate3d(0,0,0);
+    /* transform: translate3d(0,0,0); */
+    will-change: transform;
 }
 
 .Hero.movie::after {
@@ -344,7 +341,6 @@ footer {
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 /* End of Footer styles */
@@ -354,6 +350,8 @@ footer {
 /* Carousel styles */
 
 .carousel {
+    will-change: scroll-position;
+
     /* Gap between columns. */
     grid-gap: var(--col-gap);
 
@@ -368,16 +366,6 @@ footer {
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
     scrollbar-width: none;
-    -webkit-mask-composite: source-in; /* For Chrome */
-    mask-composite: intersect; /* For Firefox *
-    /*
-        -webkit-transition: visibility 0.2s linear,
-    opacity 0.1s linear;
-    -moz-transition: visibility 0.2s linear,
-    opacity 0.1s linear;
-    -o-transition: visibility 0.2s linear,
-    opacity 0.1s linear;
-     */
 }
 
 /* ТИМЧАСОВО ДЕАКТИВОВАНО РАЗОМ З js ЧЕРЕЗ ПРОДУКТИВНІСТЬ
@@ -418,7 +406,7 @@ footer {
     /* scroll-snap-align: start; */
     line-height: 1.3;
     user-select: none;
-    filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0));
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0));
     transition: filter 0.15s;
 
 /*
