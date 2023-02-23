@@ -82,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
             var rowViewportRight = Math.round(row.scrollLeft + row.clientWidth);
             var rowWidth = Math.round(row.scrollWidth);
 
+            /* ТИМЧАСОВО ДЕАКТИВОВАНО РАЗОМ З css ЧЕРЕЗ ПРОДУКТИВНІСТЬ
+
             if (rowViewportRight < rowWidth && rowViewportLeft <= vw(2)) {
                 row.classList.remove("vignette-left");
                 row.classList.remove("vignette-right-left");
@@ -95,6 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 row.classList.remove("vignette-right");
                 row.classList.add("vignette-right-left");
             }
+
+            ТИМЧАСОВО ДЕАКТИВОВАНО РАЗОМ З css ЧЕРЕЗ ПРОДУКТИВНІСТЬ */
 
             /*
             if (rowViewportRight < rowWidth) {

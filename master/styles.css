@@ -240,6 +240,10 @@ header.sticky {
     padding: var(--section-vertical-padding) var(--section-horizontal-padding);
     /* padding: max(2rem, 8vh) max(2rem, 12vw); */
     overflow-x: hidden;
+
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, black var(--section-horizontal-padding)), linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
+    mask-image: linear-gradient(to left, transparent 0%, black var(--section-horizontal-padding)), linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
+
 }
 
 .Section.airborne {
@@ -341,7 +345,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-mask-image: -webkit-gradient(linear, left 10%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
 
 /* End of Footer styles */
@@ -351,8 +354,6 @@ footer {
 /* Carousel styles */
 
 .carousel {
-    transform: translate3d(0,0,0);
-
     /* Gap between columns. */
     grid-gap: var(--col-gap);
 
@@ -379,6 +380,7 @@ footer {
      */
 }
 
+/* ТИМЧАСОВО ДЕАКТИВОВАНО РАЗОМ З js ЧЕРЕЗ ПРОДУКТИВНІСТЬ
 
 .carousel.vignette-left {
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
@@ -394,6 +396,8 @@ footer {
     -webkit-mask-image: linear-gradient(to left, transparent 0%, black var(--section-horizontal-padding)), linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
     mask-image: linear-gradient(to left, transparent 0%, black var(--section-horizontal-padding)), linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
 }
+
+ТИМЧАСОВО ДЕАКТИВОВАНО РАЗОМ З js ЧЕРЕЗ ПРОДУКТИВНІСТЬ */
 
 
 
