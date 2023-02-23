@@ -504,6 +504,10 @@ footer {
     border-radius: 10px;
 }
 
+.carousel .picture-card img {
+    height: 60vmin;
+}
+
 .picture-card figcaption {width: min-content; min-width: 80%}
 
 /* End of Picture Card styles */
