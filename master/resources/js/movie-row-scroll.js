@@ -67,15 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 momentumID = requestAnimationFrame(momentumLoop);
             }
         }
+        /* ТИМЧАСОВО ДЕАКТИВОВАНО РАЗОМ З css ЧЕРЕЗ ПРОДУКТИВНІСТЬ
 
-        /*Scrollable left and right detection for server + vignette */
+
+           Scrollable left and right detection for server + vignette
 
         carousel.onscroll = function(e) {
             rowVignette(carousel);
         };
 
 
-        /*зробити ширину димки-градієнту залежно від того скільки лишилось скролити */
+        /*зробити ширину димки-градієнту залежно від того скільки лишилось скролити
 
         function rowVignette(row) {
             var rowViewportLeft = Math.round(row.scrollLeft);
@@ -112,10 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (rowViewportLeft === 0) {
                 row.classList.remove("vignette-left");
             }
-            */
+
 
 
         }
+
+
+             */
 
     }
 
