@@ -77,18 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /*зробити ширину димки-градієнту залежно від того скільки лишилось скролити */
 
-        /*
-
         function rowVignette(row) {
             var rowViewportLeft = Math.round(row.scrollLeft);
             var rowViewportRight = Math.round(row.scrollLeft + row.clientWidth);
             var rowWidth = Math.round(row.scrollWidth);
 
-            if (rowViewportRight < rowWidth && rowViewportLeft <= vw(5)) {
+            if (rowViewportRight < rowWidth && rowViewportLeft <= vw(2)) {
                 row.classList.remove("vignette-left");
                 row.classList.remove("vignette-right-left");
                 row.classList.add("vignette-right");
-            } else if (rowViewportRight+vw(5) >= rowWidth && rowViewportLeft > 0) {
+            } else if (rowViewportRight+vw(2) >= rowWidth && rowViewportLeft > 0) {
                 row.classList.remove("vignette-right");
                 row.classList.remove("vignette-right-left");
                 row.classList.add("vignette-left");
@@ -98,9 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 row.classList.add("vignette-right-left");
             }
 
-
-
-
+            /*
             if (rowViewportRight < rowWidth) {
                 row.classList.add("vignette-right");
             } else if (rowViewportRight >= rowWidth) {
@@ -112,13 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (rowViewportLeft === 0) {
                 row.classList.remove("vignette-left");
             }
-
+            */
 
 
         }
 
-
-*/
     }
 
 });
