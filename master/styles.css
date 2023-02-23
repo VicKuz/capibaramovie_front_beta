@@ -351,6 +351,8 @@ footer {
 /* Carousel styles */
 
 .carousel {
+    transform: translate3d(0,0,0);
+
     /* Gap between columns. */
     grid-gap: var(--col-gap);
 
