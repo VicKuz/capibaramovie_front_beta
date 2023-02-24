@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var startX;
         var scrollLeft;
 
-        /* rowVignette(carousel); */
+        rowVignette(carousel);
 
         carousel.addEventListener('mousedown', (e) => {
             isDown = true;
@@ -67,30 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 momentumID = requestAnimationFrame(momentumLoop);
             }
         }
-        /* ТИМЧАСОВО ДЕАКТИВОВАНО РАЗОМ З css ЧЕРЕЗ ПРОДУКТИВНІСТЬ
 
-
-           Scrollable left and right detection for server + vignette
+        /*Scrollable left and right detection for server + vignette */
 
         carousel.onscroll = function(e) {
             rowVignette(carousel);
         };
 
 
-        /*зробити ширину димки-градієнту залежно від того скільки лишилось скролити
+        /*зробити ширину димки-градієнту залежно від того скільки лишилось скролити */
 
         function rowVignette(row) {
             var rowViewportLeft = Math.round(row.scrollLeft);
             var rowViewportRight = Math.round(row.scrollLeft + row.clientWidth);
             var rowWidth = Math.round(row.scrollWidth);
 
-            /* ТИМЧАСОВО ДЕАКТИВОВАНО РАЗОМ З css ЧЕРЕЗ ПРОДУКТИВНІСТЬ
-
-            if (rowViewportRight < rowWidth && rowViewportLeft <= vw(2)) {
+            if (rowViewportRight < rowWidth && rowViewportLeft <= vw(5)) {
                 row.classList.remove("vignette-left");
                 row.classList.remove("vignette-right-left");
                 row.classList.add("vignette-right");
-            } else if (rowViewportRight+vw(2) >= rowWidth && rowViewportLeft > 0) {
+            } else if (rowViewportRight+vw(5) >= rowWidth && rowViewportLeft > 0) {
                 row.classList.remove("vignette-right");
                 row.classList.remove("vignette-right-left");
                 row.classList.add("vignette-left");
@@ -99,8 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 row.classList.remove("vignette-right");
                 row.classList.add("vignette-right-left");
             }
-
-            ТИМЧАСОВО ДЕАКТИВОВАНО РАЗОМ З css ЧЕРЕЗ ПРОДУКТИВНІСТЬ */
 
             /*
             if (rowViewportRight < rowWidth) {
@@ -114,13 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (rowViewportLeft === 0) {
                 row.classList.remove("vignette-left");
             }
-
+            */
 
 
         }
-
-
-             */
 
     }
 

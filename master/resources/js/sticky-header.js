@@ -33,14 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-/*
 window.addEventListener('resize', function(){
     if(window.innerWidth > 640){
         window.onscroll = function() {headerScroll()};
     }
 });
-
- */
 
 function headerScroll() {
 
@@ -52,8 +49,7 @@ function headerScroll() {
         header.classList.remove("sticky");
     }
 
-    /*
-    /*!!!!!!!!!!!!!!!!!Зробити ініціалізацію тільки на інтервалі прокрутки коли треба!!!!!!!!!!!!
+    /*!!!!!!!!!!!!!!!!!Зробити ініціалізацію тільки на інтервалі прокрутки коли треба!!!!!!!!!!!!*/
     var header_opacity = (1 - window.pageYOffset/vw(1.5)) * 0.3 + 0.7;
 
     if (header_opacity < '0.7') {
@@ -61,7 +57,6 @@ function headerScroll() {
     } else if (header_opacity >= '0.7') {
         header.style.opacity = header_opacity;
     }
-    */
 
     /* Переробити vw(4) в івент sticked і записування значення скролу для розрахунку) */
     var bg_opacity = ((1 - (vh(100) - (window.pageYOffset - vw(4))) / vh(100)));
