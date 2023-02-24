@@ -34,6 +34,7 @@ if (!herocontent) {
 
 const header = document.querySelector("header");
 const nextSection = header.nextElementSibling;
+console.log(nextSection)
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-const slightlyexposedheader = new IntersectionObserver((entries) => {
+const semiexposedheader = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             header.classList.remove("slightly-exposed")
@@ -60,17 +61,16 @@ const slightlyexposedheader = new IntersectionObserver((entries) => {
 const exposedheader = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            console.log('nema')
             header.classList.add("exposed")
         } else {
             header.classList.remove("exposed")
         }
     });
-}, options = {rootMargin: '40px', threshold: 1});
+}, options = {rootMargin: '0px 0px 100% 0px', threshold: 1});
 
 
 if (!Hero) {
-    console.log('nema')
     exposedheader.observe(nextSection);
-} else if (Hero) {
-    slightlyexposedheader.observe(herocontent)
 }
+semiexposedheader.observe(herocontent);

@@ -194,9 +194,9 @@ header {
     grid-row-start: 1;
     grid-column-start: 1;
     align-self: start;
-    -webkit-transition: background-color 0.1s linear;
-    -ms-transition: background-color 0.1s linear;
-    transition: background-color 0.1s linear;
+    -webkit-transition: background-color 0.15s linear;
+    -ms-transition: background-color 0.15s linear;
+    transition: background-color 0.15s linear;
 }
 
 header.hero-header {
