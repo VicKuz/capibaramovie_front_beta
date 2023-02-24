@@ -23,7 +23,8 @@
     --border-radius: 10px;
 
     --header-height: calc(6vw + 2rem);
-    --header-background: rgba(0, 0, 0, 0.9);
+    --header-slightly-exposed-background: rgba(0, 0, 0, 0.9);
+    --header-exposed-background: rgba(0, 0, 0, 1);
 
 
     --font-size-sm: clamp(0.8403rem, -0.1062vw + 0.8682rem, 0.7407rem);
@@ -186,16 +187,16 @@ a {
 /* Header styles */
 
 header {
-    background: var(--header-background);
+    background: var(--header-slightly-exposed-background);
     position:sticky;
     z-index: 100;
     top:0;
     grid-row-start: 1;
     grid-column-start: 1;
     align-self: start;
-    -webkit-transition: background-color 1000ms linear;
-    -ms-transition: background-color 0.14s linear;
-    transition: background-color 0.14s linear;
+    -webkit-transition: background-color 0.1s linear;
+    -ms-transition: background-color 0.1s linear;
+    transition: background-color 0.1s linear;
 }
 
 header.hero-header {
@@ -204,8 +205,12 @@ header.hero-header {
     background: transparent;
 }
 
+header.slightly-exposed {
+    background: var(--header-slightly-exposed-background);
+}
+
 header.exposed {
-    background: var(--header-background);
+    background: var(--header-exposed-background);
 }
 
 .header-inner {
@@ -320,7 +325,6 @@ header.exposed {
     align-items: center;
     color: white;
     text-align: center;
-    position: relative;
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
     background-position: center;
@@ -329,19 +333,21 @@ header.exposed {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    padding: calc(var(--header-height) + var(--col-gap)) var(--section-horizontal-padding);
+    padding: calc(var(--header-height) - 3vmin) var(--section-horizontal-padding); /*3vmin це h1 padding */
 
     grid-row-start: 1;
     grid-column-start: 1;
     align-self: start;
 }
 
+.Hero.alone {grid-row-start: 2;}
+
 .Hero.main {min-height: 80vh}
 
 .Hero.article {min-height: 60vh;}
 
 .Hero.movie {
-    height:100vh;
+    height: 100vh;
     z-index: -1;
     position: fixed;
     top: 0;
@@ -741,7 +747,7 @@ footer {
     }
 
     .Section.airborne {
-        --section-airborne-width: 100vw;
+        --section-airborne-width: 100%;
         border-radius: 0;
     }
 }
@@ -759,10 +765,14 @@ footer {
 }
 
 @media (max-width: 840px) {
-    header.hero-header {
+    header, header.hero-header {
         top: 0;
         padding: 2.5vw;
-        background: var(--header-background);
+        background: var(--header-slightly-exposed-background);
+    }
+
+    header.exposed {
+        background: var(--header-exposed-background);
     }
 
     .Hero {grid-row-start: 2;}

@@ -26,35 +26,51 @@ function vmax(percent) {
 }
 
 const Hero = document.querySelector(".Hero");
-const herocontent = document.querySelector(".hero-content");
+
+let herocontent = document.querySelector(".hero-content");
+if (!herocontent) {
+    herocontent = document.querySelector(".Hero *");
+}
+
 const header = document.querySelector("header");
+const nextSection = header.nextElementSibling;
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    if (Hero) {
+    if ((Hero && herocontent)) {
         header.classList.add("hero-header");
+    } else if (Hero) {
+        header.classList.remove("hero-header");
+        Hero.classList.add("alone");
     } else {
         header.classList.remove("hero-header");
     }
 })
 
-
-const headerObserverOptions = {
-    rootMargin: '0px',
-    threshold: 1
-}
-
-
-const headerexposed = (entries) => {
+const slightlyexposedheader = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            header.classList.remove("exposed")
+            header.classList.remove("slightly-exposed")
         } else {
-            header.classList.add("exposed")
+            header.classList.add("slightly-exposed")
         }
     });
+}, options = {rootMargin: '-40px', threshold: 1});
+
+const exposedheader = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            header.classList.add("exposed")
+        } else {
+            header.classList.remove("exposed")
+        }
+    });
+}, options = {rootMargin: '40px', threshold: 1});
+
+
+if (!Hero) {
+    console.log('nema')
+    exposedheader.observe(nextSection);
+} else if (Hero) {
+    slightlyexposedheader.observe(herocontent)
 }
-
-const observer = new IntersectionObserver(headerexposed, headerObserverOptions)
-
-observer.observe(herocontent);
