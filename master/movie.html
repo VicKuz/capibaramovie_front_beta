@@ -24,55 +24,56 @@
 </head>
 
 <body>
+<section class="body-wrapper">
 
-<header id="header">
+    <header id="header">
+        <div class="header-inner">
+            <a class="logo-container">
+                <svg class="logo">
+                    <use xlink:href="resources/icons/sprite.svg#logo" href="resources/icons/sprite.svg#logo"></use>
+                </svg>
+            </a>
 
-    <a class="logo-container">
-        <svg class="logo">
-            <use xlink:href="resources/icons/sprite.svg#logo" href="resources/icons/sprite.svg#logo"></use>
-        </svg>
-    </a>
+            <nav class="menu-top-strip">
+                <ul>
+                    <li><a href="#">Фільми</a></li>
+                    <li><a href="#">Прем'єри</a></li>
+                    <li><a href="#">Новини</a></li>
+                    <li><a href="#">Люди</a></li>
+                    <li><a href="#">Рейтинг</a></li>
+                </ul>
+            </nav>
 
-    <nav class="menu-top-strip">
-        <ul>
-            <li><a href="/">Фільми</a></li>
-            <li><a href="/">Прем'єри</a></li>
-            <li><a href="/">Новини</a></li>
-            <li><a href="/">Люди</a></li>
-            <li><a href="/">Рейтинг</a></li>
-        </ul>
-    </nav>
-
-    <div class="top-icons-container">
-        <a class="top-icon-container">
-            <svg class="top-icon">
-                <use xlink:href="resources/icons/sprite.svg#search" href="resources/icons/sprite.svg#search"></use>
-            </svg>
-        </a>
-
-
-        <a class="top-icon-container">
-            <svg class="top-icon">
-                <use xlink:href="resources/icons/sprite.svg#twitter" href="resources/icons/sprite.svg#twitter"></use>
-            </svg>
-        </a>
+            <div class="top-icons-container">
+                <a class="top-icon-container">
+                    <svg class="top-icon">
+                        <use xlink:href="resources/icons/sprite.svg#search" href="resources/icons/sprite.svg#search"></use>
+                    </svg>
+                </a>
 
 
-        <a class="top-icon-container">
-            <svg class="top-icon">
-                <use xlink:href="resources/icons/sprite.svg#orange" href="resources/icons/sprite.svg#orange"></use>
-            </svg>
-        </a>
+                <a class="top-icon-container">
+                    <svg class="top-icon">
+                        <use xlink:href="resources/icons/sprite.svg#twitter" href="resources/icons/sprite.svg#twitter"></use>
+                    </svg>
+                </a>
 
-    </div>
 
-</header>
+                <a class="top-icon-container">
+                    <svg class="top-icon">
+                        <use xlink:href="resources/icons/sprite.svg#orange" href="resources/icons/sprite.svg#orange"></use>
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+    </header>
 
 <section class="Section Hero movie">
 </section>
 
 <Section class="movie-page-name-plate">
-    <h1>Тролі (2016)</h1>
+    <h1 class="hero-content">Тролі (2016)</h1>
     <span><span class="movie-rating">PG</span> 27/10/2016 (UA) • Сімейний, Мультфільм, Фентезі, Пригоди, Комедія, Музика • 1h 32m</span>
 </Section>
 
@@ -290,5 +291,6 @@
 <script src="resources/js/sticky-header.js"></script>
 <script src="resources/js/movie-row-scroll.js"></script>
 
+</section>
 </body>
 </html>

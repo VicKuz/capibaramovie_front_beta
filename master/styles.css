@@ -23,7 +23,7 @@
     --border-radius: 10px;
 
     --header-height: calc(6vw + 2rem);
-    --header-background: rgba(0, 0, 0, 0);
+    --header-background: rgba(0, 0, 0, 0.9);
 
 
     --font-size-sm: clamp(0.8403rem, -0.1062vw + 0.8682rem, 0.7407rem);
@@ -82,11 +82,17 @@
 }
 
 html {
+    scroll-behavior: smooth;
     /*overflow-x: hidden; Увімкнути на проді!!!*/
 }
 
 body {
     overflow: overlay;
+}
+
+.body-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
 }
 
 img {max-width: 100%}
@@ -178,15 +184,38 @@ a {
 /*------------------------*/
 
 /* Header styles */
+
 header {
+    background: var(--header-background);
+    position:sticky;
+    z-index: 100;
+    top:0;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    align-self: start;
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 0.14s linear;
+    transition: background-color 0.14s linear;
+}
+
+header.hero-header {
+    top:-2.5vw;
+    padding-top:2.5vw;
+    background: transparent;
+}
+
+header.exposed {
+    background: var(--header-background);
+}
+
+.header-inner {
+    position:sticky;
+    top:0;
     z-index: 100;
     width: 100%;
-    position: absolute;
-    top: 0;
-    padding: 3vw;
+    padding: 0.5vw 3vw;
     color: white;
     text-transform: uppercase;
-    background: var(--header-background);
     opacity: 100%;
     display: flex;
     flex-direction: row;
@@ -197,10 +226,7 @@ header {
     overflow: hidden;
 }
 
-header.sticky {
-    position: fixed;
-    padding: 0.5vw 3vw;
-}
+
 
 .menu-top-strip ul {
     display: flex;
@@ -304,6 +330,10 @@ header.sticky {
     -moz-background-size: cover;
     -o-background-size: cover;
     padding: calc(var(--header-height) + var(--col-gap)) var(--section-horizontal-padding);
+
+    grid-row-start: 1;
+    grid-column-start: 1;
+    align-self: start;
 }
 
 .Hero.main {min-height: 80vh}
@@ -577,12 +607,10 @@ footer {
 
 .article-card-link {
     text-decoration: none;
-    transition: filter 0.15s;
 }
 
 .article-card-link:hover .article-card-picture {
-    filter: brightness(110%) contrast(85%);
-    transition: 0.1s;
+   /* filter: brightness(110%) contrast(85%); */
 }
 
 .article-tag {
@@ -731,17 +759,20 @@ footer {
 }
 
 @media (max-width: 840px) {
+    header.hero-header {
+        top: 0;
+        padding: 2.5vw;
+        background: var(--header-background);
+    }
+
+    .Hero {grid-row-start: 2;}
+
     .people-cards-row, .people-cards-grid {
         --visible-cols: 3;
     }
 }
 
 @media (max-width: 640px) {
-
-    header {
-        position: fixed;
-        opacity: 0.7;
-    }
 
     .movie-cards-row, .movie-cards-grid {
         --visible-cols: 2;
@@ -769,7 +800,6 @@ footer {
     .movie-page-name-plate {background: rgba(255, 255, 255, 0.4); padding-bottom: 0}
 
     :root {
-        --header-background: rgba(0, 0, 0, 1);
         --section-airborne-padding: 10vw;
     }
 
