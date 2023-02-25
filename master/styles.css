@@ -346,11 +346,11 @@ header.exposed {
     align-self: start;
 }
 
-.Hero.alone {grid-row-start: 3;}
+.Hero.alone {grid-row-start: 3}
 
 .Hero.main {min-height: 80vh}
 
-.Hero.article {min-height: 60vh;}
+.Hero.article {min-height: 60vh}
 
 .Hero.movie {
     height: 100vh;

@@ -1,6 +1,3 @@
-onresize = (event) => setHeaderObserver()
-setHeaderObserver()
-
 let root = document.documentElement;
 
 function changeValue(id, value) {
@@ -58,7 +55,7 @@ const semiexposedheader = new window.IntersectionObserver((entries) => {
             header.classList.add("slightly-exposed")
         }
     })
-}, options = {rootMargin: '-60px', threshold: 1});
+}, options = {rootMargin: '-60px', threshold: 0.99});
 
 
 
@@ -70,7 +67,7 @@ const exposedheader = new window.IntersectionObserver((entries) => {
             header.classList.remove("exposed")
         }
     })
-}, options = {rootMargin: '60px', threshold: 1});
+}, options = {rootMargin: '60px', threshold: 0.99});
 
 
 
@@ -87,10 +84,13 @@ function setHeaderObserver() {
     semiexposedheader.disconnect();
     exposedheader.disconnect();
 
-    heroposition = getHeroPosition()
+    let heroposition = getHeroPosition()
     if (Hero && heroposition === '1') {
         semiexposedheader.observe(herocontent);
     } else if (!Hero || heroposition === '3') {
         exposedheader.observe(detector);
     }
 }
+
+onresize = (event) => setHeaderObserver()
+setHeaderObserver()
