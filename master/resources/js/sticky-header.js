@@ -1,4 +1,5 @@
-/* !!!!!!!!!!!!!!!!!!!!! ПЕРЕВІРЯТИ ЧИ Є HERO, якщо ні - то одразу sticky !!!!!!!!!!!!!!!!! */
+onresize = (event) => setHeaderObserver()
+setHeaderObserver()
 
 let root = document.documentElement;
 
@@ -93,6 +94,3 @@ function setHeaderObserver() {
         exposedheader.observe(detector);
     }
 }
-
-onresize = (event) => setHeaderObserver()
-setHeaderObserver()
