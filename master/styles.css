@@ -23,7 +23,7 @@
     --border-radius: 16px;
 
     --header-height: calc(6vw + 2rem);
-    --header-slightly-exposed-background: rgba(0, 0, 0, 0.9);
+    --header-slightly-exposed-background: rgba(0, 0, 0, 0.8);
     --header-exposed-background: rgba(0, 0, 0, 1);
 
 
@@ -194,20 +194,31 @@ header {
     grid-row-start: 1;
     grid-column-start: 1;
     align-self: start;
-    -webkit-transition: background 0.1s ease-in;
-    -moz-transition: background 0.1s ease-in;
-    -o-transition: background 0.1s ease-in;
-    transition: background 0.1s ease-in;
+
+    -webkit-transition: background 0.15s ease-in;
+    -moz-transition: background 0.15s ease-in;
+    -o-transition: background 0.15s ease-in;
+    transition: background 0.15s ease-in;
 }
 
 header.hero-header {
     top:-2.5vw;
     padding-top:2.5vw;
     background: transparent;
+
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
 }
 
 header.slightly-exposed {
     background: var(--header-slightly-exposed-background);
+
+    -webkit-transition: background 0.15s ease-in;
+    -moz-transition: background 0.15s ease-in;
+    -o-transition: background 0.15s ease-in;
+    transition: background 0.15s ease-in;
 }
 
 header.exposed {
