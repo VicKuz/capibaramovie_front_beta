@@ -33,12 +33,12 @@ if (!herocontent) {
 }
 
 const header = document.querySelector("header");
-const nextSection = header.nextElementSibling;
-console.log(nextSection)
+/*const nextSection = header.nextElementSibling;*/
+const detector = document.querySelector(".intersection-observer-detector");
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    if ((Hero && herocontent)) {
+    if (Hero && herocontent) {
         header.classList.add("hero-header");
     } else if (Hero) {
         header.classList.remove("hero-header");
@@ -48,29 +48,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-const semiexposedheader = new IntersectionObserver((entries) => {
+const semiexposedheader = new window.IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             header.classList.remove("slightly-exposed")
         } else {
             header.classList.add("slightly-exposed")
         }
-    });
-}, options = {rootMargin: '-40px', threshold: 1});
+    })
+}, options = {rootMargin: '-60px', threshold: 1});
 
-const exposedheader = new IntersectionObserver((entries) => {
+
+
+const exposedheader = new window.IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            console.log('nema')
+            console.log('exposed')
             header.classList.add("exposed")
         } else {
             header.classList.remove("exposed")
         }
-    });
-}, options = {rootMargin: '0px 0px 100% 0px', threshold: 1});
+    })
+}, options = {rootMargin: '60px', threshold: 1});
 
 
-if (!Hero) {
-    exposedheader.observe(nextSection);
+
+
+function getHeroPosition() {
+    if (Hero) {
+        return window.getComputedStyle(Hero).gridRowStart
+    }
 }
-semiexposedheader.observe(herocontent);
+
+function setHeaderObserver() {
+    header.classList.remove("slightly-exposed")
+    header.classList.remove("exposed")
+    semiexposedheader.unobserve(herocontent);
+    exposedheader.unobserve(detector);
+
+    heroposition = getHeroPosition()
+    if (Hero && heroposition === '1') {
+        semiexposedheader.observe(herocontent);
+    } else if (!Hero || heroposition === '3') {
+        exposedheader.observe(detector);
+    }
+}
+
+onresize = (event) => setHeaderObserver()
+setHeaderObserver()

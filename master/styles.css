@@ -20,7 +20,7 @@
 /*------------------------*/
 
 :root {
-    --border-radius: 10px;
+    --border-radius: 16px;
 
     --header-height: calc(6vw + 2rem);
     --header-slightly-exposed-background: rgba(0, 0, 0, 0.9);
@@ -79,7 +79,6 @@
     box-sizing: border-box;
     font-family: Mariupol Regular, sans-serif;
     font-weight: normal !important;
-    /*outline: 3px solid green;*/
 }
 
 html {
@@ -89,6 +88,7 @@ html {
 
 body {
     overflow: overlay;
+    background: black;
 }
 
 .body-wrapper {
@@ -194,9 +194,10 @@ header {
     grid-row-start: 1;
     grid-column-start: 1;
     align-self: start;
-    -webkit-transition: background-color 0.15s linear;
-    -ms-transition: background-color 0.15s linear;
-    transition: background-color 0.15s linear;
+    -webkit-transition: background 0.1s ease-in;
+    -moz-transition: background 0.1s ease-in;
+    -o-transition: background 0.1s ease-in;
+    transition: background 0.1s ease-in;
 }
 
 header.hero-header {
@@ -263,6 +264,8 @@ header.exposed {
 .top-icon:hover {fill: #ffb200}
 
 .logo-container, .top-icons-container {flex: 1}
+
+.intersection-observer-detector {width:100%; grid-row-start: 2}
 
 /* End of Header styles */
 
@@ -356,7 +359,7 @@ header.exposed {
     will-change: transform;
 }
 
-.Hero.movie::after {
+.Hero.movie::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -593,7 +596,7 @@ footer {
     background-size: cover;
     width: 100%;
     aspect-ratio: 40 / 27;
-    border-radius: 10px
+    border-radius: var(--border-radius);
 }
 
 .article-card-title {padding: 0.8rem 0 0.5rem 0; text-align: left}
@@ -775,7 +778,7 @@ footer {
         background: var(--header-exposed-background);
     }
 
-    .Hero {grid-row-start: 2;}
+    .Hero {grid-row-start: 3;}
 
     .people-cards-row, .people-cards-grid {
         --visible-cols: 3;
