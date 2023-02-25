@@ -33,6 +33,7 @@ if (!herocontent) {
 }
 
 const header = document.querySelector("header");
+
 /*const nextSection = header.nextElementSibling;*/
 const detector = document.querySelector(".intersection-observer-detector");
 
@@ -63,7 +64,6 @@ const semiexposedheader = new window.IntersectionObserver((entries) => {
 const exposedheader = new window.IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            console.log('exposed')
             header.classList.add("exposed")
         } else {
             header.classList.remove("exposed")
@@ -83,8 +83,8 @@ function getHeroPosition() {
 function setHeaderObserver() {
     header.classList.remove("slightly-exposed")
     header.classList.remove("exposed")
-    semiexposedheader.unobserve(herocontent);
-    exposedheader.unobserve(detector);
+    semiexposedheader.disconnect();
+    exposedheader.disconnect();
 
     heroposition = getHeroPosition()
     if (Hero && heroposition === '1') {

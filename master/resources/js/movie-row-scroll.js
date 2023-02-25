@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     /*!!!!!!!!!!!!!!відібрати в масив тільки ті що шириною більше вюпорта, якщо менше - додаєм клас few (або стиль по центру)!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
     if (carousels) {
-    var arr = Array.from(carousels);
-    arr.forEach(CarouselFunction);
+    var array = Array.from(carousels);
+    array.forEach(CarouselFunction);
     }
 
     function CarouselFunction(item) {
@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         var isDown = false;
         var startX;
         var scrollLeft;
-
-        rowVignette(carousel);
 
         carousel.addEventListener('mousedown', (e) => {
             isDown = true;
@@ -68,52 +66,39 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        /*Scrollable left and right detection for server + vignette */
+        const carouselObserver1 = new window.IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    carousel.classList.add("fog-right")
+                    carousel.classList.remove("fog-left")
+                    carousel.classList.remove("fog-both")
+                } else {
+                    carousel.classList.remove("fog-right")
+                    carousel.classList.add("fog-both")
+                }
+            })
+        }, options = {root: carousel, rootMargin: '10px', threshold: 1});
 
-        carousel.onscroll = function(e) {
-            rowVignette(carousel);
-        };
+        const carouselObserver2 = new window.IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    carousel.classList.add("fog-left")
+                    carousel.classList.remove("fog-right")
+                    carousel.classList.remove("fog-both")
+                } else {
+                    carousel.classList.remove("fog-left")
+                    carousel.classList.add("fog-both")
+                }
+            })
+        }, options = {root: carousel, rootMargin: '10px', threshold: 1});
 
+        carouselObserver1.observe(carousel.querySelector('.carousel > :first-child'))
+        carouselObserver2.observe(carousel.querySelector('.carousel > :last-child'))
 
-        /*зробити ширину димки-градієнту залежно від того скільки лишилось скролити */
-
-        function rowVignette(row) {
-            var rowViewportLeft = Math.round(row.scrollLeft);
-            var rowViewportRight = Math.round(row.scrollLeft + row.clientWidth);
-            var rowWidth = Math.round(row.scrollWidth);
-
-            if (rowViewportRight < rowWidth && rowViewportLeft <= vw(5)) {
-                row.classList.remove("vignette-left");
-                row.classList.remove("vignette-right-left");
-                row.classList.add("vignette-right");
-            } else if (rowViewportRight+vw(5) >= rowWidth && rowViewportLeft > 0) {
-                row.classList.remove("vignette-right");
-                row.classList.remove("vignette-right-left");
-                row.classList.add("vignette-left");
-            } else if (rowViewportLeft > 0 && rowViewportRight < rowWidth) {
-                row.classList.remove("vignette-left");
-                row.classList.remove("vignette-right");
-                row.classList.add("vignette-right-left");
-            }
-
-            /*
-            if (rowViewportRight < rowWidth) {
-                row.classList.add("vignette-right");
-            } else if (rowViewportRight >= rowWidth) {
-                row.classList.remove("vignette-right");
-            }
-
-            if (rowViewportLeft > 0) {
-                row.classList.add("vignette-left");
-            } else if (rowViewportLeft === 0) {
-                row.classList.remove("vignette-left");
-            }
-            */
-
-
-        }
 
     }
+
+
 
 });
 
