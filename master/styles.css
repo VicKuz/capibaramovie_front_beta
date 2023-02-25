@@ -408,6 +408,8 @@ footer {
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
     scrollbar-width: none;
+
+    -webkit-mask-composite: source-in;
 }
 
 .carousel, .carousel * {
@@ -417,19 +419,20 @@ footer {
 
 
 .carousel.fog-left {
-    -webkit-mask: linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
-    mask: linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
+    -webkit-mask: linear-gradient(to right, transparent 0%, black 12vw);
+    mask: linear-gradient(to right, transparent 0%, black 12vw);
 }
 
 .carousel.fog-right {
-    -webkit-mask: linear-gradient(to left, transparent 0%, black var(--section-horizontal-padding));
-    mask: linear-gradient(to left, transparent 0%, black var(--section-horizontal-padding));
+    -webkit-mask: linear-gradient(to left, transparent 0%, black 12vw);
+    mask: linear-gradient(to left, transparent 0%, black 12vw);
 }
 
 .carousel.fog-both {
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
-    mask-image: linear-gradient(to left, transparent 0%, black var(--section-horizontal-padding)),
-                linear-gradient(to right, transparent 0%, black var(--section-horizontal-padding));
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, black 12vw),
+                        linear-gradient(to right, transparent 0%, black 12vw);
+    mask-image: linear-gradient(to left, transparent 0%, black 12vw),
+                linear-gradient(to right, transparent 0%, black 12vw);
 }
 
 
