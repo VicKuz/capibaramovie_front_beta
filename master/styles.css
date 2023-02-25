@@ -194,31 +194,23 @@ header {
     grid-row-start: 1;
     grid-column-start: 1;
     align-self: start;
-
+/*
     -webkit-transition: background 0.15s ease-in;
     -moz-transition: background 0.15s ease-in;
     -o-transition: background 0.15s ease-in;
     transition: background 0.15s ease-in;
+
+ */
 }
 
 header.hero-header {
     top:-2.5vw;
     padding-top:2.5vw;
     background: transparent;
-
-    -webkit-transition: none;
-    -moz-transition: none;
-    -o-transition: none;
-    transition: none;
 }
 
 header.slightly-exposed {
     background: var(--header-slightly-exposed-background);
-
-    -webkit-transition: background 0.15s ease-in;
-    -moz-transition: background 0.15s ease-in;
-    -o-transition: background 0.15s ease-in;
-    transition: background 0.15s ease-in;
 }
 
 header.exposed {
@@ -276,7 +268,7 @@ header.exposed {
 
 .logo-container, .top-icons-container {flex: 1}
 
-.intersection-observer-detector {width:100%; grid-row-start: 2}
+.intersection-observer-detector {width:100%; height:1px; margin-top:-1px; grid-row-start: 2}
 
 /* End of Header styles */
 
@@ -354,7 +346,7 @@ header.exposed {
     align-self: start;
 }
 
-.Hero.alone {grid-row-start: 2;}
+.Hero.alone {grid-row-start: 3;}
 
 .Hero.main {min-height: 80vh}
 
