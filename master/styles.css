@@ -590,7 +590,7 @@
 
     .people-cards-row, .people-cards-grid {
         /* How many columns to show. */
-        --visible-cols: 6;
+        --visible-cols: 8;
 
         /* How much to show of the next hidden column. You can use this as a hint to show the user there are more scrollable items. Particularly helpful for mobile devices where the scrollbar gets hidden by default.*/
         --col-hint: 0px;
@@ -778,7 +778,7 @@
         }
 
         .people-cards-row, .people-cards-grid {
-            --visible-cols: 6;
+            --visible-cols: 7;
         }
     }
 
@@ -788,7 +788,7 @@
         }
 
         .people-cards-row, .people-cards-grid {
-            --visible-cols: 5;
+            --visible-cols: 6;
         }
 
         :root {
@@ -802,7 +802,7 @@
         }
 
         .people-cards-row, .people-cards-grid {
-            --visible-cols: 4;
+            --visible-cols: 5;
         }
 
         .Section.airborne {
@@ -837,7 +837,7 @@
         .Hero {grid-row-start: 3;}
 
         .people-cards-row, .people-cards-grid {
-            --visible-cols: 3;
+            --visible-cols: 4;
         }
     }
 
@@ -852,7 +852,7 @@
         }
 
         .people-cards-row, .people-cards-grid {
-            --visible-cols: 2;
+            --visible-cols: 3;
         }
 
         .movie-page {
@@ -880,7 +880,7 @@
         }
 
         .people-cards-row, .people-cards-grid {
-            --visible-cols: 1;
+            --visible-cols: 2;
         }
     }
 
