@@ -101,7 +101,7 @@
         box-sizing: border-box;
         font-family: Mariupol Regular, sans-serif;
         font-weight: normal !important;
-        outline: 1px solid greenyellow;
+
     }
 
     html {
@@ -412,10 +412,43 @@
         background: rebeccapurple;
         width: 100%;
         min-height: 30vh;
-        text-align: center;
-        display: flex;
-        justify-content: center;
+        display: grid;
+        place-items: center;
+        gap: calc(var(--col-gap));
+        grid-template-areas:
+            "socials socials socials socials"
+    "links links links links"
+    "copyright copyright copyright copyright"
+    "name browse read empty"
+    "afterword afterword afterword afterword";
     }
+
+    footer * {list-style: none}
+
+.name {
+    grid-area: name;
+}
+.browse {
+    grid-area: browse;
+}
+.read {
+    grid-area: read;
+}
+.empty {
+    grid-area: empty;
+}
+.socials {
+    grid-area: socials;
+}
+.links {
+    grid-area: links;
+}
+.copyright {
+    grid-area: copyright;
+}
+.afterword {
+    grid-area: afterword;
+}
 
     /* End of Footer styles */
 
@@ -470,8 +503,6 @@
 
 
 
-
-
     .carousel::-webkit-scrollbar{
         display: none;
     }
@@ -485,6 +516,7 @@
     /*------------------------*/
 
     /* Movie Card styles */
+
     .movie-card, .picture-card, .person-card, .article-card {
         /* scroll-snap-align: start; */
         line-height: 1.3;
@@ -526,7 +558,7 @@
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        gap: 0.618em;
+        gap: 0.382em;
         text-decoration: none;
     }
 
@@ -713,8 +745,10 @@
     grid-template-columns: 1fr 3fr;
     gap: var(--col-gap);
 }
-.movie-page-poster {grid-area: poster; filter: var(--drop-shadow)}
+.movie-page-poster {grid-area: poster; filter: var(--drop-shadow); max-width: 61.8vw; justify-self: center;}
 .movie-page-details {grid-area: details}
+
+.movie-page .carousel {margin: calc(-1 * var(--col-gap))}
 
 .movie-info {
     list-style: none;
@@ -825,6 +859,11 @@
     }
 
     @media (max-width: 940px) {
+        .carousel {
+            padding: var(--col-gap) calc(var(--section-horizontal-padding) * 1.618);
+        }
+        .grid {padding: var(--col-gap) calc(var(--section-horizontal-padding) * 0.618)}
+
         .movie-cards-row, .movie-cards-grid {
             --visible-cols: 3;
         }
@@ -871,6 +910,7 @@
                              "pics"
                              "people";
             grid-template-columns: minmax(0, 1fr);
+            gap: calc(1.618 * var(--col-gap))
         }
 
         .movie-page-name-plate {background: rgba(255, 255, 255, 0.4); padding-bottom: 0}
@@ -881,15 +921,21 @@
 
     }
 
-@media (max-width: 440px) {
+
+@media (max-width: 480px) {
 
     .people-cards-row, .people-cards-grid {
         --visible-cols: 2;
     }
+
 }
 
 
+
     @media (max-width: 340px) {
+
+        .movie-cards-grid, .article-cards-grid, .people-cards-grid, .picture-cards-grid {grid-row-gap: calc(2.617924 * var(--col-gap))}
+
         .movie-cards-row, .movie-cards-grid {
             --visible-cols: 1;
         }
@@ -897,7 +943,9 @@
         .people-cards-row, .people-cards-grid {
             --visible-cols: 1;
         }
+
     }
+
 
 
     /*
