@@ -285,7 +285,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     }
 
 .logo-container {max-height: 2rem; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-transform: capitalize;}
-.logo-container .logo, .logo-container h4 {display: inline-block}
+.logo-container a {display: flex; flex-direction: row; justify-content: flex-start; align-items: center; margin-right: auto}
     .logo {height: 2rem; width: 5rem; }
 
     .top-icons-container {display: flex; flex-direction: row; justify-content: flex-end; align-items: stretch; gap: calc(0.618 * var(--vw-unit)); height: 100%}
@@ -770,7 +770,7 @@ input[type=radio] {
     border-radius: 99px;
     padding: 0 1.618em;
     cursor: pointer;
-    transition: color 0.15s ease-in;
+    transition: color 0.15s ease-out;
 }
 
 input[type=radio]:checked + label {
