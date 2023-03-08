@@ -495,8 +495,6 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
         -ms-overflow-style: none;
         overflow: -moz-scrollbars-none;
         scrollbar-width: none;
-
-        -webkit-mask-composite: source-in;
     }
 
     .carousel, .carousel * {
