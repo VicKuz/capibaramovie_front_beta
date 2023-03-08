@@ -188,17 +188,14 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
         hyphens: auto;
     }
 
-    a {
-        all: unset;
-        cursor: pointer;
-        transition: 0.15s;
-    }
-
     a:hover {
         color: #ffb200;
     }
 
     a {
+        all: unset;
+        cursor: pointer;
+        transition: 0.15s;
         text-decoration: underline;
         -webkit-text-decoration-line: underline;
         text-decoration-thickness: 0.146em;
@@ -255,6 +252,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
         text-transform: uppercase;
         opacity: 100%;
         display: flex;
+        gap: var(--vw-unit);
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -428,6 +426,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     }
 
     footer * {list-style: none; padding: 0}
+    footer a {text-decoration: none}
 
 .navigation {
     grid-area: nav;
@@ -498,14 +497,13 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
         scrollbar-width: none;
 
         -webkit-mask-composite: source-in;
-        mask-composite: add;
     }
 
     .carousel, .carousel * {
         cursor: grab;
     }
 
-
+    .grid {grid-column-gap: var(--vw-unit); grid-row-gap: clamp(1.618rem, var(--vw-unit), 5rem)}
 
     .carousel.fog-left {
         -webkit-mask: linear-gradient(to right, transparent 0%, black 12vw);
@@ -518,10 +516,8 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     }
 
     .carousel.fog-both {
-        -webkit-mask-image: linear-gradient(to left, transparent 0%, black 12vw),
-        linear-gradient(to right, transparent 0%, black 12vw);
-        mask-image: linear-gradient(to left, transparent 0%, black 12vw),
-        linear-gradient(to right, transparent 0%, black 12vw);
+        -webkit-mask-image: linear-gradient(to left, transparent 0%, black 12vw, black 88vw, black 12vw, transparent 100%);
+        mask-image: linear-gradient(to left, transparent 0%, black 12vw, black 88vw, black 12vw, transparent 100%);
     }
 
 
@@ -601,7 +597,6 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
 
     .movie-cards-grid {
         grid-template-columns: repeat(var(--visible-cols), var(--col-size));
-        grid-gap: var(--vw-unit);
     }
 
     .movie-cards-row.few {
@@ -620,7 +615,6 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
 
     .picture-cards-grid {
         display: flex;
-        gap: var(--vw-unit);
         flex-wrap: wrap;
         justify-content:center;
     }
@@ -667,7 +661,6 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
 
     .people-cards-grid {
         grid-template-columns: repeat(var(--visible-cols), var(--col-size));
-        grid-gap: var(--vw-unit);
     }
 
     .person-card-picture {
@@ -701,7 +694,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     .article-card-details {
         display: flex;
         flex-direction: row;
-        gap: 1.618em;
+        gap: 1em;
         align-items: baseline;
         justify-content: flex-start;
     }
@@ -736,7 +729,6 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
 
 
     .article-cards-grid {
-        grid-gap: var(--vw-unit);
         grid-template-columns: repeat(var(--visible-cols), var(--col-size));
     }
 
@@ -979,7 +971,6 @@ input[id=radio-3]:checked ~ .glider {
     .movie-cards-row, .movie-cards-grid {
         --visible-cols: 3;
     }
-    .grid {grid-row-gap: calc(1.618 * var(--vw-unit))}
 }
 
     @media (max-width: 640px) {
