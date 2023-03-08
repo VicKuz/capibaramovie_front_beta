@@ -514,7 +514,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     }
 
     .carousel.fog-both {
-        -webkit-mask-image: linear-gradient(to left, transparent 0%, black 12vw, black 88vw, black 12vw, transparent 100%);
+        -webkit-mask: linear-gradient(to left, transparent 0%, black 12vw, black 88vw, black 12vw, transparent 100%);
         mask-image: linear-gradient(to left, transparent 0%, black 12vw, black 88vw, black 12vw, transparent 100%);
     }
 
