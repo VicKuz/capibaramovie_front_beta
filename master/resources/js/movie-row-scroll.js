@@ -1,21 +1,31 @@
-document.addEventListener('DOMContentLoaded', () => {
+function isOverflown(element) {
+    return element.scrollWidth > element.clientWidth;
+}
 
+document.addEventListener('DOMContentLoaded', (FindCarousels()))
+onresize = (event) => FindCarousels()
+
+function FindCarousels() {
     const carousels = document.getElementsByClassName('carousel');
-
     /*!!!!!!!!!!!!!!відібрати в масив тільки ті що шириною більше вюпорта, якщо менше - додаєм клас few (або стиль по центру)!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
     if (carousels) {
     var array = Array.from(carousels);
     array.forEach(CarouselFunction);
     }
+}
 
     function CarouselFunction(item) {
 
-        // carousel dragging
         const carousel = item;
+
+        if (isOverflown(item)) {
+        // carousel dragging
         var isDown = false;
         var startX;
         var scrollLeft;
+
+        carousel.classList.add("scrollable")
+        carousel.classList.remove("few")
 
         carousel.addEventListener('mousedown', (e) => {
             isDown = true;
@@ -49,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Momentum
         var velX = 0;
         var momentumID;
+
         function beginMomentumTracking() {
             cancelMomentumTracking();
             momentumID = requestAnimationFrame(momentumLoop);
@@ -95,11 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
         carouselObserver1.observe(carousel.querySelector('.carousel > :first-child'))
         carouselObserver2.observe(carousel.querySelector('.carousel > :last-child'))
 
-
-    }
-
-
-
-});
+    } else {
+            carousel.classList.remove("scrollable")
+            carousel.classList.add("few")
+        }
+}
 
 /* https://dev.to/wolffe/i-created-a-draggable-carousel-with-momentum-scrolling-and-mobile-support-using-vanilla-javascript-17he */

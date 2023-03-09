@@ -74,7 +74,7 @@
 <section class="Section white">
     <h1 class="section-tittle">Новини цього тижня</h1>
 
-    <section class="grid-filters">
+    <nav class="grid-filters carousel">
 
         <div class="tabs">
             <input type="radio" id="radio-1" name="tabs" checked />
@@ -88,43 +88,49 @@
             <span class="glider"></span>
         </div>
 
-        <label for="cars">Choose a car:</label>
-        <select name="cars" id="cars">
-            <optgroup label="Swedish Cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-            </optgroup>
-            <optgroup label="German Cars">
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-            </optgroup>
-        </select>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown ⌄</button>
+            <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                <a href="#about">About</a>
+                <a href="#base">Base</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="#custom">Custom</a>
+                <a href="#support">Support</a>
+                <a href="#tools">Tools</a>
+            </div>
+        </div>
 
-        <label for="cars">Choose a car:</label>
-        <select name="cars" id="cars">
-            <optgroup label="Swedish Cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-            </optgroup>
-            <optgroup label="German Cars">
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-            </optgroup>
-        </select>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown ⌄</button>
+            <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                <a href="#about">About</a>
+                <a href="#base">Base</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="#custom">Custom</a>
+                <a href="#support">Support</a>
+                <a href="#tools">Tools</a>
+            </div>
+        </div>
 
-        <label for="cars">Choose a car:</label>
-        <select name="cars" id="cars">
-            <optgroup label="Swedish Cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-            </optgroup>
-            <optgroup label="German Cars">
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-            </optgroup>
-        </select>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown ⌄</button>
+            <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                <a href="#about">About</a>
+                <a href="#base">Base</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="#custom">Custom</a>
+                <a href="#support">Support</a>
+                <a href="#tools">Tools</a>
+            </div>
+        </div>
 
-    </section>
+    </nav>
 
     <section class="article-cards-grid grid">
 
@@ -273,6 +279,7 @@
 
 <script src="resources/js/sticky-header.js"></script>
 <script src="resources/js/movie-row-scroll.js"></script>
+    <script src="resources/js/dropdown.js"></script>
 
 </section>
 </body>
