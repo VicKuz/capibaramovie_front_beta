@@ -55,6 +55,7 @@
 
         /* Gap between columns. */
         --vw-unit: calc(0.5rem + 1.5625vw);
+        --row-gap: clamp(1.618rem, var(--vw-unit), 5rem);
 
         --comfy-text-width: 61.8vw;
 
@@ -102,6 +103,7 @@
         box-sizing: border-box;
         font-family: Mariupol Regular, sans-serif;
         font-weight: normal !important;
+        outline: 1px solid lawngreen;
 
     }
 
@@ -236,6 +238,11 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
 
     header.slightly-exposed {
         background: var(--header-slightly-exposed-background);
+
+        -webkit-transition: background 0.14s ease-in;
+        -moz-transition: background 0.14s ease-in;
+        -o-transition: background 0.14s ease-in;
+        transition: background 0.14s ease-in;
     }
 
     header.exposed {
@@ -501,7 +508,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
         cursor: grab;
     }
 
-    .grid {grid-column-gap: var(--vw-unit); grid-row-gap: clamp(1.618rem, var(--vw-unit), 5rem)}
+    .grid {grid-column-gap: var(--vw-unit); grid-row-gap: var(--row-gap)}
 
     .carousel.fog-left {
         -webkit-mask: linear-gradient(to right, transparent 0%, black 12vw);
@@ -738,28 +745,67 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
 
 
 .tabs {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 99px;
-    color: white;
+    user-select: none;
+
+    background-color: white;
+    color: black;
+    padding: 0.618em;
+    filter: var(--drop-shadow)
 }
+
+.tabs.lang {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 0;
+}
+
 .tabs * {
     z-index: 2;
 }
 
-input[type=radio] {
-    display: none;
-}
-
 .tab {
+    font-family: Mariupol Bold, sans-serif;
+    white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 99px;
-    padding: 0.618em 1.618em;
     cursor: pointer;
     transition: color 0.15s ease-out;
+
+    padding: 1em 1.618em;
+}
+
+.lang .tab {
+    padding: 0.618em 1.618em;
+}
+
+.tab.first {grid-row-start: 1;
+    grid-column-start: 1;}
+
+.glider {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    display: flex;
+    z-index: 1;
+    border-radius: 99px;
+    transition: 0.15s ease-out;
+    padding: 0.618em 1.618em;
+    background-color: #E5E5E5;
+
+}
+
+.lang .glider {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+input[type=radio] {
+    display: none;
 }
 
 input[type=radio]:checked + label {
@@ -778,25 +824,19 @@ input[id=radio-3]:checked ~ .glider {
     transform: translateX(200%);
 }
 
-.glider {
-    position: absolute;
-    top: 0;
-    display: flex;
-    height: 100%;
-    width: 50%;
-    background-color: rgba(255, 255, 255, 1);
-    z-index: 1;
-    border-radius: 99px;
-    transition: 0.15s ease-out;
+input[id=radio-4]:checked ~ .glider {
+    transform: translateX(300%);
 }
 
-@media (max-width: 700px) {
-    .tabs {
-        transform: scale(0.6);
-    }
-}
 
 /* End of nav tabs styles */
+
+/*------------------------*/
+
+/*GRID PAGE*/
+
+.grid-filters {display: flex; gap: var(--vw-unit); justify-content: space-between; padding: var(--row-gap) 0}
+
 
 /*------------------------*/
 

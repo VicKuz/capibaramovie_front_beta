@@ -63,8 +63,10 @@ const exposedheader = new window.IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             header.classList.add("exposed")
+            header.classList.remove("slightly-exposed")
         } else {
             header.classList.remove("exposed")
+            header.classList.add("slightly-exposed")
         }
     })
 }, options = {rootMargin: '60px', threshold: 0.99});

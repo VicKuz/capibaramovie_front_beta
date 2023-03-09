@@ -75,17 +75,18 @@
     <h1 class="section-tittle">Новини цього тижня</h1>
 
     <section class="grid-filters">
-        <label for="cars">Choose a car:</label>
-        <select name="cars" id="cars">
-            <optgroup label="Swedish Cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-            </optgroup>
-            <optgroup label="German Cars">
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-            </optgroup>
-        </select>
+
+        <div class="tabs">
+            <input type="radio" id="radio-1" name="tabs" checked />
+            <label class="tab first" for="radio-1">НОВІШІ</label>
+            <input type="radio" id="radio-2" name="tabs" />
+            <label class="tab" for="radio-2">ДАВНІШІ</label>
+            <input type="radio" id="radio-3" name="tabs" />
+            <label class="tab" for="radio-3">ПОПУЛЯРНІ</label>
+            <input type="radio" id="radio-4" name="tabs" />
+            <label class="tab" for="radio-4">ЗА РЕЙТИНГОМ</label>
+            <span class="glider"></span>
+        </div>
 
         <label for="cars">Choose a car:</label>
         <select name="cars" id="cars">
@@ -110,9 +111,22 @@
                 <option value="audi">Audi</option>
             </optgroup>
         </select>
+
+        <label for="cars">Choose a car:</label>
+        <select name="cars" id="cars">
+            <optgroup label="Swedish Cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+            </optgroup>
+            <optgroup label="German Cars">
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </optgroup>
+        </select>
+
     </section>
 
-    <section class="article-cards-grid">
+    <section class="article-cards-grid grid">
 
         <section class="article-card">
             <a class="article-card-link">
