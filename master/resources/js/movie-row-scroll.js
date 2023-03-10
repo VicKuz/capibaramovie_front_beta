@@ -2,7 +2,7 @@ function isOverflown(element) {
     return element.scrollWidth > element.clientWidth;
 }
 
-document.addEventListener('DOMContentLoaded', (FindCarousels()))
+document.addEventListener('DOMContentLoaded', (FindCarousels))
 onresize = (event) => FindCarousels()
 
 function FindCarousels() {
@@ -85,6 +85,7 @@ function FindCarousels() {
                     carousel.classList.remove("fog-both")
                 } else {
                     carousel.classList.remove("fog-right")
+                    carousel.classList.remove("fog-left")
                     carousel.classList.add("fog-both")
                 }
             })
@@ -98,6 +99,7 @@ function FindCarousels() {
                     carousel.classList.remove("fog-both")
                 } else {
                     carousel.classList.remove("fog-left")
+                    carousel.classList.remove("fog-right")
                     carousel.classList.add("fog-both")
                 }
             })

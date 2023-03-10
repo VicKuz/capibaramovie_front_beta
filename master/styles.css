@@ -20,10 +20,29 @@
     /*------------------------*/
 
     :root {
+        /* КОЛЬОРИ */
+        --coral: #FF7F50;
+        --white: white;
+        --grey: #DFDFDF;
+        --camel: #DEAB78; /* Darker shade: #D0A071 */
+        --olive: #373127;
+        --rebeccapurple: #663399;
+        --honeyyellow: #FFB200;
+
+        --gradient-background: linear-gradient(110deg,#ffb200,#ff7f50);
+        --gradient-background-rotated: linear-gradient(238deg,#ffb200,#ff7f50);
+
+
         --border-radius: 16px;
+
+        --transition: 0.1s ease-in;
 
         --header-slightly-exposed-background: rgba(0, 0, 0, 0.8);
         --header-exposed-background: rgba(0, 0, 0, 1);
+
+        --button-padding-slim: 0.618em clamp(0.618rem, 0.444rem + 0.695vw, 1rem);
+        --button-padding-bold: 1em 1.618em;
+        --button-border-radius: 99px;
 
 /*
         --font-size-sm: clamp(0.8386rem, -0.0044vw + 0.8397rem, 0.8344rem);
@@ -103,7 +122,7 @@
         box-sizing: border-box;
         font-family: Mariupol Regular, sans-serif;
         font-weight: normal !important;
-        outline: 1px solid lawngreen;
+        /* outline: 1px solid lawngreen; */
 
     }
 
@@ -130,10 +149,10 @@
     p, b, strong, i, em, li {font-size: var(--font-size-md); line-height: 1.8}
     b, strong {font-family: Mariupol Bold, sans-serif;}
 
-    p {padding: 0.618em 0;}
+    p {margin: 1.618em 0;}
 
     .orange-list {padding-left: 4vw}
-    .orange-list li {padding-left: 2rem}
+    .orange-list li {margin: 1.618em 0; padding-left: 2em;}
     .orange-list li::marker {
         content: "🍊";
     }
@@ -141,37 +160,37 @@
     h1 {
         font-family: Mariupol Medium, sans-serif;
         font-size: var(--font-size-xxl);
-        padding: 0.618em 0;
+        margin: 0.618em 0;
     }
 
     h2 {
         font-family: Mariupol Medium, sans-serif;
         font-size: var(--font-size-xl);
-        padding: 0.618em 0;
+        margin: 0.618em 0;
     }
 
     h3 {
         font-family: Mariupol Medium, sans-serif;
         font-size: var(--font-size-lg);
-        padding: 0.618em 0;
+        margin: 0.618em 0;
     }
 
     h4 {
         font-family: Mariupol Medium, sans-serif;
         font-size: var(--font-size-l);
-        padding: 0.618em 0;
+        margin: 0.618em 0;
     }
 
     h5 {
         font-family: Mariupol Medium, sans-serif;
         font-size: var(--font-size-md);
-        padding: 0.618em 0;
+        margin: 0.618em 0;
     }
 
     h6 {
         font-family: Mariupol Medium, sans-serif;
         font-size: var(--font-size-base);
-        padding: 0.618em 0;
+        margin: 0.618em 0;
     }
 
 h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
@@ -191,20 +210,20 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     }
 
     a:hover {
-        color: #ffb200;
+        color: var(--honeyyellow);
     }
 
     a {
         all: unset;
         cursor: pointer;
-        transition: 0.15s;
+        transition: var(--transition);
         text-decoration: underline;
         -webkit-text-decoration-line: underline;
         text-decoration-thickness: 0.146em;
         text-underline-offset: 0.146em;
         text-underline-position: under;
-        text-decoration-color: #ffb200;
-        -webkit-text-decoration-color: #ffb200;
+        text-decoration-color: var(--honeyyellow);
+        -webkit-text-decoration-color: var(--honeyyellow);
     }
 
     /* End of font styles */
@@ -296,7 +315,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     .top-icons-container {display: flex; flex-direction: row; justify-content: flex-end; align-items: center; gap: calc(0.618 * var(--vw-unit)); height: 100%}
     .top-icon-container {width: 3rem; height: 3rem; display: inline-flex; justify-content: center;}
     .top-icon {width: 100%; height: 100%; fill: white; padding: 0.618rem}
-    .top-icon:hover {fill: #ffb200}
+    .top-icon:hover {fill: var(--honeyyellow)}
 
     .logo-container, .top-icons-container {flex: 1}
 
@@ -309,31 +328,35 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     /* Sections styles */
     .Section {
         padding: var(--section-vertical-padding) var(--section-horizontal-padding);
-        /* padding: max(2rem, 8vh) max(2rem, 12vw); */
-        overflow-x: hidden;
     }
 
     .Section.airborne {
+        --section-horizontal-padding: calc(1.618 * var(--vw-unit));
+
         width: var(--section-airborne-width);
         margin: 0 auto var(--vw-unit);
-        padding: calc(1.618 * var(--vw-unit));
+        padding: var(--section-horizontal-padding);
         z-index: 1;
         border-radius: var(--border-radius);
     }
 
-    .Section.coral {background: coral;}
+    .Section.coral {background: var(--coral)}
 
-    .Section.white {background: white;}
+    .Section.white {background: var(--white)}
 
-    .Section.grey  {background: #E5E5E5;}
+    .Section.grey  {background: var(--grey)}
 
-    .Section.camel {background: #D0A071}
+    .Section.camel {background: var(--camel)}
 
-    .Section.olive {background: #373127; color: white}
+    .Section.olive {background: var(--olive); color: white}
 
-    .Section.rebeccapurple {background: rebeccapurple; color: white}
+    .Section.rebeccapurple {background: var(--rebeccapurple); color: white}
 
-    .Section.honeyyellow {background: #FFB200}
+    .Section.honeyyellow {background: var(--honeyyellow)}
+
+    .Section.gradient {background: var(--gradient-background)}
+
+    /* ADD custom colours for articles !!! */
 
     .Section.transparent {background: none}
 
@@ -343,10 +366,12 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
 
     .section-sub-tittle {padding-bottom: 0}
 
-    .comfy-text p, .comfy-text li, .comfy-text i, .comfy-text b, .comfy-text ul {
+    .comfy-text p, .comfy-text i, .comfy-text b, .comfy-text ul {
         width: var(--comfy-text-width);
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
+    .comfy-text p:first-child {margin-top: 0}
 
     :is(.comfy-text) :is(h1, h2, h3, h4, h5, h6) {text-align: center}
 
@@ -366,7 +391,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
         color: white;
         text-align: center;
 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("materials/images/poster-hero.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url("materials/images/poster-hero.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -387,6 +412,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     .Hero.alone {grid-row-start: 3}
 
     .Hero.movie {
+        background-image: url("materials/images/image-2.jpg");
         height: 100vh;
         z-index: -1;
         position: fixed;
@@ -486,8 +512,8 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
 
 .carousel {
     will-change: scroll-position;
-    padding: var(--vw-unit) var(--section-horizontal-padding);
-    margin: 0 calc(var(--section-horizontal-padding) * -1);
+    padding: calc(var(--vw-unit) + 100px) var(--section-horizontal-padding);
+    margin: -100px calc(var(--section-horizontal-padding) * -1);
 
     overflow-x: scroll;
     overflow-y: hidden;
@@ -495,7 +521,6 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
     scrollbar-width: none;
-
 
         /* Gap between columns. */
         grid-gap: var(--vw-unit);
@@ -505,6 +530,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
         /*scroll-behavior: smooth;
         scroll-snap-type: x mandatory;*/
     }
+
 
     .carousel.scrollable, .carousel.scrollable * {
         cursor: grab;
@@ -528,8 +554,8 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     }
 
     .carousel.fog-both {
-        -webkit-mask: linear-gradient(to left, transparent 0%, black 12vw, black 88vw, black 12vw, transparent 100%);
-        mask-image: linear-gradient(to left, transparent 0%, black 12vw, black 88vw, black 12vw, transparent 100%);
+        -webkit-mask: linear-gradient(to left, transparent 0%, black 12%, black 88%, black 12%, transparent 100%);
+        mask-image: linear-gradient(to left, transparent 0%, black 12%, black 88%, black 12%, transparent 100%);
     }
 
 
@@ -553,7 +579,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
         line-height: 1.3;
         user-select: none;
         will-change: filter;
-        transition: filter 0.15s;
+        transition: filter var(--transition);
         filter: var(--drop-shadow-zero);
 
         /*
@@ -578,7 +604,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
         aspect-ratio: 27 / 40;
     }
 
-    .movie-card .movie-card-title, .person-card .person-card-title {padding: calc(0.382 * var(--vw-unit)) 0 calc(0.382 * 0.382 * var(--vw-unit)) 0; text-align: start}
+    .movie-card .movie-card-title, .person-card .person-card-title {margin: calc(0.382 * var(--vw-unit)) 0 calc(0.382 * 0.382 * var(--vw-unit)) 0; text-align: start}
 
     .movie-card-desc, .person-card-desc, .article-card-desc {
         font-size: var(--font-size-sm);
@@ -697,7 +723,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
         border-radius: var(--border-radius);
     }
 
-    .article-card-title {padding: 0.618em 0 0.382em 0; text-align: left}
+    .article-card-title {margin: 0.618em 0 0.382em; text-align: left}
 
     .article-card-details {
         display: flex;
@@ -716,7 +742,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     }
 
     .article-tag {
-        font-family: Mariupol Medium, sans-serif;
+        font-family: Mariupol Bold, sans-serif;
     }
 
 
@@ -754,7 +780,29 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     align-items: center;
 }
 
-/*------------------------*/
+.button {
+    font-family: Mariupol Bold, sans-serif;
+    padding: var(--button-padding-bold);
+    background: black;
+    color: white;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    border-radius: var(--button-border-radius);
+    filter: var(--drop-shadow)
+}
+
+.button:hover {
+    background: var(--gradient-background-rotated);
+    color: black;
+}
+
+.more-button {
+    width: 100%;
+margin-top: var(--row-gap);
+}
+
+    /*------------------------*/
 
 /* Start of Nav Tabs styles */
 .tabs {
@@ -763,7 +811,7 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     grid-auto-flow: column;
     grid-auto-columns: minmax(0, 1fr);
     position: relative;
-    border-radius: 99px;
+    border-radius: var(--button-border-radius);
     user-select: none;
 
     background-color: white;
@@ -787,11 +835,11 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 99px;
+    border-radius: var(--button-border-radius);
     cursor: pointer;
     transition: color 0.15s ease-out;
 
-    padding: 0.618em 1em;
+    padding: var(--button-padding-slim);
 }
 
 .lang .tab {
@@ -806,10 +854,9 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     grid-column-start: 1;
     display: flex;
     z-index: 1;
-    border-radius: 99px;
     transition: 0.15s ease-out;
-    background-color: #E5E5E5;
-
+    background-color: var(--grey);
+    border-radius: var(--button-border-radius);
 }
 
 .lang .glider {
@@ -854,7 +901,7 @@ input[id=radio-4]:checked ~ .glider {
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover {
-    color: #ffb200;
+    color: var(--honeyyellow);
 }
 
 /* The search field */
@@ -892,7 +939,7 @@ input[id=radio-4]:checked ~ .glider {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #E5E5E5}
+.dropdown-content a:hover {background-color: var(--grey)}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
@@ -918,7 +965,7 @@ input[id=radio-4]:checked ~ .glider {
 .movie-page {
     display: grid;
     grid-template-areas: "poster trailer"
-                         "details desc"
+                         "stats desc"
                          "collection collection"
                          "pics pics"
                          "people people";
@@ -926,9 +973,7 @@ input[id=radio-4]:checked ~ .glider {
     gap: var(--vw-unit);
 }
 .movie-page-poster {grid-area: poster; filter: var(--drop-shadow); max-width: 61.8vw; justify-self: center;}
-.movie-page-details {grid-area: details}
-
-.movie-page .carousel {margin: calc(-1 * var(--vw-unit))}
+.movie-page-stats {grid-area: stats}
 
 .movie-info {
     list-style: none;
@@ -981,6 +1026,17 @@ input[id=radio-4]:checked ~ .glider {
     /*------------------------*/
 
     /* Start of Article Picture styles */
+
+.article-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 0.618em;
+    margin-bottom: 1.618em;
+}
+
+.article-tags {display: flex; justify-content: center; gap: 1em}
 
 
     /* End of Article Picture styles */
@@ -1038,7 +1094,8 @@ input[id=radio-4]:checked ~ .glider {
 
     @media (max-width: 940px) {
         .carousel {
-            padding: var(--vw-unit) calc(var(--section-horizontal-padding) * 1.618);
+            padding-left: calc(var(--section-horizontal-padding) * 1.618);
+            padding-right: calc(var(--section-horizontal-padding) * 1.618);
         }
         .grid {padding: var(--vw-unit) calc(var(--section-horizontal-padding) * 0.618)}
 
@@ -1103,7 +1160,7 @@ input[id=radio-4]:checked ~ .glider {
             grid-template-areas: "poster"
                              "desc"
                              "trailer"
-                             "details"
+                             "stats"
                              "collection"
                              "pics"
                              "people";

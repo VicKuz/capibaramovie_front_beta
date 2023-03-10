@@ -79,14 +79,16 @@ function getHeroPosition() {
         return window.getComputedStyle(Hero).gridRowStart
     }
 }
+let heroposition = getHeroPosition()
 
 function setHeaderObserver() {
-    header.classList.remove("slightly-exposed")
+    heroposition = getHeroPosition()
+
     header.classList.remove("exposed")
+    header.classList.remove("slightly-exposed")
     semiexposedheader.disconnect();
     exposedheader.disconnect();
 
-    let heroposition = getHeroPosition()
     if (Hero && heroposition === '1') {
         semiexposedheader.observe(herocontent);
     } else if (!Hero || heroposition === '3') {
@@ -94,5 +96,5 @@ function setHeaderObserver() {
     }
 }
 
-onresize = (event) => setHeaderObserver()
 setHeaderObserver()
+window.addEventListener("resize", setHeaderObserver);
