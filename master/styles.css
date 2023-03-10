@@ -1,90 +1,90 @@
 /* Font faces */
 
-    @font-face {
-        font-family: Mariupol Regular;
-        src: url(resources/fonts/Mariupol/Mariupol_Regular/Mariupol-Regular.otf);
-    }
+@font-face {
+    font-family: Mariupol Regular;
+    src: url(resources/fonts/Mariupol/Mariupol_Regular/Mariupol-Regular.otf);
+}
 
-    @font-face {
-        font-family: Mariupol Medium;
-        src: url(resources/fonts/Mariupol/Mariupol_Medium/Mariupol-Medium.otf);
-    }
+@font-face {
+    font-family: Mariupol Medium;
+    src: url(resources/fonts/Mariupol/Mariupol_Medium/Mariupol-Medium.otf);
+}
 
-    @font-face {
-        font-family: Mariupol Bold;
-        src: url(resources/fonts/Mariupol/Mariupol_Bold/Mariupol-Bold.otf);
-    }
+@font-face {
+    font-family: Mariupol Bold;
+    src: url(resources/fonts/Mariupol/Mariupol_Bold/Mariupol-Bold.otf);
+}
 
-    /* End of font faces */
+/* End of font faces */
 
-    /*------------------------*/
+/*------------------------*/
 
-    :root {
-        /* КОЛЬОРИ */
-        --coral: #FF7F50;
-        --white: white;
-        --grey: #DFDFDF;
-        --camel: #DEAB78; /* Darker shade: #D0A071 */
-        --olive: #373127;
-        --rebeccapurple: #663399;
-        --honeyyellow: #FFB200;
+:root {
+    /* КОЛЬОРИ */
+    --coral: #FF7F50;
+    --white: white;
+    --grey: #DFDFDF;
+    --camel: #DEAB78; /* Darker shade: #D0A071 */
+    --olive: #373127;
+    --rebeccapurple: #663399;
+    --honeyyellow: #FFB200;
 
-        --gradient-background: linear-gradient(110deg,#ffb200,#ff7f50);
-        --gradient-background-rotated: linear-gradient(238deg,#ffb200,#ff7f50);
-
-
-        --border-radius: 16px;
-
-        --transition: 0.1s ease-in;
-
-        --header-slightly-exposed-background: rgba(0, 0, 0, 0.8);
-        --header-exposed-background: rgba(0, 0, 0, 1);
-
-        --button-padding-slim: 0.618em clamp(0.618rem, 0.444rem + 0.695vw, 1rem);
-        --button-padding-bold: 1em 1.618em;
-        --button-border-radius: 99px;
-
-/*
-        --font-size-sm: clamp(0.8386rem, -0.0044vw + 0.8397rem, 0.8344rem);
-        --font-size-base: clamp(0.9979rem, 0.0668vw + 0.9812rem, 1.0613rem);
-        --font-size-md: clamp(1.1875rem, 0.1711vw + 1.1447rem, 1.35rem);
-        --font-size-l: clamp(1.4131rem, 0.3201vw + 1.3331rem, 1.7172rem);
-        --font-size-lg: clamp(1.6816rem, 0.5291vw + 1.5493rem, 2.1843rem);
-        --font-size-xl: clamp(2.0011rem, 0.8182vw + 1.7966rem, 2.7784rem);
-        --font-size-xxl: clamp(2.3813rem, 1.2135vw + 2.078rem, 3.5341rem);
+    --gradient-background: linear-gradient(110deg,#ffb200,#ff7f50);
+    --gradient-background-rotated: linear-gradient(238deg,#ffb200,#ff7f50);
 
 
- */
-        /* --font-size-xxxl: clamp(2.8338rem, 1.7491vw + 2.3965rem, 4.4954rem); */
+    --border-radius: 16px;
+
+    --transition: 0.1s ease-in;
+
+    --header-slightly-exposed-background: rgba(0, 0, 0, 0.8);
+    --header-exposed-background: rgba(0, 0, 0, 1);
+
+    --button-padding-slim: 0.618em clamp(0.618rem, 0.444rem + 0.695vw, 1rem);
+    --button-padding-bold: 1em 1.618em;
+    --button-border-radius: 99px;
+
+    /*
+            --font-size-sm: clamp(0.8386rem, -0.0044vw + 0.8397rem, 0.8344rem);
+            --font-size-base: clamp(0.9979rem, 0.0668vw + 0.9812rem, 1.0613rem);
+            --font-size-md: clamp(1.1875rem, 0.1711vw + 1.1447rem, 1.35rem);
+            --font-size-l: clamp(1.4131rem, 0.3201vw + 1.3331rem, 1.7172rem);
+            --font-size-lg: clamp(1.6816rem, 0.5291vw + 1.5493rem, 2.1843rem);
+            --font-size-xl: clamp(2.0011rem, 0.8182vw + 1.7966rem, 2.7784rem);
+            --font-size-xxl: clamp(2.3813rem, 1.2135vw + 2.078rem, 3.5341rem);
 
 
-        --font-size-sm: clamp(0.8403rem, -0.1062vw + 0.8682rem, 0.7407rem);
-        --font-size-base: clamp(1rem, 0vw + 1rem, 1rem);
-        --font-size-md: clamp(1.19rem, 0.1707vw + 1.1452rem, 1.35rem);
-        --font-size-l: clamp(1.4161rem, 0.4335vw + 1.3023rem, 1.8225rem);
-        --font-size-lg: clamp(1.6852rem, 0.8269vw + 1.4681rem, 2.4604rem);
-        --font-size-xl: clamp(2.0053rem, 1.4039vw + 1.6368rem, 3.3215rem);
-        --font-size-xxl: clamp(2.3864rem, 2.2375vw + 1.799rem, 4.484rem);
-        --font-size-xxxl: clamp(2.8398rem, 3.4279vw + 1.9399rem, 6.0534rem);
+     */
+    /* --font-size-xxxl: clamp(2.8338rem, 1.7491vw + 2.3965rem, 4.4954rem); */
+
+
+    --font-size-sm: clamp(0.8403rem, -0.1062vw + 0.8682rem, 0.7407rem);
+    --font-size-base: clamp(1rem, 0vw + 1rem, 1rem);
+    --font-size-md: clamp(1.19rem, 0.1707vw + 1.1452rem, 1.35rem);
+    --font-size-l: clamp(1.4161rem, 0.4335vw + 1.3023rem, 1.8225rem);
+    --font-size-lg: clamp(1.6852rem, 0.8269vw + 1.4681rem, 2.4604rem);
+    --font-size-xl: clamp(2.0053rem, 1.4039vw + 1.6368rem, 3.3215rem);
+    --font-size-xxl: clamp(2.3864rem, 2.2375vw + 1.799rem, 4.484rem);
+    --font-size-xxxl: clamp(2.8398rem, 3.4279vw + 1.9399rem, 6.0534rem);
 
 
 
-        /* --font-size-xxl: clamp(2.375rem, 1.9573vw + 1.8612rem, 4.21rem); */
+    /* --font-size-xxl: clamp(2.375rem, 1.9573vw + 1.8612rem, 4.21rem); */
 
 
-        /* Gap between columns. */
-        --vw-unit: calc(0.5rem + 1.5625vw);
-        --row-gap: clamp(1.618rem, var(--vw-unit), 5rem);
+    /* Gap between columns. */
+    --vw-unit: calc(0.5rem + 1.5625vw);
+    --row-gap: clamp(1.618rem, var(--vw-unit), 5rem);
 
-        --comfy-text-width: 61.8vw;
+    --comfy-text-width: 61.8vw;
 
-        --section-airborne-width: 85.4vw;
-        --section-vertical-padding: calc(1.618 * var(--vw-unit));
-        --section-horizontal-padding: clamp(calc(1.618 * var(--vw-unit)), calc(11.8vw - 1.618 * var(--vw-unit)), 11.8vw);
+    --section-airborne-width: 85.4vw;
+    --section-vertical-padding: calc(1.618 * var(--vw-unit));
+    --section-horizontal-padding: clamp(calc(1.618 * var(--vw-unit)), calc(11.8vw - 1.618 * var(--vw-unit)), 11.8vw);
 
-        --drop-shadow-zero: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0));
-        --drop-shadow: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.3));
-    }
+    --drop-shadow-zero: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0));
+    --drop-shadow: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.3));
+}
 
 
 /*.Ukrainian-flag {position: fixed; top: 15vh; right: 0; display: flex; flex-direction: column; aspect-ratio: 3 / 2; width: 4rem; z-index: 1000; filter: var(--drop-shadow)} */
@@ -93,373 +93,373 @@
 .Ukrainian-flag .yellow {background: rgb(255,213,0);  width: 100%; height:50%}
 
 
-    /* custom scrollbar */
-    ::-webkit-scrollbar {
-        width: 20px;
-    }
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+}
 
-    ::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
 
-    ::-webkit-scrollbar-thumb {
-        background-color: rgba(119, 119, 119, 0.6);
-        border-radius: 20px;
-        border: 6px solid transparent;
-        background-clip: content-box;
-        mix-blend-mode: difference;
-    }
+::-webkit-scrollbar-thumb {
+    background-color: rgba(119, 119, 119, 0.6);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+    mix-blend-mode: difference;
+}
 
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: rgba(119, 119, 119, 1);
-    }
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(119, 119, 119, 1);
+}
 
-    * {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        outline: transparent;
-        box-sizing: border-box;
-        font-family: Mariupol Regular, sans-serif;
-        font-weight: normal !important;
-        /* outline: 1px solid lawngreen; */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: transparent;
+    box-sizing: border-box;
+    font-family: Mariupol Regular, sans-serif;
+    font-weight: normal !important;
+    /* outline: 1px solid lawngreen; */
 
-    }
+}
 
-    html {
-        scroll-behavior: smooth;
-        /*overflow-x: hidden; Увімкнути на проді!!!*/
-    }
+html {
+    scroll-behavior: smooth;
+    /*overflow-x: hidden; Увімкнути на проді!!!*/
+}
 
-    body {
-        overflow: overlay;
-        background: black;
-    }
+body {
+    overflow: overlay;
+    background: black;
+}
 
-    .body-wrapper {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-    }
+.body-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
 
-    img {max-width: 100%}
-    figcaption {color: rgba(119, 119, 119, 1); font-size: var(--font-size-sm); text-align: center}
+img {max-width: 100%}
+figcaption {color: rgba(119, 119, 119, 1); font-size: var(--font-size-sm); text-align: center}
 
-    /* Font styles */
+/* Font styles */
 
-    p, b, strong, i, em, li {font-size: var(--font-size-md); line-height: 1.8}
-    b, strong {font-family: Mariupol Bold, sans-serif;}
+p, b, strong, i, em, li {font-size: var(--font-size-md); line-height: 1.8}
+b, strong {font-family: Mariupol Bold, sans-serif;}
 
-    p {margin: 1.618em 0;}
+p {margin: 1.618em 0;}
 
-    .orange-list {padding-left: 4vw}
-    .orange-list li {margin: 1.618em 0; padding-left: 2em;}
-    .orange-list li::marker {
-        content: "🍊";
-    }
+.orange-list {padding-left: 4vw}
+.orange-list li {margin: 1.618em 0; padding-left: 2em;}
+.orange-list li::marker {
+    content: "🍊";
+}
 
-    h1 {
-        font-family: Mariupol Medium, sans-serif;
-        font-size: var(--font-size-xxl);
-        margin: 0.618em 0;
-    }
+h1 {
+    font-family: Mariupol Medium, sans-serif;
+    font-size: var(--font-size-xxl);
+    margin: 0.618em 0;
+}
 
-    h2 {
-        font-family: Mariupol Medium, sans-serif;
-        font-size: var(--font-size-xl);
-        margin: 0.618em 0;
-    }
+h2 {
+    font-family: Mariupol Medium, sans-serif;
+    font-size: var(--font-size-xl);
+    margin: 0.618em 0;
+}
 
-    h3 {
-        font-family: Mariupol Medium, sans-serif;
-        font-size: var(--font-size-lg);
-        margin: 0.618em 0;
-    }
+h3 {
+    font-family: Mariupol Medium, sans-serif;
+    font-size: var(--font-size-lg);
+    margin: 0.618em 0;
+}
 
-    h4 {
-        font-family: Mariupol Medium, sans-serif;
-        font-size: var(--font-size-l);
-        margin: 0.618em 0;
-    }
+h4 {
+    font-family: Mariupol Medium, sans-serif;
+    font-size: var(--font-size-l);
+    margin: 0.618em 0;
+}
 
-    h5 {
-        font-family: Mariupol Medium, sans-serif;
-        font-size: var(--font-size-md);
-        margin: 0.618em 0;
-    }
+h5 {
+    font-family: Mariupol Medium, sans-serif;
+    font-size: var(--font-size-md);
+    margin: 0.618em 0;
+}
 
-    h6 {
-        font-family: Mariupol Medium, sans-serif;
-        font-size: var(--font-size-base);
-        margin: 0.618em 0;
-    }
+h6 {
+    font-family: Mariupol Medium, sans-serif;
+    font-size: var(--font-size-base);
+    margin: 0.618em 0;
+}
 
 h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
 
-    p,
-    b,
-    i,
-    li,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        overflow-wrap: break-word;
-        hyphens: auto;
-    }
+p,
+b,
+i,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
 
-    a:hover {
-        color: var(--honeyyellow);
-    }
+a:hover {
+    color: var(--honeyyellow);
+}
 
-    a {
-        all: unset;
-        cursor: pointer;
-        transition: var(--transition);
-        text-decoration: underline;
-        -webkit-text-decoration-line: underline;
-        text-decoration-thickness: 0.146em;
-        text-underline-offset: 0.146em;
-        text-underline-position: under;
-        text-decoration-color: var(--honeyyellow);
-        -webkit-text-decoration-color: var(--honeyyellow);
-    }
+a {
+    all: unset;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: underline;
+    -webkit-text-decoration-line: underline;
+    text-decoration-thickness: 0.146em;
+    text-underline-offset: 0.146em;
+    text-underline-position: under;
+    text-decoration-color: var(--honeyyellow);
+    -webkit-text-decoration-color: var(--honeyyellow);
+}
 
-    /* End of font styles */
+/* End of font styles */
 
-    /*------------------------*/
+/*------------------------*/
 
-    /* Header styles */
+/* Header styles */
 
-    header {
-        background: var(--header-slightly-exposed-background);
-        position:sticky;
-        z-index: 100;
-        top:0;
-        grid-row-start: 1;
-        grid-column-start: 1;
-        align-self: start;
-        /*
-            -webkit-transition: background 0.15s ease-in;
-            -moz-transition: background 0.15s ease-in;
-            -o-transition: background 0.15s ease-in;
-            transition: background 0.15s ease-in;
+header {
+    background: var(--header-slightly-exposed-background);
+    position:sticky;
+    z-index: 100;
+    top:0;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    align-self: start;
+    /*
+        -webkit-transition: background 0.15s ease-in;
+        -moz-transition: background 0.15s ease-in;
+        -o-transition: background 0.15s ease-in;
+        transition: background 0.15s ease-in;
 
-         */
-    }
+     */
+}
 
-    header.hero-header {
-        top:calc(-1 * var(--vw-unit));
-        padding-top:var(--vw-unit);
-        background: transparent;
-    }
+header.hero-header {
+    top:calc(-1 * var(--vw-unit));
+    padding-top:var(--vw-unit);
+    background: transparent;
+}
 
-    header.slightly-exposed {
-        background: var(--header-slightly-exposed-background);
+header.slightly-exposed {
+    background: var(--header-slightly-exposed-background);
 
-        -webkit-transition: background 0.14s ease-in;
-        -moz-transition: background 0.14s ease-in;
-        -o-transition: background 0.14s ease-in;
-        transition: background 0.14s ease-in;
-    }
+    -webkit-transition: background 0.14s ease-in;
+    -moz-transition: background 0.14s ease-in;
+    -o-transition: background 0.14s ease-in;
+    transition: background 0.14s ease-in;
+}
 
-    header.exposed {
-        background: var(--header-exposed-background);
-    }
+header.exposed {
+    background: var(--header-exposed-background);
+}
 
-    .header-inner {
-        position:sticky;
-        top:0;
-        z-index: 100;
-        width: 100%;
-        padding: calc(0.618 * 0.618 * 0.618 * var(--vw-unit)) calc(1.618 * var(--vw-unit));
-        color: white;
-        text-transform: uppercase;
-        opacity: 100%;
-        display: flex;
-        gap: var(--vw-unit);
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+.header-inner {
+    position:sticky;
+    top:0;
+    z-index: 100;
+    width: 100%;
+    padding: calc(0.618 * 0.618 * 0.618 * var(--vw-unit)) calc(1.618 * var(--vw-unit));
+    color: white;
+    text-transform: uppercase;
+    opacity: 100%;
+    display: flex;
+    gap: var(--vw-unit);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-        /* ПРИБРАТИ */
-        overflow: hidden;
-    }
+    /* ПРИБРАТИ */
+    overflow: hidden;
+}
 
 
 
-    .menu-top-strip ul {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        gap: calc(1.618 * var(--vw-unit));
-        list-style: none;
-        align-items: center;
-        height: 100%;
-    }
+.menu-top-strip ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: calc(1.618 * var(--vw-unit));
+    list-style: none;
+    align-items: center;
+    height: 100%;
+}
 
-    .menu-top-strip li {
-        font-size: var(--font-size-base);
-        line-height: 1;
-    }
+.menu-top-strip li {
+    font-size: var(--font-size-base);
+    line-height: 1;
+}
 
-    header a {
-        text-decoration: none;
-    }
+header a {
+    text-decoration: none;
+}
 
 .logo-container {max-height: 2rem; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-transform: capitalize;}
 .logo-container a {display: flex; flex-direction: row; justify-content: flex-start; align-items: center; margin-right: auto}
-    .logo {height: 2rem; width: 5rem; }
+.logo {height: 2rem; width: 5rem; }
 
-    .top-icons-container {display: flex; flex-direction: row; justify-content: flex-end; align-items: center; gap: calc(0.618 * var(--vw-unit)); height: 100%}
-    .top-icon-container {width: 3rem; height: 3rem; display: inline-flex; justify-content: center;}
-    .top-icon {width: 100%; height: 100%; fill: white; padding: 0.618rem}
-    .top-icon:hover {fill: var(--honeyyellow)}
+.top-icons-container {display: flex; flex-direction: row; justify-content: flex-end; align-items: center; gap: calc(0.618 * var(--vw-unit)); height: 100%}
+.top-icon-container {width: 3rem; height: 3rem; display: inline-flex; justify-content: center;}
+.top-icon {width: 100%; height: 100%; fill: white; padding: 0.618rem}
+.top-icon:hover {fill: var(--honeyyellow)}
 
-    .logo-container, .top-icons-container {flex: 1}
+.logo-container, .top-icons-container {flex: 1}
 
-    .intersection-observer-detector {width:100%; height:1px; margin-top:-1px; grid-row-start: 2}
+.intersection-observer-detector {width:100%; height:1px; margin-top:-1px; grid-row-start: 2}
 
-    /* End of Header styles */
+/* End of Header styles */
 
-    /*------------------------*/
+/*------------------------*/
 
-    /* Sections styles */
-    .Section {
-        padding: var(--section-vertical-padding) var(--section-horizontal-padding);
-    }
+/* Sections styles */
+.Section {
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
+}
 
-    .Section.airborne {
-        --section-horizontal-padding: calc(1.618 * var(--vw-unit));
+.Section.airborne {
+    --section-horizontal-padding: calc(1.618 * var(--vw-unit));
 
-        width: var(--section-airborne-width);
-        margin: 0 auto var(--vw-unit);
-        padding: var(--section-horizontal-padding);
-        z-index: 1;
-        border-radius: var(--border-radius);
-    }
+    width: var(--section-airborne-width);
+    margin: 0 auto var(--vw-unit);
+    padding: var(--section-horizontal-padding);
+    z-index: 1;
+    border-radius: var(--border-radius);
+}
 
-    .Section.coral {background: var(--coral)}
+.Section.coral {background: var(--coral)}
 
-    .Section.white {background: var(--white)}
+.Section.white {background: var(--white)}
 
-    .Section.grey  {background: var(--grey)}
+.Section.grey  {background: var(--grey)}
 
-    .Section.camel {background: var(--camel)}
+.Section.camel {background: var(--camel)}
 
-    .Section.olive {background: var(--olive); color: white}
+.Section.olive {background: var(--olive); color: white}
 
-    .Section.rebeccapurple {background: var(--rebeccapurple); color: white}
+.Section.rebeccapurple {background: var(--rebeccapurple); color: white}
 
-    .Section.honeyyellow {background: var(--honeyyellow)}
+.Section.honeyyellow {background: var(--honeyyellow)}
 
-    .Section.gradient {background: var(--gradient-background)}
+.Section.gradient {background: var(--gradient-background)}
 
-    /* ADD custom colours for articles !!! */
+/* ADD custom colours for articles !!! */
 
-    .Section.transparent {background: none}
+.Section.transparent {background: none}
 
-    .Section.semitransparent {background: /*rgba(169, 157, 206, 0.4)*/rgba(255, 255, 255, 0.4)}
+.Section.semitransparent {background: /*rgba(169, 157, 206, 0.4)*/rgba(255, 255, 255, 0.4)}
 
-    .section-tittle {text-align: center}
+.section-tittle {text-align: center}
 
-    .section-sub-tittle {padding-bottom: 0}
+.section-sub-tittle {padding-bottom: 0}
 
-    .comfy-text p, .comfy-text i, .comfy-text b, .comfy-text ul {
-        width: var(--comfy-text-width);
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .comfy-text p:first-child {margin-top: 0}
+.comfy-text p, .comfy-text i, .comfy-text b, .comfy-text ul {
+    width: var(--comfy-text-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+.comfy-text p:first-child {margin-top: 0}
 
-    :is(.comfy-text) :is(h1, h2, h3, h4, h5, h6) {text-align: center}
+:is(.comfy-text) :is(h1, h2, h3, h4, h5, h6) {text-align: center}
 
-    /* End of Section styles */
+/* End of Section styles */
 
-    /*------------------------*/
+/*------------------------*/
 
-    /* Hero styles */
-    .Hero {
-        min-height: 61.8vh;
+/* Hero styles */
+.Hero {
+    min-height: 61.8vh;
 
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url("materials/images/poster-hero.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        padding: var(--section-horizontal-padding); /*3vmin це h1 padding */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url("materials/images/poster-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: var(--section-horizontal-padding); /*3vmin це h1 padding */
 
-        grid-row-start: 1;
-        grid-column-start: 1;
-        align-self: start;
-    }
+    grid-row-start: 1;
+    grid-column-start: 1;
+    align-self: start;
+}
 
-    .Hero.main {
-        min-height: 85.4vh;
-    }
+.Hero.main {
+    min-height: 85.4vh;
+}
 
-    .Hero.alone {grid-row-start: 3}
+.Hero.alone {grid-row-start: 3}
 
-    .Hero.movie {
-        background-image: url("materials/images/image-2.jpg");
-        height: 100vh;
-        z-index: -1;
-        position: fixed;
-        top: 0;
-        filter: blur(49px); /* apply the blur */
-        pointer-events: none;
-        /* background-image: url("materials/posters/poster.jpg"); */
-        /* transform: translate3d(0,0,0); */
-        will-change: transform;
-    }
+.Hero.movie {
+    background-image: url("materials/images/image-2.jpg");
+    height: 100vh;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    filter: blur(49px); /* apply the blur */
+    pointer-events: none;
+    /* background-image: url("materials/posters/poster.jpg"); */
+    /* transform: translate3d(0,0,0); */
+    will-change: transform;
+}
 
-    /*
-    .Hero.movie::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backdrop-filter: blur(49px);
-        -webkit-backdrop-filter: blur(49px);
-        pointer-events: none;
-    }
+/*
+.Hero.movie::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(49px);
+    -webkit-backdrop-filter: blur(49px);
+    pointer-events: none;
+}
 */
 
-    /* End of Hero styles */
+/* End of Hero styles */
 
-    /*-----------------------*/
+/*-----------------------*/
 
-    /* Footer styles */
+/* Footer styles */
 
-    footer {
-        width: 100%;
-        min-height: 30vh;
-        display: grid;
-        row-gap: calc(1.618 * var(--vw-unit));
-        column-gap: calc(1.618 * 1.618 * var(--vw-unit));
-        grid-template-columns: 1.618fr 1fr 1fr;
-        align-items: start;
-        grid-template-areas:
+footer {
+    width: 100%;
+    min-height: 30vh;
+    display: grid;
+    row-gap: calc(1.618 * var(--vw-unit));
+    column-gap: calc(1.618 * 1.618 * var(--vw-unit));
+    grid-template-columns: 1.618fr 1fr 1fr;
+    align-items: start;
+    grid-template-areas:
             "socials socials socials"
     "subscription info nav"
     "links links links"
     "copyright copyright copyright"
     "afterword afterword afterword";
-    }
+}
 
-    footer * {list-style: none; padding: 0}
-    footer a {text-decoration: none}
+footer * {list-style: none; padding: 0}
+footer a {text-decoration: none}
 
 .navigation {
     grid-area: nav;
@@ -504,11 +504,11 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     justify-self: center;
 }
 
-    /* End of Footer styles */
+/* End of Footer styles */
 
-    /*------------------------*/
+/*------------------------*/
 
-    /* Carousel styles */
+/* Carousel styles */
 
 .carousel {
     will-change: scroll-position;
@@ -522,253 +522,253 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
     overflow: -moz-scrollbars-none;
     scrollbar-width: none;
 
-        /* Gap between columns. */
-        grid-gap: var(--vw-unit);
+    /* Gap between columns. */
+    grid-gap: var(--vw-unit);
 
-        display: grid;
-        grid-auto-flow: column;
-        /*scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;*/
-    }
+    display: grid;
+    grid-auto-flow: column;
+    /*scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;*/
+}
 
 
-    .carousel.scrollable, .carousel.scrollable * {
-        cursor: grab;
-    }
+.carousel.scrollable, .carousel.scrollable * {
+    cursor: grab;
+}
 
 .movie-cards-row.few {
     justify-content: center;
 }
 
 
-    .grid {grid-column-gap: var(--vw-unit); grid-row-gap: var(--row-gap)}
+.grid {grid-column-gap: var(--vw-unit); grid-row-gap: var(--row-gap)}
 
-    .carousel.fog-left {
-        -webkit-mask: linear-gradient(to right, transparent 0%, black 12vw);
-        mask: linear-gradient(to right, transparent 0%, black 12vw);
-    }
+.carousel.fog-left {
+    -webkit-mask: linear-gradient(to right, transparent 0%, black 12vw);
+    mask: linear-gradient(to right, transparent 0%, black 12vw);
+}
 
-    .carousel.fog-right {
-        -webkit-mask: linear-gradient(to left, transparent 0%, black 12vw);
-        mask: linear-gradient(to left, transparent 0%, black 12vw);
-    }
+.carousel.fog-right {
+    -webkit-mask: linear-gradient(to left, transparent 0%, black 12vw);
+    mask: linear-gradient(to left, transparent 0%, black 12vw);
+}
 
-    .carousel.fog-both {
-        -webkit-mask: linear-gradient(to left, transparent 0%, black 12%, black 88%, black 12%, transparent 100%);
-        mask-image: linear-gradient(to left, transparent 0%, black 12%, black 88%, black 12%, transparent 100%);
-    }
-
-
-
-    .carousel::-webkit-scrollbar{
-        display: none;
-    }
-
-    .carousel.active, .carousel.active * {
-        cursor: grabbing;
-    }
-
-    /* End of Carousel styles */
-
-    /*------------------------*/
-
-    /* Movie Card styles */
-
-    .movie-card, .picture-card, .person-card, .article-card {
-        /* scroll-snap-align: start; */
-        line-height: 1.3;
-        user-select: none;
-        will-change: filter;
-        transition: filter var(--transition);
-        filter: var(--drop-shadow-zero);
-
-        /*
-            box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
-            padding: 0.5rem;
-            margin: calc(1vw + 1rem) 0;
-            border-radius: var(--border-radius);
-        */
-    }
-
-    .movie-card:hover, .picture-card:hover, .person-card:hover, .article-card:hover {
-        filter: var(--drop-shadow);
-    }
+.carousel.fog-both {
+    -webkit-mask: linear-gradient(to left, transparent 0%, black 12%, black 88%, black 12%, transparent 100%);
+    mask-image: linear-gradient(to left, transparent 0%, black 12%, black 88%, black 12%, transparent 100%);
+}
 
 
-    .movie-card-poster, .movie-page-poster {
-        background-image: url("materials/posters/poster.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        aspect-ratio: 27 / 40;
-    }
 
-    .movie-card .movie-card-title, .person-card .person-card-title {margin: calc(0.382 * var(--vw-unit)) 0 calc(0.382 * 0.382 * var(--vw-unit)) 0; text-align: start}
+.carousel::-webkit-scrollbar{
+    display: none;
+}
 
-    .movie-card-desc, .person-card-desc, .article-card-desc {
-        font-size: var(--font-size-sm);
-        color: rgba(119, 119, 119, 1);
-    }
+.carousel.active, .carousel.active * {
+    cursor: grabbing;
+}
 
-    .movie-card a, .person-card a {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-    }
+/* End of Carousel styles */
 
-    .movie-cards-row, .movie-cards-grid {
-        /* How many columns to show. */
-        --visible-cols: 6;
+/*------------------------*/
 
-        /* How much to show of the next hidden column. You can use this as a hint to show the user there are more scrollable items. Particularly helpful for mobile devices where the scrollbar gets hidden by default.*/
-        --col-hint: 0px;
+/* Movie Card styles */
 
-        /*  Calculated column size. */
-        --col-size: calc((100% / var(--visible-cols)) - var(--vw-unit) * ((var(--visible-cols) - 1) / var(--visible-cols)) - var(--col-hint));
+.movie-card, .picture-card, .person-card, .article-card {
+    /* scroll-snap-align: start; */
+    line-height: 1.3;
+    user-select: none;
+    will-change: filter;
+    transition: filter var(--transition);
+    filter: var(--drop-shadow-zero);
 
-        display: grid;
-        grid-template-columns: var(--col-size);
-        grid-auto-columns: var(--col-size);
-    }
+    /*
+        box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+        padding: 0.5rem;
+        margin: calc(1vw + 1rem) 0;
+        border-radius: var(--border-radius);
+    */
+}
 
-    .movie-cards-grid {
-        grid-template-columns: repeat(var(--visible-cols), var(--col-size));
-    }
+.movie-card:hover, .picture-card:hover, .person-card:hover, .article-card:hover {
+    filter: var(--drop-shadow);
+}
 
-    /* End of Movie Card styles */
 
-    /*------------------------*/
+.movie-card-poster, .movie-page-poster {
+    background-image: url("materials/posters/poster.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 27 / 40;
+}
 
-    /* Start of Picture Card styles */
+.movie-card .movie-card-title, .person-card .person-card-title {margin: calc(0.382 * var(--vw-unit)) 0 calc(0.382 * 0.382 * var(--vw-unit)) 0; text-align: start}
 
-    .picture-cards-row {
-        grid-auto-columns: max-content;
-    }
+.movie-card-desc, .person-card-desc, .article-card-desc {
+    font-size: var(--font-size-sm);
+    color: rgba(119, 119, 119, 1);
+}
 
-    .picture-cards-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:center;
-    }
+.movie-card a, .person-card a {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.movie-cards-row, .movie-cards-grid {
+    /* How many columns to show. */
+    --visible-cols: 6;
+
+    /* How much to show of the next hidden column. You can use this as a hint to show the user there are more scrollable items. Particularly helpful for mobile devices where the scrollbar gets hidden by default.*/
+    --col-hint: 0px;
+
+    /*  Calculated column size. */
+    --col-size: calc((100% / var(--visible-cols)) - var(--vw-unit) * ((var(--visible-cols) - 1) / var(--visible-cols)) - var(--col-hint));
+
+    display: grid;
+    grid-template-columns: var(--col-size);
+    grid-auto-columns: var(--col-size);
+}
+
+.movie-cards-grid {
+    grid-template-columns: repeat(var(--visible-cols), var(--col-size));
+}
+
+/* End of Movie Card styles */
+
+/*------------------------*/
+
+/* Start of Picture Card styles */
+
+.picture-cards-row {
+    grid-auto-columns: max-content;
+}
+
+.picture-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
 
 
 .picture-cards-grid .picture-card img {max-height: 25vmin;}
 
-    .picture-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.618em;
-    }
+.picture-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.618em;
+}
 
-    .picture-card img {
-        max-height: 60vmin;
-        max-width: 100%;
-        border-radius: var(--border-radius);
-    }
-
-
-    .picture-card figcaption {width: min-content; min-width: 90%}
-
-    /* End of Picture Card styles */
-
-    /*------------------------*/
-
-    /* Start of Person Card styles */
-
-    .people-cards-row, .people-cards-grid {
-        /* How many columns to show. */
-        --visible-cols: 8;
-
-        /* How much to show of the next hidden column. You can use this as a hint to show the user there are more scrollable items. Particularly helpful for mobile devices where the scrollbar gets hidden by default.*/
-        --col-hint: 0px;
-
-        /*  Calculated column size. */
-        --col-size: calc((100% / var(--visible-cols)) - var(--vw-unit) * ((var(--visible-cols) - 1) / var(--visible-cols)) - var(--col-hint));
-
-        display: grid;
-        grid-template-columns: var(--col-size);
-        grid-auto-columns: var(--col-size);
-    }
-
-    .people-cards-grid {
-        grid-template-columns: repeat(var(--visible-cols), var(--col-size));
-    }
-
-    .person-card-picture {
-        background-image: url("materials/images/portrait-1.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        border-radius: var(--border-radius);
-    }
-
-    /* End of Person Card styles */
-
-    /*------------------------*/
-
-    /* Start of Article Card styles */
-
-    .article-card-picture {
-        background-image: url("materials/images/news-1.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        aspect-ratio: 40 / 27;
-        border-radius: var(--border-radius);
-    }
-
-    .article-card-title {margin: 0.618em 0 0.382em; text-align: left}
-
-    .article-card-details {
-        display: flex;
-        flex-direction: row;
-        gap: 1em;
-        align-items: baseline;
-        justify-content: flex-start;
-    }
-
-    .article-card-link {
-        text-decoration: none;
-    }
-
-    .article-card-link:hover .article-card-picture {
-        /* filter: brightness(110%) contrast(85%); */
-    }
-
-    .article-tag {
-        font-family: Mariupol Bold, sans-serif;
-    }
+.picture-card img {
+    max-height: 60vmin;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
 
 
-    .article-cards-row, .article-cards-grid {
-        /* How many columns to show. */
-        --visible-cols: 3;
+.picture-card figcaption {width: min-content; min-width: 90%}
 
-        /* How much to show of the next hidden column. You can use this as a hint to show the user there are more scrollable items. Particularly helpful for mobile devices where the scrollbar gets hidden by default.*/
-        --col-hint: 0px;
+/* End of Picture Card styles */
 
-        /*  Calculated column size. */
-        --col-size: calc((100% / var(--visible-cols)) - var(--vw-unit) * ((var(--visible-cols) - 1) / var(--visible-cols)) - var(--col-hint));
+/*------------------------*/
 
-        display: grid;
-        grid-template-columns: var(--col-size);
-        grid-auto-columns: var(--col-size);
-    }
+/* Start of Person Card styles */
+
+.people-cards-row, .people-cards-grid {
+    /* How many columns to show. */
+    --visible-cols: 8;
+
+    /* How much to show of the next hidden column. You can use this as a hint to show the user there are more scrollable items. Particularly helpful for mobile devices where the scrollbar gets hidden by default.*/
+    --col-hint: 0px;
+
+    /*  Calculated column size. */
+    --col-size: calc((100% / var(--visible-cols)) - var(--vw-unit) * ((var(--visible-cols) - 1) / var(--visible-cols)) - var(--col-hint));
+
+    display: grid;
+    grid-template-columns: var(--col-size);
+    grid-auto-columns: var(--col-size);
+}
+
+.people-cards-grid {
+    grid-template-columns: repeat(var(--visible-cols), var(--col-size));
+}
+
+.person-card-picture {
+    background-image: url("materials/images/portrait-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--border-radius);
+}
+
+/* End of Person Card styles */
+
+/*------------------------*/
+
+/* Start of Article Card styles */
+
+.article-card-picture {
+    background-image: url("materials/images/news-1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 40 / 27;
+    border-radius: var(--border-radius);
+}
+
+.article-card-title {margin: 0.618em 0 0.382em; text-align: left}
+
+.article-card-details {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.article-card-link {
+    text-decoration: none;
+}
+
+.article-card-link:hover .article-card-picture {
+    /* filter: brightness(110%) contrast(85%); */
+}
+
+.article-tag {
+    font-family: Mariupol Bold, sans-serif;
+}
 
 
-    .article-cards-grid {
-        grid-template-columns: repeat(var(--visible-cols), var(--col-size));
-    }
+.article-cards-row, .article-cards-grid {
+    /* How many columns to show. */
+    --visible-cols: 3;
 
-    /* End of Article Card styles */
+    /* How much to show of the next hidden column. You can use this as a hint to show the user there are more scrollable items. Particularly helpful for mobile devices where the scrollbar gets hidden by default.*/
+    --col-hint: 0px;
 
-    /*------------------------*/
+    /*  Calculated column size. */
+    --col-size: calc((100% / var(--visible-cols)) - var(--vw-unit) * ((var(--visible-cols) - 1) / var(--visible-cols)) - var(--col-hint));
+
+    display: grid;
+    grid-template-columns: var(--col-size);
+    grid-auto-columns: var(--col-size);
+}
+
+
+.article-cards-grid {
+    grid-template-columns: repeat(var(--visible-cols), var(--col-size));
+}
+
+/* End of Article Card styles */
+
+/*------------------------*/
 
 
 /*GRID PAGE*/
@@ -799,10 +799,10 @@ h1.zero, h2.zero, h3.zero, h4.zero, h5.zero, h6.zero {padding: 0}
 
 .more-button {
     width: 100%;
-margin-top: var(--row-gap);
+    margin-top: var(--row-gap);
 }
 
-    /*------------------------*/
+/*------------------------*/
 
 /* Start of Nav Tabs styles */
 .tabs {
@@ -843,7 +843,7 @@ margin-top: var(--row-gap);
 }
 
 .lang .tab {
-    padding: 0.618em 1.618em;
+    font-size: var(--font-size-sm);
 }
 
 .tab.first {grid-row-start: 1;
@@ -1019,13 +1019,13 @@ input[id=radio-4]:checked ~ .glider {
 
 /* End of MOVIE PAGE styles */
 
-    /*------------------------*/
+/*------------------------*/
 
-    /*ARTICLE PAGE*/
+/*ARTICLE PAGE*/
 
-    /*------------------------*/
+/*------------------------*/
 
-    /* Start of Article Picture styles */
+/* Start of Article Picture styles */
 
 .article-details {
     display: flex;
@@ -1039,89 +1039,89 @@ input[id=radio-4]:checked ~ .glider {
 .article-tags {display: flex; justify-content: center; gap: 1em}
 
 
-    /* End of Article Picture styles */
+/* End of Article Picture styles */
 
-    /*------------------------*/
+/*------------------------*/
 
 
 
-    @media (min-width: 1440px) {
-        .movie-cards-row, .movie-cards-grid {
-            --visible-cols: 6;
-        }
-
-        .article-cards-row, .article-cards-grid {
-            --visible-cols: 3;
-        }
-
-        .people-cards-row, .people-cards-grid {
-            --visible-cols: 7;
-        }
+@media (min-width: 1440px) {
+    .movie-cards-row, .movie-cards-grid {
+        --visible-cols: 6;
     }
 
-    @media (max-width: 1440px) {
-        .movie-cards-row, .movie-cards-grid {
-            --visible-cols: 5;
-        }
-
-        .people-cards-row, .people-cards-grid {
-            --visible-cols: 5;
-        }
-
-        :root {
-            --comfy-text-width: 100%;
-        }
+    .article-cards-row, .article-cards-grid {
+        --visible-cols: 3;
     }
 
-    @media (max-width: 1240px) {
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 7;
+    }
+}
 
-        .people-cards-row, .people-cards-grid {
-            --visible-cols: 5;
-        }
-
-        .Section.airborne {
-            --section-airborne-width: 100%;
-            border-radius: 0;
-        }
+@media (max-width: 1440px) {
+    .movie-cards-row, .movie-cards-grid {
+        --visible-cols: 5;
     }
 
-    @media (max-width: 1140px) {
-        .article-cards-row, .article-cards-grid {
-            --visible-cols: 2;
-        }
-
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 5;
     }
 
-    @media (max-width: 940px) {
-        .carousel {
-            padding-left: calc(var(--section-horizontal-padding) * 1.618);
-            padding-right: calc(var(--section-horizontal-padding) * 1.618);
-        }
-        .grid {padding: var(--vw-unit) calc(var(--section-horizontal-padding) * 0.618)}
+    :root {
+        --comfy-text-width: 100%;
+    }
+}
 
-        .movie-cards-row, .movie-cards-grid {
-            --visible-cols: 4;
-        }
+@media (max-width: 1240px) {
+
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 5;
     }
 
-    @media (max-width: 840px) {
-        header, header.hero-header {
-            top: 0;
-            background: var(--header-slightly-exposed-background);
-            padding-top: 0;
-        }
-
-        header.exposed {
-            background: var(--header-exposed-background);
-        }
-
-        .Hero {grid-row-start: 3;}
-
-        .people-cards-row, .people-cards-grid {
-            --visible-cols: 4;
-        }
-
+    .Section.airborne {
+        --section-airborne-width: 100%;
+        border-radius: 0;
     }
+}
+
+@media (max-width: 1140px) {
+    .article-cards-row, .article-cards-grid {
+        --visible-cols: 2;
+    }
+
+}
+
+@media (max-width: 940px) {
+    .carousel {
+        padding-left: calc(var(--section-horizontal-padding) * 1.618);
+        padding-right: calc(var(--section-horizontal-padding) * 1.618);
+    }
+    .grid {padding: var(--vw-unit) calc(var(--section-horizontal-padding) * 0.618)}
+
+    .movie-cards-row, .movie-cards-grid {
+        --visible-cols: 4;
+    }
+}
+
+@media (max-width: 840px) {
+    header, header.hero-header {
+        top: 0;
+        background: var(--header-slightly-exposed-background);
+        padding-top: 0;
+    }
+
+    header.exposed {
+        background: var(--header-exposed-background);
+    }
+
+    .Hero {grid-row-start: 3;}
+
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 4;
+    }
+
+}
 
 @media (max-width: 780px) {
     .movie-cards-row, .movie-cards-grid {
@@ -1129,52 +1129,52 @@ input[id=radio-4]:checked ~ .glider {
     }
 }
 
-    @media (max-width: 640px) {
+@media (max-width: 640px) {
 
-        /*
-        .grid-filters {
-            flex-direction: column;
-            justify-content: center;
-            position: absolute;
-            top: 30%;
-            left: 0;
-            z-index: 10;
-            background: white;
-            width: 100%;
-            padding: 0;
-        }
-        .tabs {grid-auto-flow: row;background: transparent}
-        .tab {padding: 0.618em 1.618em;}
-         */
+    /*
+    .grid-filters {
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 30%;
+        left: 0;
+        z-index: 10;
+        background: white;
+        width: 100%;
+        padding: 0;
+    }
+    .tabs {grid-auto-flow: row;background: transparent}
+    .tab {padding: 0.618em 1.618em;}
+     */
 
 
-        .article-cards-row, .article-cards-grid {
-            --visible-cols: 1;
-        }
+    .article-cards-row, .article-cards-grid {
+        --visible-cols: 1;
+    }
 
-        .people-cards-row, .people-cards-grid {
-            --visible-cols: 3;
-        }
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 3;
+    }
 
-        .movie-page {
-            grid-template-areas: "poster"
+    .movie-page {
+        grid-template-areas: "poster"
                              "desc"
                              "trailer"
                              "stats"
                              "collection"
                              "pics"
                              "people";
-            grid-template-columns: minmax(0, 1fr);
-            gap: calc(1.618 * var(--vw-unit))
-        }
-
-        .movie-page-name-plate {background: rgba(255, 255, 255, 0.4); padding-bottom: 0}
-
-        :root {
-            --section-airborne-padding: 10vw;
-        }
-
+        grid-template-columns: minmax(0, 1fr);
+        gap: calc(1.618 * var(--vw-unit))
     }
+
+    .movie-page-name-plate {background: rgba(255, 255, 255, 0.4); padding-bottom: 0}
+
+    :root {
+        --section-airborne-padding: 10vw;
+    }
+
+}
 
 
 @media (max-width: 540px) {
@@ -1193,39 +1193,39 @@ input[id=radio-4]:checked ~ .glider {
 
 
 
-    @media (max-width: 340px) {
+@media (max-width: 340px) {
 
-        .movie-cards-row, .movie-cards-grid {
-            --visible-cols: 1;
-        }
-
-        .people-cards-row, .people-cards-grid {
-            --visible-cols: 1;
-        }
-
+    .movie-cards-row, .movie-cards-grid {
+        --visible-cols: 1;
     }
 
-
-
-    /*
-    mobile:
-    .carousel {
-        padding: 0 max(2rem, 15vw);
-        margin: 0 min(-2rem, -15vw);
+    .people-cards-row, .people-cards-grid {
+        --visible-cols: 1;
     }
 
-    @supports not (aspect-ratio: 1 / 1) {
-      .element::before {
-        float: left;
-        padding-top: 100%;
-        content: "";
-      }
+}
 
-      .element::after {
-        display: block;
-        content: "";
-        clear: both;
-      }
-    }
 
-    */
+
+/*
+mobile:
+.carousel {
+    padding: 0 max(2rem, 15vw);
+    margin: 0 min(-2rem, -15vw);
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+  .element::before {
+    float: left;
+    padding-top: 100%;
+    content: "";
+  }
+
+  .element::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+*/
