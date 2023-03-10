@@ -29,7 +29,7 @@
     --rebeccapurple: #663399;
     --honeyyellow: #FFB200;
 
-    --gradient-background: linear-gradient(110deg,#ffb200,#ff7f50);
+    --gradient-background: linear-gradient(110deg,#ffb200 5%,#ff7f50 100%);
     --gradient-background-rotated: linear-gradient(238deg,#ffb200,#ff7f50);
 
 
@@ -40,7 +40,7 @@
     --header-slightly-exposed-background: rgba(0, 0, 0, 0.8);
     --header-exposed-background: rgba(0, 0, 0, 1);
 
-    --button-padding-slim: 0.618em clamp(0.618rem, 0.444rem + 0.695vw, 1rem);
+    --button-padding-slim: 0.618em clamp(0.618em, 0.444em + 0.695vw, 1em);
     --button-padding-bold: 1em 1.618em;
     --button-border-radius: 99px;
 
@@ -59,7 +59,7 @@
 
 
     --font-size-sm: clamp(0.8403rem, -0.1062vw + 0.8682rem, 0.7407rem);
-    --font-size-base: clamp(1rem, 0vw + 1rem, 1rem);
+    --font-size-base: clamp(1rem, 0.09vw + 1rem, 1.1rem);
     --font-size-md: clamp(1.19rem, 0.1707vw + 1.1452rem, 1.35rem);
     --font-size-l: clamp(1.4161rem, 0.4335vw + 1.3023rem, 1.8225rem);
     --font-size-lg: clamp(1.6852rem, 0.8269vw + 1.4681rem, 2.4604rem);
@@ -512,8 +512,8 @@ footer a {text-decoration: none}
 
 .carousel {
     will-change: scroll-position;
-    padding: calc(var(--vw-unit) + 100px) var(--section-horizontal-padding);
-    margin: -100px calc(var(--section-horizontal-padding) * -1);
+    padding: var(--vw-unit) var(--section-horizontal-padding);
+    margin: 0 calc(var(--section-horizontal-padding) * -1);
 
     overflow-x: scroll;
     overflow-y: hidden;
@@ -962,6 +962,9 @@ input[id=radio-4]:checked ~ .glider {
     padding: calc(100vh * 0.618 * 0.618 * 0.618 * 0.618 * 0.618) var(--vw-unit) var(--vw-unit);
     color: white;
 }
+
+.movie-details {font-size: var(--font-size-base);}
+
 .movie-page {
     display: grid;
     grid-template-areas: "poster trailer"
@@ -1034,10 +1037,11 @@ input[id=radio-4]:checked ~ .glider {
     align-content: center;
     gap: 0.618em;
     margin-bottom: 1.618em;
+    font-size: var(--font-size-base);
 }
 
-.article-tags {display: flex; justify-content: center; gap: 1em}
-
+.article-tags {display: flex; justify-content: center; gap: 1em;}
+.article-tag {font-size: var(--font-size-base)}
 
 /* End of Article Picture styles */
 
