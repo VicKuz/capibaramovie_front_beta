@@ -1198,12 +1198,12 @@ input[id=radio-4]:checked ~ .glider {
 
     header {
         backdrop-filter: saturate(140%) blur(25px);
-        -webkit-backdrop-filter: saturate(140%) blur(25px);
+        -webkit-backdrop-filter: saturate(140%) blur(15px);
     }
 
     header.active {
-        backdrop-filter: saturate(140%) blur(25px);
-        -webkit-backdrop-filter: saturate(140%) blur(25px);
+        backdrop-filter: saturate(140%) blur(15px);
+        -webkit-backdrop-filter: saturate(140%) blur(15px);
         min-height: 100vh
     }
 
