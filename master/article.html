@@ -29,13 +29,13 @@
 
     <header>
         <div class="header-inner">
-            <a class="logo-container">
-                <svg class="logo">
+            <section class="logo-container">
+                <a><svg class="logo">
                     <use xlink:href="resources/icons/sprite.svg#logo" href="resources/icons/sprite.svg#logo"></use>
-                </svg>
-            </a>
+                </svg><h4>Carbonara mavic</h4></a>
+            </section>
 
-            <nav class="menu-top-strip">
+            <nav class="mobile-menu-item menu-top-strip">
                 <ul>
                     <li><a href="#">Фільми</a></li>
                     <li><a href="#">Прем'єри</a></li>
@@ -45,19 +45,20 @@
                 </ul>
             </nav>
 
-            <div class="top-icons-container">
+            <div class="mobile-menu-item top-icons-container">
                 <a class="top-icon-container">
                     <svg class="top-icon">
                         <use xlink:href="resources/icons/sprite.svg#search" href="resources/icons/sprite.svg#search"></use>
                     </svg>
                 </a>
 
-
-                <a class="top-icon-container">
-                    <svg class="top-icon">
-                        <use xlink:href="resources/icons/sprite.svg#twitter" href="resources/icons/sprite.svg#twitter"></use>
-                    </svg>
-                </a>
+                <!--
+                        <a class="top-icon-container">
+                            <svg class="top-icon">
+                                <use xlink:href="resources/icons/sprite.svg#twitter" href="resources/icons/sprite.svg#twitter"></use>
+                            </svg>
+                        </a>
+                -->
 
 
                 <a class="top-icon-container">
@@ -66,7 +67,18 @@
                     </svg>
                 </a>
 
+                <div class="tabs lang">
+                    <input type="radio" id="radio-1" name="tabs" checked />
+                    <label class="tab first" for="radio-1">УКР</label>
+                    <input type="radio" id="radio-2" name="tabs" />
+                    <label class="tab" for="radio-2">ENG</label>
+                    <span class="glider"></span>
+                </div>
+
+
             </div>
+
+            <div class="mobile-menu-toggle">Button</div>
         </div>
     </header>
     <div class="intersection-observer-detector"></div>
