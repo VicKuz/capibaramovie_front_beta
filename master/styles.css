@@ -262,10 +262,30 @@ header.slightly-exposed {
     -moz-transition: background 0.14s ease-in;
     -o-transition: background 0.14s ease-in;
     transition: background 0.14s ease-in;
+
+    backdrop-filter: saturate(140%) blur(15px);
+    -webkit-backdrop-filter: saturate(140%) blur(15px);
+   /* animation: backdrop-filter-animation 3s ease infinite;*/
+}
+
+@keyframes backdrop-filter-animation {
+    from {
+        backdrop-filter: blur(15px) saturate(140%) brightness(130%);
+    }
+
+    50% {
+        backdrop-filter: blur(0px) saturate(140%) brightness(130%);
+    }
+    to {
+        backdrop-filter: blur(15px) saturate(140%) brightness(130%);
+    }
 }
 
 header.exposed {
     background: var(--header-exposed-background);
+
+    backdrop-filter: saturate(140%) blur(25px);
+    -webkit-backdrop-filter: saturate(140%) blur(15px);
 }
 
 .header-inner {
@@ -1196,15 +1216,11 @@ input[id=radio-4]:checked ~ .glider {
         --visible-cols: 2;
     }
 
-    header {
-        backdrop-filter: saturate(140%) blur(25px);
-        -webkit-backdrop-filter: saturate(140%) blur(15px);
-    }
-
     header.active {
         backdrop-filter: saturate(140%) blur(15px);
         -webkit-backdrop-filter: saturate(140%) blur(15px);
-        min-height: 100vh
+        min-height: 100vh;
+        position: fixed;
     }
 
 
