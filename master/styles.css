@@ -139,7 +139,6 @@ body {
 .body-wrapper {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    position: static;
 }
 
 img {max-width: 100%}
@@ -1197,11 +1196,15 @@ input[id=radio-4]:checked ~ .glider {
         --visible-cols: 2;
     }
 
+    header {
+        backdrop-filter: saturate(140%) blur(25px);
+        -webkit-backdrop-filter: saturate(140%) blur(25px);
+    }
 
     header.active {
         backdrop-filter: saturate(140%) blur(25px);
         -webkit-backdrop-filter: saturate(140%) blur(25px);
-        min-height: 50vh
+        min-height: 100vh
     }
 
 
