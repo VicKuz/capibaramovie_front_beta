@@ -23,6 +23,29 @@ function vmax(percent) {
     return Math.max(vh(percent), vw(percent));
 }
 
+
+
+
+const toggle = document.querySelector(".mobile-menu-toggle");
+const menu = document.querySelector("header");
+const body = document.querySelector("body");
+/* Toggle mobile menu */
+function toggleMenu() {
+    if (menu.classList.contains("active")) {
+        menu.classList.remove("active");
+        body.classList.remove("parked");
+    } else {
+        menu.classList.add("active");
+        body.classList.add("parked");
+    }
+}
+/* Event Listener */
+toggle.addEventListener("click", toggleMenu, false);
+
+
+
+
+
 const Hero = document.querySelector(".Hero");
 
 let herocontent = document.querySelector(".hero-content");
@@ -86,6 +109,7 @@ function setHeaderObserver() {
 
     header.classList.remove("exposed")
     header.classList.remove("slightly-exposed")
+    body.classList.remove("parked");
     semiexposedheader.disconnect();
     exposedheader.disconnect();
 
@@ -102,21 +126,4 @@ window.addEventListener("resize", setHeaderObserver);
 
 
 
-const toggle = document.querySelector(".mobile-menu-toggle");
-const menu = document.querySelector("header");
-/* Toggle mobile menu */
-function toggleMenu() {
-    if (menu.classList.contains("active")) {
-        menu.classList.remove("active");
 
-        // adds the menu (hamburger) icon
-        toggle.querySelector("a").innerHTML = "<i class=’fas fa-bars’></i>";
-    } else {
-        menu.classList.add("active");
-
-        // adds the close (x) icon
-        toggle.querySelector("a").innerHTML = "<i class=’fas fa-times’></i>";
-    }
-}
-/* Event Listener */
-toggle.addEventListener("click", toggleMenu, false);

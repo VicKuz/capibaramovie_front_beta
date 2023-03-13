@@ -136,6 +136,10 @@ body {
     background: black;
 }
 
+body.parked {
+    overflow: hidden;
+}
+
 .body-wrapper {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -301,7 +305,7 @@ header.exposed {
     gap: var(--vw-unit);
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
 
     /* ПРИБРАТИ */
     overflow: hidden;
@@ -328,11 +332,11 @@ header a {
     text-decoration: none;
 }
 
-.logo-container {height: 3rem; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; text-transform: capitalize;}
+.logo-container {height: 3rem; display: flex; flex-direction: row; flex-shrink: 0; justify-content: flex-start; align-items: center; text-transform: capitalize;}
 .logo-container a {display: flex; flex-direction: row; justify-content: flex-start; align-items: center; margin-right: auto}
-.logo {height: 2rem; width: 5rem; }
+.logo {height: 2rem; width: 5rem; flex-shrink: 0;}
 
-.top-icons-container {display: flex; flex-direction: row; justify-content: flex-end; align-items: center; gap: calc(0.618 * var(--vw-unit)); height: 100%}
+.top-icons-container {display: flex; flex-direction: row; justify-content: flex-end; align-items: center; gap: calc(0.618 * var(--vw-unit))}
 .top-icon-container {width: 3rem; height: 3rem; display: inline-flex; justify-content: center;}
 .top-icon {fill: white; padding: 0.618rem}
 .top-icon:hover {fill: var(--honeyyellow)}
@@ -590,7 +594,7 @@ gap: var(--row-gap);
 
 
 
-.carousel::-webkit-scrollbar{
+.carousel::-webkit-scrollbar, .header-inner::-webkit-scrollbar {
     display: none;
 }
 
@@ -1220,15 +1224,22 @@ input[id=radio-4]:checked ~ .glider {
         backdrop-filter: saturate(140%) blur(15px);
         -webkit-backdrop-filter: saturate(140%) blur(15px);
         min-height: 100vh;
-        position: fixed;
     }
 
+    header.active .header-inner {
+        height: 100vh;
+        overflow: scroll;
+    }
 
     .header-inner {
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         gap: calc(1.618 * var(--row-gap));
+
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        scrollbar-width: none;
     }
 
 
@@ -1253,10 +1264,11 @@ input[id=radio-4]:checked ~ .glider {
         width: 100%;
     }
 
-    .mobile-menu-toggle {display: block; padding: 0.618rem; justify-self: flex-end}
+    .mobile-menu-toggle {padding: 0.618rem; display: flex; align-items: center}
     .top-icons-container {order:2; justify-content: center; gap: calc(1.618 * var(--row-gap));}
     .menu-top-strip {order: 3}
 
+    header .mobile-menu-sticked {position: sticky; top: 0}
     .logo-container h4 {display: none}
 
 }
