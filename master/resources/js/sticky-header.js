@@ -109,7 +109,6 @@ function setHeaderObserver() {
 
     header.classList.remove("exposed")
     header.classList.remove("slightly-exposed")
-    body.classList.remove("parked");
     semiexposedheader.disconnect();
     exposedheader.disconnect();
 

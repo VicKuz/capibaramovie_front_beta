@@ -851,6 +851,7 @@ gap: var(--row-gap);
     padding: 0.618em;
     filter: var(--drop-shadow);
     -webkit-transform:translate3d(0,0,0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .tabs.lang {
