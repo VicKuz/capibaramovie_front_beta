@@ -136,7 +136,7 @@ body {
     background: black;
 }
 
-body.parked {
+html.parked body {
     overflow: hidden;
 }
 
@@ -993,7 +993,7 @@ input[id=radio-4]:checked ~ .glider {
     align-items: center;
     text-align: center;
 
-    padding: calc(100vh * 0.618 * 0.618 * 0.618 * 0.618 * 0.618) var(--vw-unit) var(--vw-unit);
+    padding: calc(100vh * 0.382 * 0.382 * 0.382) var(--vw-unit) var(--vw-unit);
     color: white;
 }
 
@@ -1052,7 +1052,7 @@ input[id=radio-4]:checked ~ .glider {
 }
 .movie-page-people {grid-area: people}
 
-.movie-rating {padding: 0.3rem; border: 1px solid white; border-radius: 2px}
+.movie-rating {padding: 0.3em; border: 1px solid white; border-radius: 2px; line-height: 2.617924em}
 
 /* End of MOVIE PAGE styles */
 

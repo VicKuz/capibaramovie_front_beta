@@ -1,7 +1,7 @@
 let root = document.documentElement;
 
-function changeValue(id, value) {
-    root.style.setProperty(`--${id}`, value);
+function changeValue(element, id, value) {
+    element.style.setProperty(`--${id}`, value);
 }
 
 
@@ -28,15 +28,14 @@ function vmax(percent) {
 
 const toggle = document.querySelector(".mobile-menu-toggle");
 const menu = document.querySelector("header");
-const body = document.querySelector("body");
 /* Toggle mobile menu */
 function toggleMenu() {
     if (menu.classList.contains("active")) {
         menu.classList.remove("active");
-        body.classList.remove("parked");
+        root.classList.remove("parked");
     } else {
         menu.classList.add("active");
-        body.classList.add("parked");
+        root.classList.add("parked");
     }
 }
 /* Event Listener */
@@ -109,6 +108,7 @@ function setHeaderObserver() {
 
     header.classList.remove("exposed")
     header.classList.remove("slightly-exposed")
+    root.classList.remove("parked");
     semiexposedheader.disconnect();
     exposedheader.disconnect();
 
