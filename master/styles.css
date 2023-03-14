@@ -22,35 +22,36 @@
 :root {
     /* КОЛЬОРИ */
     --gradient-angle: 125deg;
+    --a: 1;
 
-    --coral: #FF7F50; /* orange #FF6B36 */
-    --flame: #E8513C;
-    --gradient-background-coral: linear-gradient(var(--gradient-angle),var(--flame) 30%, var(--coral) 70%);
+    --coral: rgba(255, 127, 80, var(--a, 1)); /* orange #FF6B36 */
+    --cinnabar: rgba(232, 81, 60, var(--a, 1));
+    --gradient-background-coral: linear-gradient(var(--gradient-angle),var(--cinnabar) 20%, var(--coral) 50%);
 
-    --white: white;
-    --grey: #DFDFDF;
-    --darkgrey: #9E9E9E;
-    --gradient-background-grey: linear-gradient(var(--gradient-angle),var(--darkgrey) 30%, var(--grey) 70%);
+    --white: rgba(255, 255, 255, var(--a, 1));
+    --platinum: rgba(226, 226, 226, var(--a, 1));
+    --cadetgrey: rgba(158, 158, 158, var(--a, 1));
+    --gradient-background-grey: linear-gradient(var(--gradient-angle),var(--cadetgrey) 30%, var(--platinum) 50%);
 
-    --camel: #DEAB78; /* Darker shade: #D0A071 */
-    --darkcamel: #b28960;
-    --gradient-background-camel: linear-gradient(var(--gradient-angle),var(--darkcamel) 0%, var(--camel) 70%);
+    --camel: rgba(222, 171, 120, var(--a, 1)); /* Darker shade: #D0A071 */
+    --lion: rgba(178, 137, 96, var(--a, 1));
+    --gradient-background-camel: linear-gradient(var(--gradient-angle),var(--lion) 0%, var(--camel) 40%);
 
-    --olive: #373127;
-    --darkolive: #2c271f;
-    --gradient-background-olive: linear-gradient(var(--gradient-angle),var(--darkolive) 0%, var(--olive) 70%);
+    --olive: rgba(55, 49, 39, var(--a, 1));
+    --darkolive: rgba(44, 39, 31, var(--a, 1));
+    --gradient-background-olive: linear-gradient(var(--gradient-angle),var(--darkolive) 0%, var(--olive) 40%);
 
 
-    --stormislandviolet: #9040CC;
-    --rebeccapurple: #663399;
-    --persianindigo: #31005F;
+    --stormislandviolet: rgba(144, 64, 204, var(--a, 1));
+    --rebeccapurple: rgba(102, 51, 153, var(--a, 1));
+    --persianindigo: rgba(49, 0, 95, var(--a, 1));
     --gradient-background-storm-island: linear-gradient(var(--gradient-angle), var(--persianindigo) 20%, var(--rebeccapurple) 60%, var(--stormislandviolet) 100%);
 
 
 
-    --honeyyellow: #FFB200;
-    --harvestgold: #cc8e00;
-    --gradient-background-honeyyellow: linear-gradient(var(--gradient-angle),var(--harvestgold) 30%, var(--honeyyellow) 70%);
+    --honeyyellow: rgba(255, 178, 0, var(--a, 1));
+    --harvestgold: rgba(204, 142, 0, var(--a, 1));
+    --gradient-background-honeyyellow: linear-gradient(var(--gradient-angle),var(--harvestgold) 30%, var(--honeyyellow) 50%);
     --gradient-background-honeyyellow-coral: linear-gradient(var(--gradient-angle),var(--honeyyellow) 5%, var(--coral) 100%);
     --gradient-background-honeyyellow-coral-rotated: linear-gradient(238deg,var(--honeyyellow) 5%, var(--coral) 100%);
 
@@ -372,7 +373,7 @@ header a {
 
 .intersection-observer-detector {width:100%; height:1px; margin-top:-1px; grid-row-start: 2}
 
-.mobile-menu-toggle {grid-area: menu-toggle; justify-self: end; display: none;}
+.mobile-menu-toggle {grid-area: menu-toggle; justify-self: end; display: none; /*temporwry*/ font-size: 1.764rem;}
 
 /* End of Header styles */
 
@@ -381,11 +382,26 @@ header a {
 /* Sections styles */
 .Section {
     padding: var(--section-vertical-padding) var(--section-horizontal-padding);
+    position: relative;
 }
 
-.Section.airborne {
-    --section-horizontal-padding: calc(1.618 * var(--vw-unit));
+.Section.gradient::after, .Section.stormisland::after {
+    position: absolute;
+z-index: 1;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
+.Section > * {
+    position: relative;
+    z-index: 2;
+}
+
+Section.airborne {
+    --section-horizontal-padding: calc(1.618 * var(--vw-unit));
     width: var(--section-airborne-width);
     margin: 0 auto var(--vw-unit);
     padding: var(--section-horizontal-padding);
@@ -394,26 +410,48 @@ header a {
 }
 
 .Section.coral {background: var(--coral)}
-.Section.coral.gradient {background: var(--gradient-background-coral)}
+.Section.coral.gradient::after {
+    background: var(--gradient-background-coral);
+    opacity: .7;
+}
 
 .Section.white {background: var(--white)}
 
-.Section.grey  {background: var(--grey)}
-.Section.grey.gradient  {background: var(--gradient-background-grey)}
+.Section.grey  {background: var(--platinum)}
+.Section.grey.gradient::after {
+    background: var(--gradient-background-grey);
+    opacity: .4;
+}
 
 .Section.camel {background: var(--camel)}
-.Section.camel.gradient {background: var(--gradient-background-camel)}
+.Section.camel.gradient::after {
+    background: var(--gradient-background-camel);
+    opacity: .9;
+}
 
 .Section.olive {background: var(--olive); color: white}
-.Section.olive.gradient {background: var(--gradient-background-olive); color: white}
+.Section.olive.gradient::after {
+    background: var(--gradient-background-olive);
+    opacity: 1;
+}
 
 .Section.rebeccapurple {background: var(--rebeccapurple); color: white}
-.Section.stormisland {background: var(--gradient-background-storm-island); color: white}
+.Section.stormisland::after {
+    background: var(--gradient-background-storm-island);
+    opacity: 1;
+    color: white
+}
 
 .Section.honeyyellow {background: var(--honeyyellow)}
-.Section.honeyyellow.gradient {background: var(--gradient-background-honeyyellow)}
+.Section.honeyyellow.gradient::after {
+    background: var(--gradient-background-honeyyellow);
+    opacity: .5;
+}
 
-.Section.honeyyellow-coral.gradient {background: var(--gradient-background-honeyyellow-coral)}
+.Section.honeyyellow-coral.gradient::after {
+    background: var(--gradient-background-honeyyellow-coral);
+    opacity: 1;
+}
 
 /* ADD custom colours for articles !!! */
 
@@ -924,7 +962,7 @@ gap: var(--row-gap);
     display: flex;
     z-index: 1;
     transition: 0.15s ease-out;
-    background-color: var(--grey);
+    background-color: var(--platinum);
     border-radius: var(--button-border-radius);
 }
 
@@ -1008,7 +1046,7 @@ input[id=radio-4]:checked ~ .glider {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: var(--grey)}
+.dropdown-content a:hover {background-color: var(--platinum)}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
