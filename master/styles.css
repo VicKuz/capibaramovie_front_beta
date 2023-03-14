@@ -860,7 +860,7 @@ gap: var(--row-gap);
 }
 
 .button:hover {
-    background: var(--gradient-background-storm-island);
+    background: var(--gradient-background-honeyyellow-coral);
     color: black;
 }
 
