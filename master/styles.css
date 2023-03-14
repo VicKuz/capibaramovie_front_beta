@@ -21,16 +21,41 @@
 
 :root {
     /* КОЛЬОРИ */
-    --coral: #FF7F50;
+    --gradient-angle: 125deg;
+
+    --coral: #FF7F50; /* orange #FF6B36 */
+    --flame: #E8513C;
+    --gradient-background-coral: linear-gradient(var(--gradient-angle),var(--flame) 30%, var(--coral) 70%);
+
     --white: white;
     --grey: #DFDFDF;
-    --camel: #DEAB78; /* Darker shade: #D0A071 */
-    --olive: #373127;
-    --rebeccapurple: #663399; /* Alternative shade: #31005F */
-    --honeyyellow: #FFB200;
+    --darkgrey: #9E9E9E;
+    --gradient-background-grey: linear-gradient(var(--gradient-angle),var(--darkgrey) 30%, var(--grey) 70%);
 
-    --gradient-background: linear-gradient(110deg,#ffb200 5%,#ff7f50 100%);
-    --gradient-background-rotated: linear-gradient(238deg,#ffb200,#ff7f50);
+    --camel: #DEAB78; /* Darker shade: #D0A071 */
+    --darkcamel: #b28960;
+    --gradient-background-camel: linear-gradient(var(--gradient-angle),var(--darkcamel) 0%, var(--camel) 70%);
+
+    --olive: #373127;
+    --darkolive: #2c271f;
+    --gradient-background-olive: linear-gradient(var(--gradient-angle),var(--darkolive) 0%, var(--olive) 70%);
+
+
+    --stormislandviolet: #9040CC;
+    --rebeccapurple: #663399;
+    --persianindigo: #31005F;
+    --gradient-background-storm-island: linear-gradient(var(--gradient-angle), var(--persianindigo) 20%, var(--rebeccapurple) 60%, var(--stormislandviolet) 100%);
+
+
+
+    --honeyyellow: #FFB200;
+    --harvestgold: #cc8e00;
+    --gradient-background-honeyyellow: linear-gradient(var(--gradient-angle),var(--harvestgold) 30%, var(--honeyyellow) 70%);
+    --gradient-background-honeyyellow-coral: linear-gradient(var(--gradient-angle),var(--honeyyellow) 5%, var(--coral) 100%);
+    --gradient-background-honeyyellow-coral-rotated: linear-gradient(238deg,var(--honeyyellow) 5%, var(--coral) 100%);
+
+
+
 
 
     --border-radius: 16px;
@@ -150,6 +175,16 @@ figcaption {color: rgba(119, 119, 119, 1); font-size: var(--font-size-sm); text-
 
 /* Font styles */
 
+::-moz-selection { /* Code for Firefox */
+    color: black;
+    background: var(--honeyyellow);
+}
+
+::selection {
+    color: black;
+    background: var(--honeyyellow);
+}
+
 p, b, strong, i, em, li {font-size: var(--font-size-md); line-height: 1.8}
 b, strong {font-family: Mariupol Bold, sans-serif;}
 
@@ -266,9 +301,6 @@ header.slightly-exposed {
     -moz-transition: background 0.14s ease-in;
     -o-transition: background 0.14s ease-in;
     transition: background 0.14s ease-in;
-
-    backdrop-filter: saturate(140%) blur(15px);
-    -webkit-backdrop-filter: saturate(140%) blur(15px);
    /* animation: backdrop-filter-animation 3s ease infinite;*/
 }
 
@@ -287,9 +319,6 @@ header.slightly-exposed {
 
 header.exposed {
     background: var(--header-exposed-background);
-
-    backdrop-filter: saturate(140%) blur(25px);
-    -webkit-backdrop-filter: saturate(140%) blur(15px);
 }
 
 .header-inner {
@@ -343,7 +372,7 @@ header a {
 
 .intersection-observer-detector {width:100%; height:1px; margin-top:-1px; grid-row-start: 2}
 
-.mobile-menu-toggle {grid-area: menu-toggle; justify-self: end; padding: 0.618rem; display: none; align-items: center;}
+.mobile-menu-toggle {grid-area: menu-toggle; justify-self: end; display: none;}
 
 /* End of Header styles */
 
@@ -365,20 +394,26 @@ header a {
 }
 
 .Section.coral {background: var(--coral)}
+.Section.coral.gradient {background: var(--gradient-background-coral)}
 
 .Section.white {background: var(--white)}
 
 .Section.grey  {background: var(--grey)}
+.Section.grey.gradient  {background: var(--gradient-background-grey)}
 
 .Section.camel {background: var(--camel)}
+.Section.camel.gradient {background: var(--gradient-background-camel)}
 
 .Section.olive {background: var(--olive); color: white}
+.Section.olive.gradient {background: var(--gradient-background-olive); color: white}
 
 .Section.rebeccapurple {background: var(--rebeccapurple); color: white}
+.Section.stormisland {background: var(--gradient-background-storm-island); color: white}
 
 .Section.honeyyellow {background: var(--honeyyellow)}
+.Section.honeyyellow.gradient {background: var(--gradient-background-honeyyellow)}
 
-.Section.gradient {background: var(--gradient-background)}
+.Section.honeyyellow-coral.gradient {background: var(--gradient-background-honeyyellow-coral)}
 
 /* ADD custom colours for articles !!! */
 
@@ -825,7 +860,7 @@ gap: var(--row-gap);
 }
 
 .button:hover {
-    background: var(--gradient-background-rotated);
+    background: var(--gradient-background-storm-island);
     color: black;
 }
 
@@ -1228,6 +1263,8 @@ input[id=radio-4]:checked ~ .glider {
 
     header.active {
         height: 100vh;
+        backdrop-filter: saturate(140%) blur(15px);
+        -webkit-backdrop-filter: saturate(140%) blur(15px);
     }
 
     header.active .header-inner {
