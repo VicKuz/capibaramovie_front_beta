@@ -136,7 +136,7 @@ window.addEventListener("resize", function() {
         // Update the window width for next time
         windowWidth = window.innerWidth
 
-        setHeaderObserver();
+
 
     }
 
